@@ -266,7 +266,8 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <PreBuildEvent>
-      <Command>cd src &amp;&amp; "C:\Program Files (x86)\Windows Kits\8.1\bin\x86\tracewpp.exe" -cfgdir:"C:\Program Files (x86)\Windows Kits\10\bin\WppConfig\Rev1" -scan:JsonWpp.h *.c *.cpp</Command>
+      <Command>
+      </Command>
     </PreBuildEvent>
     <PostBuildEvent>
       <Command>copy $(OutDir)$(TargetName)$(TargetExt) ..\..\..\..\Bin\</Command>

@@ -9,10 +9,6 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 /* --- INCLUDES ------------------------------------------------------------- */
 #include "JsonInternals.h"
 
-#ifdef _WIN32
-    #include "JsonWpp.h"
-    #include "JsonInternals.tmh"
-#endif
 
 /* --- PRIVATE VARIABLES ---------------------------------------------------- */
 /* --- PUBLIC VARIABLES ----------------------------------------------------- */
@@ -307,24 +303,10 @@ static BOOL SkipJsonTokenIfNeeded(
 }
 
 /* --- PUBLIC FUNCTIONS ----------------------------------------------------- */
-VOID JsoniWppInit(
-    )
-{
-    WPP_INIT_TRACING(JSON_WPP_APP_NAME);
-}
-
-VOID JsoniWppClean(
-    )
-{
-    WPP_CLEANUP();
-}
-
 BOOL JsoniLibInit(
     )
 {
     BOOL bResult = FALSE;
-
-    JsoniWppInit();
 
     bResult = UtilsHeapCreate(&gs_pJsonHeap, JSON_HEAP_NAME, NULL);
     API_RETURN_ERROR_IF_FAILED(bResult, SAME_ERROR());
@@ -339,8 +321,6 @@ BOOL JsoniLibCleanup(
 
     bResult = UtilsHeapDestroy(&gs_pJsonHeap);
     API_RETURN_ERROR_IF_FAILED(bResult, SAME_ERROR());
-
-    JsoniWppClean();
 
     API_RETURN_SUCCESS();
 }

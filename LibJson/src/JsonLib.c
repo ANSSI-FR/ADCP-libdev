@@ -10,10 +10,6 @@ Descr. : Lightweight JSON Library written in C Windows
 #include "JsonInternals.h"
 #include "JsonLib.h"
 
-#ifdef _WIN32
-    #include "JsonWpp.h"
-    #include "JsonLib.tmh"
-#endif
 
 /* --- PRIVATE VARIABLES ---------------------------------------------------- */
 /* --- PUBLIC VARIABLES ----------------------------------------------------- */
