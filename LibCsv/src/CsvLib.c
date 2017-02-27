@@ -588,6 +588,12 @@ static BOOL CsviWriteField(
             // Scan the next part of the field
             ptTmpBuff = ptQuote + 1;
         }
+		// Finally write the remaining part of the field
+		dwLen = (DWORD)_tcslen(ptTmpBuff);
+		bResult = WriteFile(pCsv->file.hFileHandle, ptTmpBuff, sizeof(WCHAR)*dwLen, &dwWritten, NULL);
+		if (bResult == FALSE || dwWritten != sizeof(WCHAR)*dwLen) {
+			CSV_API_RETURN_ERROR(pCsv, GLE());
+		}
     }
 
     // Write the closing quote if needed
