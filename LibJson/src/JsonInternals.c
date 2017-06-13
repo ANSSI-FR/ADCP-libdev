@@ -332,8 +332,8 @@ BOOL JsoniOpenFile(
     )
 {
     HANDLE hFileHandle = INVALID_HANDLE_VALUE;
-    DWORD dwDesiredAccess = (eFileOperation == JsonFileOperationWrite ? GENERIC_WRITE : JsonFileOperationAppend ? GENERIC_READ | GENERIC_WRITE : GENERIC_READ);
-    DWORD dwCreationDisposition = (eFileOperation == JsonFileOperationWrite ? CREATE_NEW : JsonFileOperationAppend ? OPEN_EXISTING : OPEN_EXISTING);
+    DWORD dwDesiredAccess = (eFileOperation == JsonFileOperationWrite) ? GENERIC_WRITE : ((eFileOperation == JsonFileOperationAppend) ? GENERIC_READ | GENERIC_WRITE : GENERIC_READ);
+    DWORD dwCreationDisposition = (eFileOperation == JsonFileOperationWrite) ? CREATE_NEW : ((eFileOperation == JsonFileOperationAppend) ? OPEN_EXISTING : OPEN_EXISTING);
 
     hFileHandle = CreateFileW(lpwFilename, dwDesiredAccess, FILE_SHARE_READ, NULL, dwCreationDisposition, FILE_ATTRIBUTE_NORMAL, NULL);
     if (hFileHandle == INVALID_HANDLE_VALUE)
@@ -362,7 +362,7 @@ BOOL JsoniCreateFileMapping(
 {
     BOOL bResult = FALSE;
     LARGE_INTEGER liFileSize = { 0 };
-    DWORD flProtect = (pJson->eJsonOperation == JsonFileOperationWrite ? PAGE_READWRITE : JsonFileOperationAppend ? PAGE_READWRITE : PAGE_READONLY);
+    DWORD flProtect = (pJson->eJsonOperation == JsonFileOperationWrite) ? PAGE_READWRITE : ((pJson->eJsonOperation == JsonFileOperationAppend) ? PAGE_READWRITE : PAGE_READONLY);
 
     bResult = GetFileSizeEx(pJson->file.hFileHandle, &liFileSize);
     if (bResult == FALSE)
