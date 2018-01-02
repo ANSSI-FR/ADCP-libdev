@@ -7,15 +7,16 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 \******************************************************************************/
 
 /* --- INCLUDES ------------------------------------------------------------- */
+#define LIB_ERROR_VAL gs_dwLdapLastError
 #include "LdapInternals.h"
 
-#include "LdapWpp.h"
-#include "LdapInternals.tmh"
-
+#ifdef _WIN32
+    #include "LdapWpp.h"
+    #include "LdapInternals.tmh"
+#endif
 
 /* --- PRIVATE VARIABLES ---------------------------------------------------- */
-DWORD gs_dwLastError = NO_ERROR;
-
+DWORD gs_dwLdapLastError = NO_ERROR;
 
 /* --- PUBLIC VARIABLES ----------------------------------------------------- */
 /* --- PRIVATE FUNCTIONS ---------------------------------------------------- */
@@ -42,9 +43,8 @@ PVOID LdapHeapAllocZeroMem(
     return pvMemory;
 }
 
-
 PVOID LdapHeapReAlloc(
-    _In_ HANDLE hHeap,  
+    _In_ HANDLE hHeap,
     _In_ PVOID pvMemory,
     _In_ SIZE_T dwBytes
     )
@@ -66,7 +66,6 @@ PVOID LdapHeapReAlloc(
     return pvMemoryLoc;
 }
 
-
 LPWSTR LdapHeapStrDup(
     _In_ HANDLE hHeap,
     _In_ LPCWSTR ptStr
@@ -81,7 +80,7 @@ LPWSTR LdapHeapStrDup(
     {
         LdapWppMessage(TRACE_LEVEL_ERROR, ALLOCATION, "Failed to dup <%p:%s> with heap <%p>", ptStr, ptStr, hHeap);
     }
-    else 
+    else
     {
         CopyMemory(ptDupStr, ptStr, sizeof(TCHAR)*dwLen);
         LdapWppMessage(TRACE_LEVEL_VERBOSE, ALLOCATION, "Dupped <%p> to <%p> with heap <%p>: <%s>", ptStr, ptDupStr, hHeap, ptDupStr);
@@ -89,7 +88,6 @@ LPWSTR LdapHeapStrDup(
 
     return ptDupStr;
 }
-
 
 void LdapHeapFree(
     _In_ HANDLE hHeap,
@@ -111,7 +109,6 @@ void LdapHeapFree(
     }
 }
 */
-
 
 BOOL LdapSetOption(
     _In_ PLDAP_CONNECT pConnection,

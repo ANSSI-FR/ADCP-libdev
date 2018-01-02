@@ -6,7 +6,6 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 XXX XXX XXX XXX XXX XXX XXX XXX XXX
 \******************************************************************************/
 
-
 #ifndef __CSV_LIB_H__
 #define __CSV_LIB_H__
 
@@ -28,12 +27,15 @@ extern "C" {
 #endif
 
 #undef DLL_FCT
-#ifdef __CSV_INT_H__
-    #define DLL_FCT __declspec(dllexport)
+#ifdef DLL_MODE
+    #ifdef __CSV_INT_H__
+        #define DLL_FCT __declspec(dllexport)
+    #else
+        #define DLL_FCT __declspec(dllimport)
+    #endif
 #else
-    #define DLL_FCT __declspec(dllimport)
+    #define DLL_FCT
 #endif
-
 
 /* --- DEFINES -------------------------------------------------------------- */
 //
@@ -77,7 +79,6 @@ extern "C" {
 //
 #define CSV_INVALID_HANDLE_VALUE    ((CSV_HANDLE)-1)
 
-
 /* --- TYPES ---------------------------------------------------------------- */
 typedef DWORD CSV_HANDLE;
 typedef CSV_HANDLE *PCSV_HANDLE;
@@ -98,9 +99,21 @@ typedef enum _CSV_FIELD_TYPE {
     CsvFieldTypeGuid,
 } CSV_FIELD_TYPE, *PCSV_FIELD_TYPE;
 
-
 /* --- VARIABLES ------------------------------------------------------------ */
 /* --- PROTOTYPES ----------------------------------------------------------- */
+//
+// Init/Cleanup
+//
+DLL_FCT
+BOOL
+CsvLibInit(
+);
+
+DLL_FCT
+BOOL
+CsvLibCleanup(
+);
+
 //
 // Read operations
 //
@@ -209,7 +222,6 @@ DLL_FCT BOOL CsvOpenAppendA(
 #define CsvOpenAppend  CsvOpenAppendA
 #endif // !UNICODE
 
-
 DLL_FCT BOOL CsvWriteNextRecordW(
     _In_ const CSV_HANDLE hCsvHandle,
     _In_ const LPWSTR pptCsvRecordValues[],
@@ -254,7 +266,7 @@ DLL_FCT BOOL CsvSetOption(
     _In_ const CSV_OPTION eCsvOption,
     _In_ const DWORD dwCsvOptionValue
     );
-    
+
 DLL_FCT BOOL CsvUnsetOption(
     _In_ const CSV_HANDLE hCsvHandle,
     _In_ const CSV_OPTION eCsvOption
@@ -273,12 +285,12 @@ DLL_FCT BOOL CsvGetHeaderNumberOfFields(
    );
 
 DLL_FCT VOID CsvHeapFree(
-	_In_ PVOID pMem
+    _In_ PVOID pMem
    );
 
 DLL_FCT VOID CsvRecordArrayHeapFree(
-	_In_ PVOID *ppMemArr,
-	_In_ DWORD dwCount
+    _In_ PVOID *ppMemArr,
+    _In_ DWORD dwCount
 );
 
 #ifdef __cplusplus

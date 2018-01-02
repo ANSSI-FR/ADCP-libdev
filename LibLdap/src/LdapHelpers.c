@@ -7,12 +7,14 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 \******************************************************************************/
 
 /* --- INCLUDES ------------------------------------------------------------- */
+#define LIB_ERROR_VAL gs_dwLdapLastError
 #include "LdapInternals.h"
 #include "LdapHelpers.h"
 
-#include "LdapWpp.h"
-#include "LdapHelpers.tmh"
-
+#ifdef _WIN32
+    #include "LdapWpp.h"
+    #include "LdapHelpers.tmh"
+#endif
 
 /* --- PRIVATE VARIABLES ---------------------------------------------------- */
 /* --- PUBLIC VARIABLES ----------------------------------------------------- */

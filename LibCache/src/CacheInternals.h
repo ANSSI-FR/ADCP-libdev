@@ -6,14 +6,11 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 XXX XXX XXX XXX XXX XXX XXX XXX XXX
 \******************************************************************************/
 
-
 #ifndef __CACHE_INT_H__
 #define __CACHE_INT_H__
 
-
 /* --- INCLUDES ------------------------------------------------------------- */
 #include "CacheLib.h"
-
 
 /* --- DEFINES -------------------------------------------------------------- */
 #define NTDLL_MODULE_NAME                   _T("ntdll.dll")
@@ -23,10 +20,8 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
                                                 element = (ptype)gs_pfnRtlEnumerateGenericTableAvl(table, FALSE)  \
                                                 )
 
-
 /* --- TYPES ---------------------------------------------------------------- */
 /* --- VARIABLES ------------------------------------------------------------ */
 /* --- PROTOTYPES ----------------------------------------------------------- */
 
-    
 #endif // __CACHE_INT_H__

@@ -6,7 +6,6 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 XXX XXX XXX XXX XXX XXX XXX XXX XXX
 \******************************************************************************/
 
-
 #ifndef __LDAP_HELPERS_H__
 #define __LDAP_HELPERS_H__
 
@@ -17,11 +16,10 @@ extern "C" {
 /* --- INCLUDES ------------------------------------------------------------- */
 #include "LdapLib.h"
 
-
 /* --- DEFINES -------------------------------------------------------------- */
 /* --- TYPES ---------------------------------------------------------------- */
 /* --- VARIABLES ------------------------------------------------------------ */
-extern DWORD gs_dwLastError;
+extern DWORD gs_dwLdapLastError;
 
 /* --- PROTOTYPES ----------------------------------------------------------- */
 DLL_FCT BOOL LdapLocateNamedAttrW(

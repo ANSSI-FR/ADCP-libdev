@@ -13,13 +13,9 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 #ifndef __LIB_LDAP_H__
 #define __LIB_LDAP_H__
 
-
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-
-
 
 /* --- INCLUDES ------------------------------------------------------------- */
 #include "..\..\LibUtils\src\UtilsLib.h"
@@ -33,12 +29,15 @@ extern "C" {
 #endif
 
 #undef DLL_FCT
-#ifdef __LDAP_INT_H__
-    #define DLL_FCT __declspec(dllexport)
+#ifdef DLL_MODE
+    #ifdef __LDAP_INT_H__
+        #define DLL_FCT __declspec(dllexport)
+    #else
+        #define DLL_FCT __declspec(dllimport)
+    #endif
 #else
-    #define DLL_FCT __declspec(dllimport)
+    #define DLL_FCT
 #endif
-
 
 /* --- DEFINES -------------------------------------------------------------- */
 
@@ -105,7 +104,6 @@ extern "C" {
 // Misc.
 //
 #define LDAP_DEFAULT_PORT                       (389)
-
 
 /* --- TYPES ---------------------------------------------------------------- */
 typedef enum _LDAP_AUTH_METHOD {
@@ -224,9 +222,21 @@ typedef struct _LDAP_ROOT_DSE {
 
 } LDAP_ROOT_DSE, *PLDAP_ROOT_DSE;
 
-
 /* --- VARIABLES ------------------------------------------------------------ */
 /* --- PROTOTYPES ----------------------------------------------------------- */
+//
+// Init/Cleanup
+//
+DLL_FCT
+BOOL
+LdapLibInit(
+);
+
+DLL_FCT
+BOOL
+LdapLibCleanup(
+);
+
 DLL_FCT BOOL LdapConnectW(
     _In_ const LPWSTR ptHost,
     _In_ const DWORD dwPort,

@@ -6,10 +6,8 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 XXX XXX XXX XXX XXX XXX XXX XXX XXX
 \******************************************************************************/
 
-
 #ifndef __CACHE_LIB_H__
 #define __CACHE_LIB_H__
-
 
 /* --- INCLUDES ------------------------------------------------------------- */
 #include <Windows.h>
@@ -24,12 +22,15 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 #endif
 
 #undef DLL_FCT
-#ifdef __CACHE_INT_H__
-    #define DLL_FCT __declspec(dllexport)
+#ifdef DLL_MODE
+    #ifdef __CACHE_INT_H__
+        #define DLL_FCT __declspec(dllexport)
+    #else
+        #define DLL_FCT __declspec(dllimport)
+    #endif
 #else
-    #define DLL_FCT __declspec(dllimport)
+    #define DLL_FCT
 #endif
-
 
 /* --- DEFINES -------------------------------------------------------------- */
 #define CACHE_LIBERR                (0xDDDD)
@@ -48,9 +49,21 @@ typedef void (FN_CACHE_ENTRY_DESTROY_CALLBACK)(
     );
 typedef FN_CACHE_ENTRY_DESTROY_CALLBACK *PFN_CACHE_ENTRY_DESTROY_CALLBACK;
 
-
 /* --- VARIABLES ------------------------------------------------------------ */
 /* --- PROTOTYPES ----------------------------------------------------------- */
+//
+// Init/Cleanup
+//
+DLL_FCT
+BOOL
+CacheLibInit(
+);
+
+DLL_FCT
+BOOL
+CacheLibCleanup(
+);
+
 DLL_FCT BOOL CacheCreate(
     _Out_ PCACHE *ppCache,
     _In_ const PTCHAR ptName,

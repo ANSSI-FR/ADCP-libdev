@@ -6,10 +6,8 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 XXX XXX XXX XXX XXX XXX XXX XXX XXX
 \******************************************************************************/
 
-
 #ifndef __LOG_LIB_H__
 #define __LOG_LIB_H__
-
 
 /* --- INCLUDES ------------------------------------------------------------- */
 #include "..\..\LibUtils\src\UtilsLib.h"
@@ -21,12 +19,15 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 #endif
 
 #undef DLL_FCT
-#ifdef __LOG_INT_H__
-    #define DLL_FCT __declspec(dllexport)
+#ifdef DLL_MODE
+    #ifdef __LOG_INT_H__
+        #define DLL_FCT __declspec(dllexport)
+    #else
+        #define DLL_FCT __declspec(dllimport)
+    #endif
 #else
-    #define DLL_FCT __declspec(dllimport)
+    #define DLL_FCT
 #endif
-
 
 /* --- DEFINES -------------------------------------------------------------- */
 #define LOG_LIBERR                  (0xCCCC)
@@ -47,7 +48,6 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 #define LOG_CHR_Err     "-"
 #define LOG_CHR_Succ    "+"
 #define LOG_CHR_Bypass  " "
-
 
 #define LOG(lvl, frmt, ...)         LOG_NO_NL(lvl, NONE(frmt) ## _T("\r\n"), __VA_ARGS__);
 #define LOG_NO_NL(lvl, frmt, ...)   Log(lvl, LOG_CHR(lvl) ## frmt, __VA_ARGS__);
@@ -76,7 +76,7 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 typedef enum _LOG_LEVEL {
     All = 0,        // print all possible logs
     Dbg = 1,        // print debug information
-    Info = 2,       // print info 
+    Info = 2,       // print info
     Warn = 3,       // print warnings and more critical
     Err = 4,        // print errors and success
     Succ = 5,       // print success only
@@ -89,9 +89,21 @@ typedef enum _LOG_TYPE {
     LogTypeLogfile = BIT(1),
 } LOG_TYPE, *PLOG_TYPE;
 
-
 /* --- VARIABLES ------------------------------------------------------------ */
 /* --- PROTOTYPES ----------------------------------------------------------- */
+//
+// Init/Cleanup
+//
+DLL_FCT
+BOOL
+LogLibInit(
+);
+
+DLL_FCT
+BOOL
+LogLibCleanup(
+);
+
 DLL_FCT BOOL LogSetLogFile(
     _In_ const PTCHAR ptFileName
     );

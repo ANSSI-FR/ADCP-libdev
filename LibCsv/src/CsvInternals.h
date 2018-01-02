@@ -6,14 +6,11 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 XXX XXX XXX XXX XXX XXX XXX XXX XXX
 \******************************************************************************/
 
-
 #ifndef __CSV_INT_H__
 #define __CSV_INT_H__
 
-
 /* --- INCLUDES ------------------------------------------------------------- */
 #include "CsvLib.h"
-
 
 /* --- DEFINES -------------------------------------------------------------- */
 //
@@ -38,7 +35,6 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 #define CSV_CURRENT_POS(csv)            ((LPWSTR)((csv)->file.read.pvFileMappedView) + (csv)->file.read.llPosition)
 #define CSV_CONSUME_CHAR(csv)           ((LPWSTR)((csv)->file.read.pvFileMappedView))[(csv)->file.read.llPosition++]
 #define CSV_IS_LAST_FIELD(csv)          (BOOL)(((csv)->file.dwCurrentField + 1) % (csv)->header.dwNumberOfFields == 0)
-
 
 /* --- TYPES ---------------------------------------------------------------- */
 typedef enum _CSV_FILE_OPERATION {
@@ -72,12 +68,12 @@ typedef struct _CSV_OBJECT {
         DWORD dwNumberOfFilteredFields;
         PDWORD pdwFilteredSetIndexes;
     } header;
-    
+
     struct {
         DWORD dwNumberOfRecords;
         DWORD dwLastError;
     } infos;
-    
+
     struct {
         DWORD dwOptionsSet;
         WCHAR tSeparator;
@@ -104,5 +100,4 @@ typedef struct _CSV_HANDLE_TABLE {
 /* --- VARIABLES ------------------------------------------------------------ */
 /* --- PROTOTYPES ----------------------------------------------------------- */
 
-    
 #endif // __CSV_INT_H__

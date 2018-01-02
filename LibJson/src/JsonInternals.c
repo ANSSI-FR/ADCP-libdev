@@ -7,8 +7,13 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 \******************************************************************************/
 
 /* --- INCLUDES ------------------------------------------------------------- */
+#define LIB_ERROR_VAL gs_dwJsonLastError
 #include "JsonInternals.h"
 
+#ifdef _WIN32
+    #include "JsonWpp.h"
+    #include "JsonInternals.tmh"
+#endif
 
 /* --- PRIVATE VARIABLES ---------------------------------------------------- */
 /* --- PUBLIC VARIABLES ----------------------------------------------------- */
@@ -303,28 +308,6 @@ static BOOL SkipJsonTokenIfNeeded(
 }
 
 /* --- PUBLIC FUNCTIONS ----------------------------------------------------- */
-BOOL JsoniLibInit(
-    )
-{
-    BOOL bResult = FALSE;
-
-    bResult = UtilsHeapCreate(&gs_pJsonHeap, JSON_HEAP_NAME, NULL);
-    API_RETURN_ERROR_IF_FAILED(bResult, SAME_ERROR());
-
-    API_RETURN_SUCCESS();
-}
-
-BOOL JsoniLibCleanup(
-    )
-{
-    BOOL bResult = FALSE;
-
-    bResult = UtilsHeapDestroy(&gs_pJsonHeap);
-    API_RETURN_ERROR_IF_FAILED(bResult, SAME_ERROR());
-
-    API_RETURN_SUCCESS();
-}
-
 BOOL JsoniOpenFile(
     _In_ const LPWSTR                   lpwFilename,
     _In_ const JSON_OPERATION           eFileOperation,
@@ -367,7 +350,7 @@ BOOL JsoniCreateFileMapping(
     bResult = GetFileSizeEx(pJson->file.hFileHandle, &liFileSize);
     if (bResult == FALSE)
     {
-        API_RETURN_ERROR(GLE()); // TODO: ERR+WPP 
+        API_RETURN_ERROR(GLE()); // TODO: ERR+WPP
     }
     pJson->data.llDataSize = liFileSize.QuadPart;
 
@@ -376,12 +359,12 @@ BOOL JsoniCreateFileMapping(
 
     pJson->file.hFileMapping = CreateFileMapping(pJson->file.hFileHandle, NULL, flProtect, 0, 0, NULL);
     if (pJson->file.hFileMapping == NULL) {
-        API_RETURN_ERROR(GLE()); // TODO: ERR+WPP 
+        API_RETURN_ERROR(GLE()); // TODO: ERR+WPP
     }
 
     pJson->data.pvData = MapViewOfFile(pJson->file.hFileMapping, FILE_MAP_READ, 0, 0, 0);
     if (pJson->data.pvData == NULL) {
-        API_RETURN_ERROR(GLE()); // TODO: ERR+WPP 
+        API_RETURN_ERROR(GLE()); // TODO: ERR+WPP
     }
 
     API_RETURN_SUCCESS();
@@ -534,7 +517,7 @@ BOOL JsoniTokenToStr(
     BOOL bRes = FALSE;
 
     lpStr = UtilsHeapAllocStrHelper(gs_pJsonHeap, dwStrLen + 1);
-    
+
     bRes = memcpy_s(lpStr, (dwStrLen + 1) * sizeof(CHAR), lpStart, (dwStrLen)* sizeof(CHAR));
     if (bRes != 0)
         API_RETURN_ERROR(JSON_ERROR_MEMORY_OPERATION);
@@ -571,7 +554,7 @@ BOOL JsoniAllocAndFillJsonObj(
 
     // Fill external object
     pNewJsonObj = UtilsHeapAllocStructHelper(gs_pJsonHeap, JSON_OBJECT);
-    pNewJsonObj->private.hJson = hNewJsonObj;
+    pNewJsonObj->privatestruct.hJson = hNewJsonObj;
     pNewJsonObj->eObjectType = JsonResultTypeUnknown;
     if (lpParentKey) UtilsHeapAllocWStrAndConvertAStr(gs_pJsonHeap, lpParentKey, &pNewJsonObj->ptKey);
 

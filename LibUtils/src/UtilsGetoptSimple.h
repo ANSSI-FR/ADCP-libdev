@@ -4,7 +4,6 @@
 #ifndef __GETOPT_SIMPLE_H__
 #define __GETOPT_SIMPLE_H__
 
-
 /* --- INCLUDES ------------------------------------------------------------- */
 /* --- DEFINES -------------------------------------------------------------- */
 #define getopt getopt_simple

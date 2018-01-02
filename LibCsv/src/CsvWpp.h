@@ -6,10 +6,8 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 XXX XXX XXX XXX XXX XXX XXX XXX XXX
 \******************************************************************************/
 
-
 #ifndef __CSV_WPP_H__
 #define __CSV_WPP_H__
-
 
 /* --- INCLUDES ------------------------------------------------------------- */
 /* --- DEFINES -------------------------------------------------------------- */
@@ -32,9 +30,6 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 #define WPP_LEVEL_FLAGS_ENABLED(level, flags)                                           \
     (WPP_LEVEL_ENABLED(flags) && WPP_CONTROL(WPP_BIT_ ## flags).Level >= level)
 
-#define CSV_WPP_APP_NAME   L"CsvLib"
-
-
 /* --- WPP CONFIG ----------------------------------------------------------- */
 // begin_wpp config
 //      FUNC CsvWppMessage(LEVEL, FLAGS, MSG, ...);
@@ -47,13 +42,5 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 /* --- TYPES ---------------------------------------------------------------- */
 /* --- VARIABLES ------------------------------------------------------------ */
 /* --- PROTOTYPES ----------------------------------------------------------- */
-/*
-void CsviWppInit(
-    );
-
-void CsviWppClean(
-    );
-*/
-
 
 #endif // __CSV_WPP_H__

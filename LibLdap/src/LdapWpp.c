@@ -7,8 +7,10 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 \******************************************************************************/
 
 /* --- INCLUDES ------------------------------------------------------------- */
-#include "LdapWpp.h"
-#include "LdapWpp.tmh"
+#ifdef _WIN32
+    #include "LdapWpp.h"
+    #include "LdapWpp.tmh"
+#endif
 
 //
 // Regenerate *.tmh files:
@@ -19,14 +21,3 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 /* --- PUBLIC VARIABLES ----------------------------------------------------- */
 /* --- PRIVATE FUNCTIONS ---------------------------------------------------- */
 /* --- PUBLIC FUNCTIONS ----------------------------------------------------- */
-// With static libs, the caller of WPP_INIT_TRACING must be the exe, not the lib
-
-void LdapWppInit(
-    ) {
-    WPP_INIT_TRACING(LDAP_WPP_APP_NAME);
-}
-
-void LdapWppClean(
-    ) {
-    WPP_CLEANUP();
-}

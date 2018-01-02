@@ -6,7 +6,6 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 XXX XXX XXX XXX XXX XXX XXX XXX XXX
 \******************************************************************************/
 
-
 #ifndef __UTILS_LIB_H__
 #define __UTILS_LIB_H__
 
@@ -26,10 +25,14 @@ extern "C" {
 #endif
 
 #undef DLL_FCT
-#ifdef __UTILS_INT_H__
-    #define DLL_FCT __declspec(dllexport)
+#ifdef DLL_MODE
+    #ifdef __UTILS_INT_H__
+        #define DLL_FCT __declspec(dllexport)
+    #else
+        #define DLL_FCT __declspec(dllimport)
+    #endif
 #else
-    #define DLL_FCT __declspec(dllimport)
+    #define DLL_FCT
 #endif
 #define DLL_VAR DLL_FCT
 
@@ -73,16 +76,19 @@ extern "C" {
 //
 // 'Return' macros
 //
+#ifndef LIB_ERROR_VAL
+#error LIB_ERROR_VAL must be defined
+#endif
 #define ERROR_CODE(lib, code)               (((DWORD)(lib) << 16) | (code)) // lib codes and error codes are one 16 bits max
 #define SUCCESS_VALUE                       (TRUE)
 #define ERROR_VALUE                         (FALSE)
 #define API_SUCCEEDED(bReturn)              ((bReturn) == (SUCCESS_VALUE))
 #define API_FAILED(bReturn)                 ((bReturn) != (SUCCESS_VALUE))
-#define API_RETURN_SUCCESS()                return gs_dwLastError = (NO_ERROR), (SUCCESS_VALUE);
-#define API_RETURN_ERROR(dwErrorCode)       return gs_dwLastError = (dwErrorCode), (ERROR_VALUE);
+#define API_RETURN_SUCCESS()                return LIB_ERROR_VAL = (NO_ERROR), (SUCCESS_VALUE);
+#define API_RETURN_ERROR(dwErrorCode)       return LIB_ERROR_VAL = (dwErrorCode), (ERROR_VALUE);
 #define API_RETURN_SAME_ERROR()             return (ERROR_VALUE);
 #define API_RETURN_SAME_VALUE(bValue)       return (bValue);
-#define SAME_ERROR()                        (gs_dwLastError)
+#define SAME_ERROR()                        (LIB_ERROR_VAL)
 #define API_RETURN_ERROR_IF_FAILED(bValue, dwErr)   MULTI_LINE_MACRO_BEGIN      \
                                                 if (API_FAILED(bValue)) {       \
                                                     API_RETURN_ERROR(dwErr);    \
@@ -122,7 +128,7 @@ extern "C" {
 #define TAB_CHAR                    _T('\t')
 #define EMPTY_STR                   _T("")
 #define STR_EMPTY(s)                ((BOOL)((s) == NULL || (s)[0] == NULL_CHAR))
-#define STRLEN_IFNOTNULL(a)			(a ? _tcslen(a) : (size_t)0)
+#define STRLEN_IFNOTNULL(a)            (a ? _tcslen(a) : (size_t)0)
 #define STR_EQ(a,b)                 ((BOOL)(_tcscmp(a,b) == 0))
 #define STR_EQI(a,b)                ((BOOL)(_tcsicmp(a,b) == 0))
 #define STR_EQN(a,b,n)              ((BOOL)(_tcsncmp(a,b,n) == 0))
@@ -168,7 +174,6 @@ extern "C" {
 #define SIZEOF_ARRAY(s, n)          (sizeof(s)*(n))
 #define SIZEOF_TSTR(len)            (SIZEOF_ARRAY(TCHAR, ((len) + 1)))
 #define ARRAY_COUNT(x)              (sizeof(x) / sizeof((x)[0]))
-
 
 //
 // 'Misc' macros (TODO: organize!)
@@ -243,8 +248,8 @@ typedef struct _UTILS_HEAP {
 } UTILS_HEAP, *PUTILS_HEAP;
 
 typedef struct _NUMERIC_CONSTANT {
-	LPTSTR name;
-	DWORD value;
+    LPTSTR name;
+    DWORD value;
 } NUMERIC_CONSTANT, *PNUMERIC_CONSTANT;
 
 typedef struct _STR_PAIR_LIST {
@@ -255,6 +260,19 @@ typedef struct _STR_PAIR_LIST {
 
 /* --- VARIABLES ------------------------------------------------------------ */
 /* --- PROTOTYPES ----------------------------------------------------------- */
+//
+// Init/Cleanup
+//
+DLL_FCT
+BOOL
+UtilsLibInit(
+);
+
+DLL_FCT
+BOOL
+UtilsLibCleanup(
+);
+
 //
 // Allocation
 //
@@ -324,9 +342,9 @@ DLL_FCT void HexifyA(
     );
 
 DLL_FCT void HexifyW(
-	_In_ const LPWSTR ptOutHexStr,
-	_In_ const PBYTE pbInData,
-	_In_ const DWORD dwLen // ptOutHexStr must be able to receive dwLen *2 chars + null
+    _In_ const LPWSTR ptOutHexStr,
+    _In_ const PBYTE pbInData,
+    _In_ const DWORD dwLen // ptOutHexStr must be able to receive dwLen *2 chars + null
 );
 
 DLL_FCT void UnhexifyA(

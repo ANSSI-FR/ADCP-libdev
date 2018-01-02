@@ -6,14 +6,11 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 XXX XXX XXX XXX XXX XXX XXX XXX XXX
 \******************************************************************************/
 
-
 #ifndef __JSON_INT_H__
 #define __JSON_INT_H__
 
-
 /* --- INCLUDES ------------------------------------------------------------- */
 #include "JsonLib.h"
-
 
 /* --- DEFINES -------------------------------------------------------------- */
 //
@@ -36,10 +33,10 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 /* --- JSMN TYPES ----------------------------------------------------------- */
 /**
 * JSON type identifier. Basic types are:
-* 	o Object
-* 	o Array
-* 	o String
-* 	o Other primitive: number, boolean (true/false) or null
+*  - Object
+*  - Array
+*  - String
+*  - Other primitive: number, boolean (true/false) or null
 */
 typedef enum _jsmntype_t {
                                         JSMN_PRIMITIVE = 0,
@@ -47,7 +44,6 @@ typedef enum _jsmntype_t {
                                         JSMN_ARRAY = 2,
                                         JSMN_STRING = 3
 } jsmntype_t, *pjsmntype_t;
-
 
 typedef enum _parse_state {
                                         START = 0,
@@ -71,9 +67,9 @@ typedef enum _jsmnerr_t {
 
 /**
 * JSON token description.
-* @param		type	type (object, array, string etc.)
-* @param		start	start position in JSON data string
-* @param		end		end position in JSON data string
+* @param    type     type (object, array, string etc.)
+* @param    start    start position in JSON data string
+* @param    end      end position in JSON data string
 */
 typedef struct _jsmntok_t {
     jsmntype_t                          type;
@@ -92,7 +88,6 @@ typedef struct _jsmn_parser{
     INT                                 toksuper; /* suporior token node, e.g parent object or array */
 } jsmn_parser, *pjsmn_parser;
 
-
 /* --- TYPES ---------------------------------------------------------------- */
 typedef enum _JSON_OPERATION {
                                         JsonFileOperationInvalid,
@@ -100,7 +95,6 @@ typedef enum _JSON_OPERATION {
                                         JsonFileOperationWrite,
                                         JsonFileOperationAppend
 } JSON_OPERATION, *PJSON_OPERATION;
-
 
 typedef struct _JSON_INTERNAL_OBJECT {
     JSON_OBJECT_TYPE                    eObjectType;
@@ -138,11 +132,10 @@ typedef struct _JSON_HANDLE_TABLE {
     PJSON_INTERNAL_OBJECT               *pEntries;
 } JSON_HANDLE_TABLE, *P_JSON_HANDLE_TABLE;
 
-
 /* --- VARIABLES ------------------------------------------------------------ */
 // Global variable for error code
 extern PUTILS_HEAP                      gs_pJsonHeap;
-extern DWORD                            gs_dwLastError;
+extern DWORD                            gs_dwJsonLastError;
 extern JSON_HANDLE_TABLE                gs_sJsonHandleTable;
 
 /* --- PRIVATE PROTOTYPES --------------------------------------------------- */
@@ -165,12 +158,6 @@ jsmnerr_t jsmn_parse(
     );
 
 /* --- PROTOTYPES ----------------------------------------------------------- */
-BOOL JsoniLibInit(
-    );
-
-BOOL JsoniLibCleanup(
-    );
-
 BOOL JsoniOpenFile(
     _In_ const LPWSTR                   lpwFilename,
     _In_ const JSON_OPERATION           eFileOperation,

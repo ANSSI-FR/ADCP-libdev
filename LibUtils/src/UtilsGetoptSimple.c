@@ -1,3 +1,4 @@
+#define LIB_ERROR_VAL gs_dwCacheLastError
 #include "UtilsInternals.h"
 #include "UtilsLib.h"
 
@@ -37,13 +38,13 @@
 #include <string.h>
 #include <stdio.h>
 
-//MODIFIED: left to getoptComplex: 
-int 
+//MODIFIED: left to getoptComplex:
+int
 //    opterr = 1,             /* if error message should be printed */
 //    optind = 1,             /* index into parent argv vector */
 //    optopt,                 /* character checked for validity */
     optreset;               /* reset getopt */
-char    
+char
     *optarg;                /* argument associated with option */
 
 #define BADCH   (int)'?'

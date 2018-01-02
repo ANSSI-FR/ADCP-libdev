@@ -7,32 +7,16 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 \******************************************************************************/
 
 /* --- INCLUDES ------------------------------------------------------------- */
+#define LIB_ERROR_VAL gs_dwLibLastError
 #include "UtilsInternals.h"
 #include "UtilsLib.h"
 
-
 /* --- PRIVATE VARIABLES ---------------------------------------------------- */
-static DWORD gs_dwLastError = NO_ERROR;
+static DWORD gs_dwLibLastError = NO_ERROR;
 static PUTILS_HEAP gs_pUtilsHeap = NULL;
 
 /* --- PUBLIC VARIABLES ----------------------------------------------------- */
 /* --- PRIVATE FUNCTIONS ---------------------------------------------------- */
-static BOOL UtilsiLibInit(
-    ) {
-    BOOL bResult = UtilsHeapCreate(&gs_pUtilsHeap, UTILS_HEAP_NAME, NULL); // TODO!: callback
-    API_RETURN_ERROR_IF_FAILED(bResult, SAME_ERROR());  // TODO: WPP
-
-    API_RETURN_SUCCESS();
-}
-
-static BOOL UtilsiLibCleanup(
-    ) {
-    BOOL bResult = UtilsHeapDestroy(&gs_pUtilsHeap);
-    API_RETURN_ERROR_IF_FAILED(bResult, SAME_ERROR());  // TODO: WPP
-
-    API_RETURN_SUCCESS();
-}
-
 static BYTE ChartoInt(CHAR c) {
     DWORD dwRes = 0;
     if (c >= '0' && c <= '9') dwRes = c - '0';
@@ -42,13 +26,33 @@ static BYTE ChartoInt(CHAR c) {
 }
 
 /* --- PUBLIC FUNCTIONS ----------------------------------------------------- */
+BOOL
+UtilsLibInit (
+)
+{
+   BOOL bResult = UtilsHeapCreate(&gs_pUtilsHeap, UTILS_HEAP_NAME, NULL); // TODO!: callback
+   API_RETURN_ERROR_IF_FAILED(bResult, SAME_ERROR());  // TODO: WPP
+
+   API_RETURN_SUCCESS();
+}
+
+BOOL
+UtilsLibCleanup (
+)
+{
+   BOOL bResult = UtilsHeapDestroy(&gs_pUtilsHeap);
+   API_RETURN_ERROR_IF_FAILED(bResult, SAME_ERROR());  // TODO: WPP
+
+   API_RETURN_SUCCESS();
+}
+
 BOOL UtilsHeapCreate(
     _Out_ PUTILS_HEAP *ppHeap,
     _In_ const PTCHAR ptName,
     _In_opt_ const PFN_UTILS_HEAP_FATAL_ERROR_HANDLER pfnFatalErrorHandler
     ) {
     HANDLE hHeap = NULL;
-    
+
     (*ppHeap) = NULL;
 
     hHeap = HeapCreate(0, 0, 0);
@@ -74,7 +78,7 @@ BOOL UtilsHeapDestroy(
     ) {
     BOOL bResult = FALSE;
     HANDLE hHeap = (*ppHeap)->hHeap;
-    
+
     UtilsHeapFreeAndNullHelper((*ppHeap), (*ppHeap)->ptName);
     UtilsHeapFreeAndNullHelper((*ppHeap), (*ppHeap));
 
@@ -144,9 +148,9 @@ VOID UtilsHeapFree(
     _In_ const PUTILS_HEAP pHeap,
     _In_ const PVOID pMem
     ) {
-	BOOL bResult = TRUE;
-	if (pMem)
-	    bResult = HeapFree(pHeap->hHeap, 0, pMem);
+    BOOL bResult = TRUE;
+    if (pMem)
+        bResult = HeapFree(pHeap->hHeap, 0, pMem);
     UTILS_HEAP_FATAL_IF(bResult == FALSE, pHeap, _T("cannot free memory <%p>"), pMem); // TODO:WPP+ERR
 }
 
@@ -156,7 +160,7 @@ VOID UtilsHeapFreeArray(
     _In_ const PVOID *ppMemArr,
     _In_ const DWORD dwCount
     ) {
-	UNREFERENCED_PARAMETER(ptCaller);
+    UNREFERENCED_PARAMETER(ptCaller);
 
     if (ppMemArr == NULL) {
         return;
@@ -182,17 +186,17 @@ void HexifyA(
 }
 
 void HexifyW(
-	_In_ const LPWSTR ptOutHexStr,
-	_In_ const PBYTE pbInData,
-	_In_ const DWORD dwLen // ptOutHexStr must be able to receive dwLen *2 chars + null
+    _In_ const LPWSTR ptOutHexStr,
+    _In_ const PBYTE pbInData,
+    _In_ const DWORD dwLen // ptOutHexStr must be able to receive dwLen *2 chars + null
 ) {
-	DWORD i = 0;
-	const static WCHAR acConv[] = L"0123456789ABCDEF";
-	for (i = 0; i < dwLen; i++) {
-		ptOutHexStr[(2 * i) + 0] = acConv[((pbInData[i] & 0xF0) >> 4)];
-		ptOutHexStr[(2 * i) + 1] = acConv[((pbInData[i] & 0x0F) >> 0)];
-	}
-	ptOutHexStr[2 * dwLen] = L'\0';
+    DWORD i = 0;
+    const static WCHAR acConv[] = L"0123456789ABCDEF";
+    for (i = 0; i < dwLen; i++) {
+        ptOutHexStr[(2 * i) + 0] = acConv[((pbInData[i] & 0xF0) >> 4)];
+        ptOutHexStr[(2 * i) + 1] = acConv[((pbInData[i] & 0x0F) >> 0)];
+    }
+    ptOutHexStr[2 * dwLen] = L'\0';
 }
 
 void UnhexifyA(
@@ -247,7 +251,6 @@ BOOL IsNumericA(
     return bResult;
 }
 
-
 BOOL IsInSetOfStrings(
     _In_ const PTCHAR ptNeedle,
     _In_ const PTCHAR ptHaystack[],
@@ -285,7 +288,7 @@ BOOL StrNextToken(
 
 DWORD UtilsGetLastError(
     ) {
-    return gs_dwLastError;
+    return LIB_ERROR_VAL;
 }
 
 BOOL SetPrivilege(
@@ -300,7 +303,7 @@ BOOL SetPrivilege(
 
     if (!LookupPrivilegeValue(
         NULL,            // lookup privilege on local system
-        ptPriv,   // privilege to lookup 
+        ptPriv,   // privilege to lookup
         &sLuid))        // receives LUID of privilege
     {
         //LOG(Err, "LookupPrivilegeValue error: <gle:%#08x>", GLE()); // TODO!: nolog
@@ -358,7 +361,7 @@ HANDLE FileOpenWithBackupPriv(
     // Actually, http://msdn.microsoft.com/en-us/library/windows/desktop/aa363858(v=vs.85).aspx:
     // FILE_FLAG_BACKUP_SEMANTICS: You must set this flag to obtain a handle to a directory
     // To open a directory using CreateFile, specify the FILE_FLAG_BACKUP_SEMANTICS flag as part of dwFlagsAndAttributes. Appropriate security checks still apply when this flag is used without SE_BACKUP_NAME and SE_RESTORE_NAME privileges.
-    // => So we always use this flag. 
+    // => So we always use this flag.
     UNREFERENCED_PARAMETER(bUseBackupPriv);
     return CreateFile(ptPath, READ_CONTROL, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_FLAG_BACKUP_SEMANTICS, NULL);
 }
@@ -436,7 +439,6 @@ void AddStrPair(
     *ppEnd = pair;
 }
 
-
 PTCHAR GetStrPair(
     _In_ const PSTR_PAIR_LIST pHead,
     _In_ PTCHAR ptName
@@ -474,7 +476,7 @@ DWORD GenerateException(
     x = 1 / x;
     return x;
 }
-#pragma optimize( "", on ) 
+#pragma optimize( "", on )
 
 BOOL ConvertAstrToWstr(
     _In_ const PUTILS_HEAP pHeap,
@@ -491,7 +493,7 @@ BOOL ConvertAstrToWstr(
 
     dwLen = (DWORD)strlen(pAnsiStr);
     *ppOutputWstr = UtilsHeapAllocStrHelper(pHeap, (dwLen + 1) * sizeof(WCHAR));
-    
+
     if (dwLen > 0) {
         if (MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, pAnsiStr, dwLen, *ppOutputWstr, dwLen) == 0)
         {
@@ -511,12 +513,12 @@ BOOL ConvertWstrToAstr(
 {
     // TODO : respect coding conv.
     // TODO : this function must not fail.
-    // TODO : handle len==0 strings 
+    // TODO : handle len==0 strings
     if (ppOutputWstr == NULL)
         API_RETURN_ERROR(UTILS_ERR_UNKNOWN_TODO);
 
-	if (lpwStr == NULL)
-		API_RETURN_SUCCESS();
+    if (lpwStr == NULL)
+        API_RETURN_SUCCESS();
 
     *ppOutputWstr = UtilsHeapAllocStrHelper(pHeap, (DWORD)(wcslen(lpwStr) + 1) * sizeof(CHAR));
     if (!WideCharToMultiByte(CP_ACP, 0, lpwStr, (INT)wcslen(lpwStr), *ppOutputWstr, (INT) (sizeof (CHAR)* (wcslen(lpwStr) + 1)), NULL, NULL))
@@ -541,14 +543,14 @@ BOOL ConvertAstrArrayToWstrArray(
 
     *ppOutputWstr = UtilsHeapAllocArrayHelper(pHeap, LPWSTR, dwStrCount);
     for (DWORD i = 0; i < dwStrCount; ++i) {
-		if (!pAnsiStr[i])
-			continue;
-		(*ppOutputWstr)[i] = UtilsHeapAllocStrHelper(pHeap, (DWORD)(strlen(pAnsiStr[i]) + 1) * sizeof(LPWSTR));
+        if (!pAnsiStr[i])
+            continue;
+        (*ppOutputWstr)[i] = UtilsHeapAllocStrHelper(pHeap, (DWORD)(strlen(pAnsiStr[i]) + 1) * sizeof(LPWSTR));
 
-		if (strlen(pAnsiStr[i]) == 0) {
-			(*ppOutputWstr)[i][0] = L'\x00';
-			continue;
-		}
+        if (strlen(pAnsiStr[i]) == 0) {
+            (*ppOutputWstr)[i][0] = L'\x00';
+            continue;
+        }
 
         if (!MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, pAnsiStr[i], (DWORD)strlen(pAnsiStr[i]), (*ppOutputWstr)[i], (DWORD)strlen(pAnsiStr[i])))
         {
@@ -590,6 +592,7 @@ BOOL ConvertWstrArrayToAstrArray(
     API_RETURN_SUCCESS();
 }
 
+#ifdef DLL_MODE
 BOOL WINAPI DllMain(
     _In_  HINSTANCE hinstDLL,
     _In_  DWORD fdwReason,
@@ -601,10 +604,11 @@ BOOL WINAPI DllMain(
     UNREFERENCED_PARAMETER(lpvReserved);
 
     switch (fdwReason) {
-    case DLL_PROCESS_ATTACH: bResult = UtilsiLibInit(); break;
-    case DLL_PROCESS_DETACH: bResult = UtilsiLibCleanup(); break;
+    case DLL_PROCESS_ATTACH: bResult = UtilsLibInit(); break;
+    case DLL_PROCESS_DETACH: bResult = UtilsLibCleanup(); break;
     default: bResult = TRUE; break;
     }
 
     return bResult;
 }
+#endif

@@ -6,10 +6,8 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 XXX XXX XXX XXX XXX XXX XXX XXX XXX
 \******************************************************************************/
 
-
 #ifndef __LDAP_INT_H__
 #define __LDAP_INT_H__
-
 
 /* --- INCLUDES ------------------------------------------------------------- */
 #include <Windows.h>
@@ -20,7 +18,6 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 
 #include "LdapLib.h"
 
-
 /* --- DEFINES -------------------------------------------------------------- */
 #define LDAP_INIT_OPTION(pOpt, iOpt, pvVal) MULTI_LINE_MACRO_BEGIN          \
                                                 (pOpt)->iOption = iOpt;     \
@@ -29,16 +26,14 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 
 #define LDAP_RANGE_MAGIC                    _T("range=")
 
-
 /* --- TYPES ---------------------------------------------------------------- */
 typedef struct _LDAP_OPTION {
     int iOption;
     PVOID pvValue;
 } LDAP_OPTION, *PLDAP_OPTION;
 
-
 /* --- VARIABLES ------------------------------------------------------------ */
-extern DWORD gs_dwLastError;
+extern DWORD gs_dwLdapLastError;
 
 /* --- PROTOTYPES ----------------------------------------------------------- */
 
@@ -46,7 +41,7 @@ BOOL LdapSetOption(
     _In_ PLDAP_CONNECT pConnection,
     _In_ PLDAP_OPTION pOption
     );
-    
+
 BOOL LdapExtractAttributes(
     _In_ PLDAP_CONNECT pConnection,
     _In_ PLDAPMessage pCurrentEntry,

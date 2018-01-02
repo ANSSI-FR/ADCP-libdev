@@ -7,33 +7,18 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 \******************************************************************************/
 
 /* --- INCLUDES ------------------------------------------------------------- */
+#define LIB_ERROR_VAL gs_dwLdapLastError
 #include "LdapInternals.h"
-#include "LdapLib.h"
 #include "LdapHelpers.h"
 
-#include "LdapWpp.h"
-#include "LdapLib.tmh"
-
+#ifdef _WIN32
+    #include "LdapWpp.h"
+    #include "LdapLib.tmh"
+#endif
 
 /* --- PRIVATE VARIABLES ---------------------------------------------------- */
 /* --- PUBLIC VARIABLES ----------------------------------------------------- */
 /* --- PRIVATE FUNCTIONS ---------------------------------------------------- */
-static BOOL LdapiLibInit(
-    )
-{
-    LdapWppInit();
-    LdapWppMessage(TRACE_LEVEL_INFORMATION, INITIALIZATION, "LibLdap WPP initialized");
-    API_RETURN_SUCCESS();
-}
-
-static BOOL LdapiLibCleanup(
-    )
-{
-    LdapWppMessage(TRACE_LEVEL_INFORMATION, FINALIZATION, "Cleanup LibLdap WPP");
-    LdapWppClean();
-    API_RETURN_SUCCESS();
-}
-
 static BOOL LdapExtractEntryDataFromLdapMsg(
     _In_ const PLDAP_CONNECT pConnection,
     _In_ const PLDAP_REQUEST pRequest,
@@ -54,7 +39,6 @@ static BOOL LdapExtractEntryDataFromLdapMsg(
     (*ppEntry) = UtilsHeapAllocStructHelper(pConnection->pConnectionHeap, LDAP_ENTRY);
     ZeroMemory((*ppEntry), sizeof(LDAP_ENTRY)); // TODO: useless (warning C6001)
 
-    
     ptLdapDn = ldap_get_dnW(pConnection->pLdapSession, pLdapMessage);
     if (ptLdapDn != NULL)
     {
@@ -129,11 +113,11 @@ static BOOL LdapExtractEntryDataFromLdapMsg(
             }
             else
             {
-				bResult = LdapExtractRangedAttributes(pConnection, pLdapMessage, ptCurrAttrName, ptCurrAttrNameWithRange, &(*ppEntry)->ppAttributes[dwAttrIndex]);
-				if (gs_dwLastError == LDAP_NO_SUCH_OBJECT) {
-					LdapWppMessage(TRACE_LEVEL_ERROR, REQUEST, _T("No such object (non-fatal) <%ws> for entry <%ws> during LDAP request <%p>"), ptCurrAttrNameWithRange, (*ppEntry)->ptDn, pRequest->pLDAPSearch);
-				}
-				else if (API_FAILED(bResult))
+                bResult = LdapExtractRangedAttributes(pConnection, pLdapMessage, ptCurrAttrName, ptCurrAttrNameWithRange, &(*ppEntry)->ppAttributes[dwAttrIndex]);
+                if (gs_dwLdapLastError == LDAP_NO_SUCH_OBJECT) {
+                    LdapWppMessage(TRACE_LEVEL_ERROR, REQUEST, _T("No such object (non-fatal) <%ws> for entry <%ws> during LDAP request <%p>"), ptCurrAttrNameWithRange, (*ppEntry)->ptDn, pRequest->pLDAPSearch);
+                }
+                else if (API_FAILED(bResult))
                 {
                     ldap_unbind(pConnection->pLdapSession);  // TODO: appeler les fonctions de destruction ici, plutot que de faire un unbind_directement
                     LdapWppMessage(TRACE_LEVEL_ERROR, REQUEST, _T("Unable to extract multivaluated attributes <%ws> for entry <%ws> during LDAP request <%p>"), ptCurrAttrNameWithRange, (*ppEntry)->ptDn, pRequest->pLDAPSearch);
@@ -314,7 +298,7 @@ static BOOL LdapExtractRootDse(
     bResult &= LdapExtractNamedNumAttrW(pConnection, pEntry, LDAP_ROOTDSE_HIGHEST_COMMITTED_USN, &(*ppRootDse)->extracted.dwHighestCommittedUSN, 1);
     bResult &= LdapExtractNamedBoolAttrW(pConnection, pEntry, LDAP_ROOTDSE_IS_GC_READY, &(*ppRootDse)->extracted.bIsGlobalCatalogReady, 1);
     bResult &= LdapExtractNamedBoolAttrW(pConnection, pEntry, LDAP_ROOTDSE_IS_SYNCHRONIZED, &(*ppRootDse)->extracted.bIsSynchronized, 1);
-    
+
     // TODO: special case, when remounting a ntds.dit file with dsamain, the 'ldapServiceName' attribute is not present...
     /*bResult &=*/ LdapExtractNamedStrAttrW(pConnection, pEntry, LDAP_ROOTDSE_LDAP_SERVICE_NAME, &(*ppRootDse)->extracted.ptLdapServiceName, 1);
 
@@ -357,6 +341,22 @@ static BOOL LdapExtractRootDse(
 }
 
 /* --- PUBLIC FUNCTIONS ----------------------------------------------------- */
+BOOL
+LdapLibInit (
+)
+{
+   LdapWppMessage(TRACE_LEVEL_INFORMATION, INITIALIZATION, "LibLdap WPP initialized");
+   API_RETURN_SUCCESS();
+}
+
+BOOL
+LdapLibCleanup (
+)
+{
+   LdapWppMessage(TRACE_LEVEL_INFORMATION, FINALIZATION, "Cleanup LibLdap WPP");
+   API_RETURN_SUCCESS();
+}
+
 BOOL LdapConnectW(
     _In_ const LPWSTR ptHost,
     _In_ const DWORD dwPort,
@@ -410,7 +410,6 @@ BOOL LdapConnectW(
     }
     LdapWppMessage(TRACE_LEVEL_INFORMATION, CONNECTION, "Successfully initialized connection to LDAP server");
 
-
     //
     // LDAP options
     //
@@ -425,13 +424,12 @@ BOOL LdapConnectW(
     }
     LdapWppMessage(TRACE_LEVEL_INFORMATION, CONFIGURATION, "Successfully set all LDAP options");
 
-
     //
     // Connection
     //
     dwResult = ldap_connect(
         (*ppConnection)->pLdapSession,
-        NULL    // If NULL, the function uses a default timeout value 
+        NULL    // If NULL, the function uses a default timeout value
         );
     if (dwResult != LDAP_SUCCESS)
     {
@@ -647,7 +645,7 @@ BOOL LdapCloseConnection(
         UtilsHeapFreeAndNullArrayHelper(pConnHeap, (*ppRootDse)->extracted.pptSupportedLDAPPolicies, (*ppRootDse)->computed.count.dwSupportedLDAPPoliciesCount, i);
         UtilsHeapFreeAndNullArrayHelper(pConnHeap, (*ppRootDse)->extracted.pptSupportedLDAPVersion, (*ppRootDse)->computed.count.dwSupportedLDAPVersionCount, i);
         UtilsHeapFreeAndNullArrayHelper(pConnHeap, (*ppRootDse)->extracted.pptSupportedSASLMechanisms, (*ppRootDse)->computed.count.dwSupportedSASLMechanismsCount, i);
-        
+
         // TODO: free computed attributes
         UtilsHeapFreeAndNullHelper(pConnHeap, (*ppRootDse)->computed.misc.ptDnsDomainName);
         UtilsHeapFreeAndNullHelper(pConnHeap, (*ppRootDse)->computed.misc.ptDomainSid);
@@ -668,7 +666,7 @@ BOOL LdapCloseConnection(
 DWORD LdapLastError(
     )
 {
-    return gs_dwLastError;
+    return gs_dwLdapLastError;
 }
 
 BOOL LdapInitRequestExW(
@@ -705,7 +703,7 @@ BOOL LdapInitRequestExW(
 #pragma warning(suppress: 6387)
     (*ppRequest)->pLDAPSearch = ldap_search_init_page(pConnection->pLdapSession, ptBase,
         eScope, ptFilter, (*ppRequest)->pptAttributes, FALSE, pServerControls, pClientControls, LDAP_NO_LIMIT, LDAP_NO_LIMIT, NULL);
-    
+
     if ((*ppRequest)->pLDAPSearch == NULL)
     {
         dwResult = LdapGetLastError();
@@ -953,6 +951,7 @@ BOOL LdapReleaseRequest(
     API_RETURN_SUCCESS();
 }
 
+#ifdef DLL_MODE
 BOOL WINAPI DllMain(
     _In_  HINSTANCE hinstDLL,
     _In_  DWORD fdwReason,
@@ -964,10 +963,11 @@ BOOL WINAPI DllMain(
     UNREFERENCED_PARAMETER(lpvReserved);
 
     switch (fdwReason) {
-    case DLL_PROCESS_ATTACH: bResult = LdapiLibInit(); break;
-    case DLL_PROCESS_DETACH: bResult = LdapiLibCleanup(); break;
+    case DLL_PROCESS_ATTACH: bResult = LdapLibInit(); break;
+    case DLL_PROCESS_DETACH: bResult = LdapLibCleanup(); break;
     default: bResult = TRUE; break;
     }
 
     return bResult;
 }
+#endif

@@ -24,10 +24,14 @@ extern "C" {
 #endif
 
 #undef DLL_FCT
-#ifdef __JSON_INT_H__
-#define DLL_FCT __declspec(dllexport)
+#ifdef DLL_MODE
+    #ifdef __JSON_INT_H__
+        #define DLL_FCT __declspec(dllexport)
+    #else
+        #define DLL_FCT __declspec(dllimport)
+    #endif
 #else
-#define DLL_FCT __declspec(dllimport)
+    #define DLL_FCT
 #endif
 
 /* --- DEFINES -------------------------------------------------------------- */
@@ -95,7 +99,7 @@ typedef struct _JSON_OBJECT {
 
     struct {
         JSON_HANDLE                                     hJson;
-    } private;
+    } privatestruct;
 
 } JSON_OBJECT, *PJSON_OBJECT;
 
@@ -114,6 +118,19 @@ typedef struct _JSON_REQUESTED_ELEMENT {
 
 /* --- VARIABLES ------------------------------------------------------------ */
 /* --- PROTOTYPES ----------------------------------------------------------- */
+//
+// Init/Cleanup
+//
+DLL_FCT
+BOOL
+JsonLibInit(
+);
+
+DLL_FCT
+BOOL
+JsonLibCleanup(
+);
+
 //
 // Open operations
 //

@@ -7,14 +7,15 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 \******************************************************************************/
 
 /* --- INCLUDES ------------------------------------------------------------- */
+#define LIB_ERROR_VAL gs_dwCacheLastError
 #include "CacheInternals.h"
-#include "CacheLib.h"
 
-#include "CacheWpp.h"
-
+#ifdef _WIN32
+    #include "CacheWpp.h"
+#endif
 
 /* --- PRIVATE VARIABLES ---------------------------------------------------- */
-static DWORD gs_dwLastError = NO_ERROR;
+static DWORD gs_dwCacheLastError = NO_ERROR;
 static BOOL gs_bCacheLibInit = FALSE;
 static RTLINITIALIZEGENERICTABLEAVL gs_pfnRtlInitializeGenericTableAvl = NULL;
 static RTLINSERTELEMENTGENERICTABLEAVL gs_pfnRtlInsertElementGenericTableAvl = NULL;
@@ -24,54 +25,6 @@ static RTLDELETEGENERICTABLEAVL gs_pfnRtlDeleteElementGenericTableAvl = NULL;
 
 /* --- PUBLIC VARIABLES ----------------------------------------------------- */
 /* --- PRIVATE FUNCTIONS ---------------------------------------------------- */
-
-static BOOL CacheiLibInit(
-    ) {
-    HMODULE hNtdll = NULL;
-
-    if (gs_bCacheLibInit == TRUE) {
-        API_RETURN_ERROR(CACHE_ERR_UNKNOWN_TODO); // TODO: ERR+WPP
-    }
-
-    hNtdll = GetModuleHandle(NTDLL_MODULE_NAME);
-    if (hNtdll == NULL) {
-        API_RETURN_ERROR(CACHE_ERR_UNKNOWN_TODO); // TODO: ERR+WPP
-    }
-
-    gs_pfnRtlInitializeGenericTableAvl = (RTLINITIALIZEGENERICTABLEAVL)GetProcAddress(hNtdll, "RtlInitializeGenericTableAvl");
-    gs_pfnRtlInsertElementGenericTableAvl = (RTLINSERTELEMENTGENERICTABLEAVL)GetProcAddress(hNtdll, "RtlInsertElementGenericTableAvl");
-    gs_pfnRtlLookupElementGenericTableAvl = (RTLLOOKUPELEMENTGENERICTABLEAVL)GetProcAddress(hNtdll, "RtlLookupElementGenericTableAvl");
-    gs_pfnRtlEnumerateGenericTableAvl = (RTLENUMERATEGENERICTABLEAVL)GetProcAddress(hNtdll, "RtlEnumerateGenericTableAvl");
-    gs_pfnRtlDeleteElementGenericTableAvl = (RTLDELETEGENERICTABLEAVL)GetProcAddress(hNtdll, "RtlDeleteElementGenericTableAvl");
-
-    if (gs_pfnRtlInitializeGenericTableAvl == NULL
-        || gs_pfnRtlInsertElementGenericTableAvl == NULL
-        || gs_pfnRtlLookupElementGenericTableAvl == NULL
-        || gs_pfnRtlEnumerateGenericTableAvl == NULL
-        || gs_pfnRtlDeleteElementGenericTableAvl == NULL) {
-        API_RETURN_ERROR(CACHE_ERR_UNKNOWN_TODO); // TODO: ERR+WPP
-    }
-
-    gs_bCacheLibInit = TRUE;
-    API_RETURN_SUCCESS();
-}
-
-static BOOL CacheiLibCleanup(
-    ) {
-    if (gs_bCacheLibInit == TRUE) {
-        API_RETURN_ERROR(CACHE_ERR_UNKNOWN_TODO); // TODO: ERR+WPP
-    }
-
-    gs_pfnRtlInitializeGenericTableAvl = NULL;
-    gs_pfnRtlInsertElementGenericTableAvl = NULL;
-    gs_pfnRtlLookupElementGenericTableAvl = NULL;
-    gs_pfnRtlEnumerateGenericTableAvl = NULL;
-    gs_pfnRtlDeleteElementGenericTableAvl = NULL;
-
-    gs_bCacheLibInit = FALSE;
-    API_RETURN_SUCCESS();
-}
-
 static PVOID _Function_class_(RTL_AVL_ALLOCATE_ROUTINE) NTAPI CacheAvlAllocate(
     _In_ const PRTL_AVL_TABLE pTable,
     _In_ const CLONG lByteSize
@@ -87,6 +40,57 @@ static VOID _Function_class_(RTL_AVL_FREE_ROUTINE) NTAPI CacheAvlFree(
 }
 
 /* --- PUBLIC FUNCTIONS ----------------------------------------------------- */
+BOOL
+CacheLibInit (
+)
+{
+   HMODULE hNtdll = NULL;
+
+   if (gs_bCacheLibInit == TRUE) {
+      API_RETURN_ERROR(CACHE_ERR_UNKNOWN_TODO); // TODO: ERR+WPP
+   }
+
+   hNtdll = GetModuleHandle(NTDLL_MODULE_NAME);
+   if (hNtdll == NULL) {
+      API_RETURN_ERROR(CACHE_ERR_UNKNOWN_TODO); // TODO: ERR+WPP
+   }
+
+   gs_pfnRtlInitializeGenericTableAvl = (RTLINITIALIZEGENERICTABLEAVL)GetProcAddress(hNtdll, "RtlInitializeGenericTableAvl");
+   gs_pfnRtlInsertElementGenericTableAvl = (RTLINSERTELEMENTGENERICTABLEAVL)GetProcAddress(hNtdll, "RtlInsertElementGenericTableAvl");
+   gs_pfnRtlLookupElementGenericTableAvl = (RTLLOOKUPELEMENTGENERICTABLEAVL)GetProcAddress(hNtdll, "RtlLookupElementGenericTableAvl");
+   gs_pfnRtlEnumerateGenericTableAvl = (RTLENUMERATEGENERICTABLEAVL)GetProcAddress(hNtdll, "RtlEnumerateGenericTableAvl");
+   gs_pfnRtlDeleteElementGenericTableAvl = (RTLDELETEGENERICTABLEAVL)GetProcAddress(hNtdll, "RtlDeleteElementGenericTableAvl");
+
+   if (gs_pfnRtlInitializeGenericTableAvl == NULL
+      || gs_pfnRtlInsertElementGenericTableAvl == NULL
+      || gs_pfnRtlLookupElementGenericTableAvl == NULL
+      || gs_pfnRtlEnumerateGenericTableAvl == NULL
+      || gs_pfnRtlDeleteElementGenericTableAvl == NULL) {
+      API_RETURN_ERROR(CACHE_ERR_UNKNOWN_TODO); // TODO: ERR+WPP
+   }
+
+   gs_bCacheLibInit = TRUE;
+   API_RETURN_SUCCESS();
+}
+
+BOOL
+CacheLibCleanup (
+)
+{
+   if (gs_bCacheLibInit == TRUE) {
+      API_RETURN_ERROR(CACHE_ERR_UNKNOWN_TODO); // TODO: ERR+WPP
+   }
+
+   gs_pfnRtlInitializeGenericTableAvl = NULL;
+   gs_pfnRtlInsertElementGenericTableAvl = NULL;
+   gs_pfnRtlLookupElementGenericTableAvl = NULL;
+   gs_pfnRtlEnumerateGenericTableAvl = NULL;
+   gs_pfnRtlDeleteElementGenericTableAvl = NULL;
+
+   gs_bCacheLibInit = FALSE;
+   API_RETURN_SUCCESS();
+}
+
 BOOL CacheCreate(
     _Out_ PCACHE *ppCache,
     _In_ const PTCHAR ptName,
@@ -171,7 +175,7 @@ BOOL CacheEntryLookup(
     _Out_opt_ PVOID *ppvFound
     ) {
     PVOID pvFound = NULL;
-    
+
     SET_PTRVAL_IF_NOT_NULL(ppvFound, NULL);
 
     pvFound = gs_pfnRtlLookupElementGenericTableAvl(&pCache->sAvlTable, pvSearched);
@@ -198,9 +202,8 @@ BOOL CacheEntryRemove(
 
 DWORD CacheGetLastError(
     ) {
-    return gs_dwLastError;
+    return LIB_ERROR_VAL;
 }
-
 
 RTL_GENERIC_COMPARE_RESULTS CacheCompareNums(
     _In_ const int iFirst,
@@ -230,6 +233,7 @@ RTL_GENERIC_COMPARE_RESULTS CacheCompareStr(
     return CacheCompareNums(_tcsicmp(ptFirst, ptSecond), 0);
 }
 
+#ifdef DLL_MODE
 BOOL WINAPI DllMain(
     _In_  HINSTANCE hinstDLL,
     _In_  DWORD fdwReason,
@@ -241,10 +245,11 @@ BOOL WINAPI DllMain(
     UNREFERENCED_PARAMETER(lpvReserved);
 
     switch (fdwReason) {
-    case DLL_PROCESS_ATTACH: bResult = CacheiLibInit(); break;
-    case DLL_PROCESS_DETACH: bResult = CacheiLibCleanup(); break;
+    case DLL_PROCESS_ATTACH: bResult = CacheLibInit(); break;
+    case DLL_PROCESS_DETACH: bResult = CacheLibCleanup(); break;
     default: bResult = TRUE; break;
     }
 
     return bResult;
 }
+#endif

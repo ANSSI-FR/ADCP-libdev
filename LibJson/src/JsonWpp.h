@@ -6,10 +6,8 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 XXX XXX XXX XXX XXX XXX XXX XXX XXX
 \******************************************************************************/
 
-
 #ifndef __JSON_WPP_H__
 #define __JSON_WPP_H__
-
 
 /* --- INCLUDES ------------------------------------------------------------- */
 /* --- DEFINES -------------------------------------------------------------- */
@@ -32,9 +30,6 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 #define WPP_LEVEL_FLAGS_ENABLED(level, flags)                                           \
     (WPP_LEVEL_ENABLED(flags) && WPP_CONTROL(WPP_BIT_ ## flags).Level >= level)
 
-#define JSON_WPP_APP_NAME   L"JsonLib"
-
-
 /* --- WPP CONFIG ----------------------------------------------------------- */
 // begin_wpp config
 //      FUNC JsonWppMessage(LEVEL, FLAGS, MSG, ...);
@@ -47,13 +42,4 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 /* --- TYPES ---------------------------------------------------------------- */
 /* --- VARIABLES ------------------------------------------------------------ */
 /* --- PROTOTYPES ----------------------------------------------------------- */
-/*
-void JsoniWppInit(
-);
-
-void JsoniWppClean(
-);
-*/
-
-
 #endif // __JSON_WPP_H__

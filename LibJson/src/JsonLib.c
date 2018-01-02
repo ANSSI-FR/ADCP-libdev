@@ -3,24 +3,52 @@ Author : L. Delsalle
 Date   : 26/01/2015
 Descr. : Lightweight JSON Library written in C Windows
          based on jsmn project (cf. http://zserge.com/jsmn.html).
-         For now, this library only support READ operations. 
+         For now, this library only support READ operations.
 \******************************************************************************/
 
 /* --- INCLUDES ------------------------------------------------------------- */
+#define LIB_ERROR_VAL gs_dwJsonLastError
 #include "JsonInternals.h"
-#include "JsonLib.h"
 
+#ifdef _WIN32
+    #include "JsonWpp.h"
+    #include "JsonLib.tmh"
+#endif
 
 /* --- PRIVATE VARIABLES ---------------------------------------------------- */
 /* --- PUBLIC VARIABLES ----------------------------------------------------- */
 /* --- PRIVATE FUNCTIONS ---------------------------------------------------- */
-DWORD gs_dwLastError = NO_ERROR;
+DWORD gs_dwJsonLastError = NO_ERROR;
 PUTILS_HEAP gs_pJsonHeap = NULL;
 JSON_HANDLE_TABLE gs_sJsonHandleTable = { .dwTableSize = 0, .dwEntryCount = 0, .pEntries = NULL };
 
 /* --- PUBLIC VARIABLES ----------------------------------------------------- */
 /* --- PRIVATE FUNCTIONS ---------------------------------------------------- */
 /* --- PUBLIC FUNCTIONS ----------------------------------------------------- */
+BOOL
+JsonLibInit (
+)
+{
+   BOOL bResult = FALSE;
+
+   bResult = UtilsHeapCreate(&gs_pJsonHeap, JSON_HEAP_NAME, NULL);
+   API_RETURN_ERROR_IF_FAILED(bResult, SAME_ERROR());
+
+   API_RETURN_SUCCESS();
+}
+
+BOOL
+JsonLibCleanup (
+)
+{
+   BOOL bResult = FALSE;
+
+   bResult = UtilsHeapDestroy(&gs_pJsonHeap);
+   API_RETURN_ERROR_IF_FAILED(bResult, SAME_ERROR());
+
+   API_RETURN_SUCCESS();
+}
+
 BOOL JsonOpenFileReadW(
     _In_ const LPWSTR                                   lpwJsonFilename,
     _Out_ PJSON_OBJECT                                  *ppJsonObj
@@ -143,7 +171,7 @@ BOOL JsonGetNextObjectW(
         API_RETURN_ERROR(JSON_ERROR_INVALID_PARAMETER);
 
     // Get the json object
-    bResult = JsoniGetObjectByHandle(pJsonObj->private.hJson, &pJson);
+    bResult = JsoniGetObjectByHandle(pJsonObj->privatestruct.hJson, &pJson);
     API_RETURN_ERROR_IF_FAILED(bResult, SAME_ERROR()); // TODO: WPP
 
     // Verify we are processing read Json object
@@ -215,7 +243,7 @@ BOOL JsonRestartParsing(
     PJSON_INTERNAL_OBJECT pJson = NULL;
 
     // Get the csv object
-    bResult = JsoniGetObjectByHandle(pJsonObj->private.hJson, &pJson);
+    bResult = JsoniGetObjectByHandle(pJsonObj->privatestruct.hJson, &pJson);
     API_RETURN_ERROR_IF_FAILED(bResult, SAME_ERROR()); // TODO: WPP
 
     // Verify we are trying to reset a JSON object or array
@@ -353,9 +381,8 @@ BOOL JsonReleaseObject(
     BOOL bResult = ERROR_VALUE;
     PJSON_INTERNAL_OBJECT pJson = NULL;
 
-
     // Get the json object
-    bResult = JsoniGetObjectByHandle((*ppJsonObj)->private.hJson, &pJson);
+    bResult = JsoniGetObjectByHandle((*ppJsonObj)->privatestruct.hJson, &pJson);
     API_RETURN_ERROR_IF_FAILED(bResult, SAME_ERROR()); // TODO: WPP
 
     // Release internal object
@@ -394,7 +421,7 @@ BOOL JsonReleaseObject(
     }
 
     // Release private object
-    bResult = JsoniReleaseInternalObject((*ppJsonObj)->private.hJson);
+    bResult = JsoniReleaseInternalObject((*ppJsonObj)->privatestruct.hJson);
     API_RETURN_ERROR_IF_FAILED(bResult, SAME_ERROR()); // TODO: WPP
 
     SET_PTRVAL_IF_NOT_NULL(ppJsonObj, 0);
@@ -404,9 +431,10 @@ BOOL JsonReleaseObject(
 DWORD JsonGetLastError(
     )
 {
-    return gs_dwLastError;
+    return gs_dwJsonLastError;
 }
 
+#ifdef DLL_MODE
 BOOL WINAPI DllMain(
     _In_  HINSTANCE hinstDLL,
     _In_  DWORD fdwReason,
@@ -418,10 +446,11 @@ BOOL WINAPI DllMain(
     UNREFERENCED_PARAMETER(lpvReserved);
 
     switch (fdwReason) {
-    case DLL_PROCESS_ATTACH: bResult = JsoniLibInit(); break;
-    case DLL_PROCESS_DETACH: bResult = JsoniLibCleanup(); break;
+    case DLL_PROCESS_ATTACH: bResult = JsonLibInit(); break;
+    case DLL_PROCESS_DETACH: bResult = JsonLibCleanup(); break;
     default: bResult = TRUE; break;
     }
 
     return bResult;
 }
+#endif

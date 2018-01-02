@@ -7,8 +7,8 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 \******************************************************************************/
 
 /* --- INCLUDES ------------------------------------------------------------- */
+#define LIB_ERROR_VAL NOT_USED_IN_THIS_LIB
 #include "CsvInternals.h"
-#include "CsvLib.h"
 
 #ifdef _WIN32
     #include "CsvWpp.h"
@@ -20,78 +20,8 @@ static PUTILS_HEAP gs_pCsvHeap = NULL;
 static CSV_HANDLE_TABLE gs_sCsvHandleTable = { .dwTableSize = 0, .dwEntryCount = 0, .pEntries = NULL };
 static HANDLE gs_hCsvHandletableMutex = INVALID_HANDLE_VALUE;
 
-
 /* --- PUBLIC VARIABLES ----------------------------------------------------- */
 /* --- PRIVATE FUNCTIONS ---------------------------------------------------- */
-static void CsviWppInit(
-    ) {
-    WPP_INIT_TRACING(CSV_WPP_APP_NAME);
-}
-
-static void CsviWppClean(
-    ) {
-    WPP_CLEANUP();
-}
-
-static BOOL CsviLibInit(
-    ) {
-    BOOL bResult = FALSE;
-
-    CsviWppInit();
-
-    bResult = UtilsHeapCreate(&gs_pCsvHeap, CSV_HEAP_NAME, NULL);
-    if (API_FAILED(bResult)) {
-       return ERROR_VALUE;
-    }
-
-    gs_hCsvHandletableMutex = CreateMutex(NULL, FALSE, NULL);
-    if (gs_hCsvHandletableMutex == NULL)
-    {
-       return ERROR_VALUE;
-    }
-
-    return SUCCESS_VALUE;
-}
-
-
-static BOOL CsviLibCleanup(
-    ) {
-    BOOL bResult = FALSE, bReturnValue = SUCCESS_VALUE;
-    DWORD i = 0, dwWaitResult = 0;
-    CSV_HANDLE hCsv = CSV_INVALID_HANDLE_VALUE;
-
-    // Lock the CsvHandleTable
-    dwWaitResult = WaitForSingleObject(gs_hCsvHandletableMutex, INFINITE);
-    if (dwWaitResult != WAIT_OBJECT_0) {
-       bReturnValue = ERROR_VALUE;
-       goto exit;
-    }
-
-    if (gs_sCsvHandleTable.dwEntryCount > 0) {
-        for (i = 0; i < gs_sCsvHandleTable.dwTableSize; i++) {
-            if (gs_sCsvHandleTable.pEntries[i] != NULL) {
-                hCsv = (CSV_HANDLE)i;
-                CsvClose(&hCsv);
-            }
-        }
-    }
-    UtilsHeapFreeAndNullHelper(gs_pCsvHeap, gs_sCsvHandleTable.pEntries);
-
-    bResult = UtilsHeapDestroy(&gs_pCsvHeap);
-    if (API_FAILED(bResult)) {
-       bReturnValue = ERROR_VALUE;
-       goto exit;
-    }
-
-    CsviWppClean();
-
- exit:
-    // Release the global mutex
-    ReleaseMutex(gs_hCsvHandletableMutex);
-    return bReturnValue;
-}
-
-
 static BOOL CsviGetObjectByHandle(
     _In_ const CSV_HANDLE hHandle,
     _Out_ PCSV_OBJECT *ppObject
@@ -105,7 +35,7 @@ static BOOL CsviGetObjectByHandle(
       bReturnValue = ERROR_VALUE;
       goto exit;
    }
-   
+
    (*ppObject) = NULL;
 
     if (hHandle != CSV_INVALID_HANDLE_VALUE && hHandle <= gs_sCsvHandleTable.dwTableSize && gs_sCsvHandleTable.pEntries[hHandle] != NULL) {
@@ -122,7 +52,6 @@ exit :
     return bReturnValue;
 }
 
-
 static BOOL CsviExtendHandleTable(
     ) {
     PCSV_OBJECT *pEntriesNew = NULL;
@@ -138,7 +67,6 @@ static BOOL CsviExtendHandleTable(
 
     return SUCCESS_VALUE;
 }
-
 
 static BOOL CsviNewObject(
     _Out_ PCSV_OBJECT *ppObject,
@@ -181,7 +109,6 @@ static BOOL CsviNewObject(
     else
        return bReturnValue;
 }
-
 
 static BOOL CsviOpenFile(
     _In_ const LPWSTR ptFilename,
@@ -237,30 +164,29 @@ static BOOL CsviOpenFile(
     CSV_API_RETURN_SUCCESS((*ppObject));
 }
 
-
 static BOOL CsviCreateMapping(
     _In_ const PCSV_OBJECT pCsv
     ) {
     BOOL bResult = FALSE;
     LARGE_INTEGER liFileSize = { 0 };
-	DWORD flProtect = (pCsv->file.eOperationType == CsvFileOperationWrite ? PAGE_READWRITE : pCsv->file.eOperationType == CsvFileOperationAppend ? PAGE_READWRITE : PAGE_READONLY);
+    DWORD flProtect = (pCsv->file.eOperationType == CsvFileOperationWrite ? PAGE_READWRITE : pCsv->file.eOperationType == CsvFileOperationAppend ? PAGE_READWRITE : PAGE_READONLY);
 
     bResult = GetFileSizeEx(pCsv->file.hFileHandle, &liFileSize);
     CSV_API_RETURN_ERROR_IF_FAILED(pCsv, bResult, GLE());
-	//works with unicode input. Always works with csv files produced by the lib
-	//TODO: throw if ANSI is detected or extend api with CsvOpenReadEx to double llFileSize if input is ANSI
-    pCsv->file.read.llFileSize = liFileSize.QuadPart/2; 
+    //works with unicode input. Always works with csv files produced by the lib
+    //TODO: throw if ANSI is detected or extend api with CsvOpenReadEx to double llFileSize if input is ANSI
+    pCsv->file.read.llFileSize = liFileSize.QuadPart/2;
 
     // TODO : it would be cleaner here to map a small portion of the file, and then map the next parts when needed, than map the entire file...
 
     pCsv->file.read.hFileMapping = CreateFileMapping(pCsv->file.hFileHandle, NULL, flProtect, 0, 0, NULL);
     if (pCsv->file.read.hFileMapping == NULL) {
-       CSV_API_RETURN_ERROR(pCsv, GLE()); // TODO: ERR+WPP 
+       CSV_API_RETURN_ERROR(pCsv, GLE()); // TODO: ERR+WPP
     }
 
     pCsv->file.read.pvFileMappedView = MapViewOfFile(pCsv->file.read.hFileMapping, FILE_MAP_READ, 0, 0, 0);
     if (pCsv->file.read.pvFileMappedView == NULL) {
-       CSV_API_RETURN_ERROR(pCsv, GLE()); // TODO: ERR+WPP 
+       CSV_API_RETURN_ERROR(pCsv, GLE()); // TODO: ERR+WPP
     }
 
     CSV_API_RETURN_SUCCESS(pCsv);
@@ -327,9 +253,9 @@ static BOOL CsviReadField(
     //  - first char is anything else   => the current field is not enquoted (we must not encounter : separator (comma by default), LF (\n) or quote (") characters)
     //
     tCurrentChar = CSV_CONSUME_CHAR(pCsv);
-    
+
     switch (tCurrentChar) {
-    case CSV_END_OF_LINE_CHAR: 
+    case CSV_END_OF_LINE_CHAR:
         if (bHeaderKnown == TRUE) {
             if (CSV_IS_LAST_FIELD(pCsv) == FALSE) {
                 CSV_API_RETURN_ERROR(pCsv, CSV_ERROR_READ_INVALID_FIELD_TERMINATOR); // TODO: ERR+WPP
@@ -364,7 +290,7 @@ static BOOL CsviReadField(
         break;
     }
 
-    // 
+    //
     // The field is not empty (otherwise the first char would have been a LF or a separator)
     // So there must remain at least 1 char (the separator or newline)
     //
@@ -386,13 +312,13 @@ static BOOL CsviReadField(
     //      - end of the file (remaining=0)     => end of the file, last record not properly enquoted & not terminated with a LF: ERROR
     //      - other chars (including sep & LF)  => still in the field
     //
-    
+
     // if the field is not enquoted, we already consumed 1 char of it
     ptFieldStart = CSV_CURRENT_POS(pCsv) - (bFieldEnquoted ? 0 : 1);
 
     for (i = 0; i < llRemaining; i++) {
         tCurrentChar = CSV_CONSUME_CHAR(pCsv);
-        
+
         if (bFieldEnquoted == FALSE) {
             // quotes are forbidden in non-enquoted fields
             if (tCurrentChar == CSV_QUOTE_CHAR) {
@@ -476,7 +402,6 @@ static BOOL CsviReadField(
     // If we reached this point, we reached the end of the file without reading successfully the current field: ERROR
     CSV_API_RETURN_ERROR(pCsv, CSV_ERROR_READ_UNEXPECTED_EOF); // TODO: ERR+WPP
 
-
 LABEL_READ_FIELD_COPY:
     CsviCopyFieldPart(pptBuffer, ptFieldStart, llFieldLen, 0);
 
@@ -486,13 +411,12 @@ LABEL_READ_FIELD_SUCCESS:
     if (bHeaderKnown == FALSE && tCurrentChar == CSV_END_OF_LINE_CHAR) {
         // We are reading the header here, without knowing how many fields it has
         // So generate a EOL 'error' to let the caller know that the first line has ended
-        CSV_API_RETURN_ERROR(pCsv, CSV_ERROR_END_OF_LINE); 
+        CSV_API_RETURN_ERROR(pCsv, CSV_ERROR_END_OF_LINE);
     }
     else {
         CSV_API_RETURN_SUCCESS(pCsv);
     }
 }
-
 
 static BOOL CsviReadHeader(
     _In_ const PCSV_OBJECT pCsv
@@ -507,7 +431,7 @@ static BOOL CsviReadHeader(
         pCsv->header.pptHeaderValues = UtilsHeapAllocOrReallocHelper(gs_pCsvHeap, pCsv->header.pptHeaderValues, SIZEOF_ARRAY(LPWSTR, pCsv->header.dwNumberOfFields));
         bResult = CsviReadField(pCsv, &pCsv->header.pptHeaderValues[pCsv->header.dwNumberOfFields - 1], FALSE);
     } while (API_SUCCEEDED(bResult));
-    
+
     if (pCsv->infos.dwLastError == CSV_ERROR_END_OF_LINE) {
         CSV_API_RETURN_SUCCESS(pCsv);
     }
@@ -515,7 +439,6 @@ static BOOL CsviReadHeader(
         API_RETURN_SAME_ERROR(); // TODO: WPP
     }
 }
-
 
 static BOOL CsviWriteChar(
     _In_ const PCSV_OBJECT pCsv,
@@ -543,7 +466,6 @@ static BOOL CsviWriteField(
     DWORD dwWritten = 0;
     LPWSTR ptTmpBuff = NULL;
     LPWSTR ptQuote = NULL;
-
 
     //
     // Field will be:
@@ -588,12 +510,12 @@ static BOOL CsviWriteField(
             // Scan the next part of the field
             ptTmpBuff = ptQuote + 1;
         }
-		// Finally write the remaining part of the field
-		dwLen = (DWORD)_tcslen(ptTmpBuff);
-		bResult = WriteFile(pCsv->file.hFileHandle, ptTmpBuff, sizeof(WCHAR)*dwLen, &dwWritten, NULL);
-		if (bResult == FALSE || dwWritten != sizeof(WCHAR)*dwLen) {
-			CSV_API_RETURN_ERROR(pCsv, GLE());
-		}
+        // Finally write the remaining part of the field
+        dwLen = (DWORD)_tcslen(ptTmpBuff);
+        bResult = WriteFile(pCsv->file.hFileHandle, ptTmpBuff, sizeof(WCHAR)*dwLen, &dwWritten, NULL);
+        if (bResult == FALSE || dwWritten != sizeof(WCHAR)*dwLen) {
+            CSV_API_RETURN_ERROR(pCsv, GLE());
+        }
     }
 
     // Write the closing quote if needed
@@ -611,7 +533,6 @@ static BOOL CsviWriteField(
     pCsv->file.dwCurrentField += 1;
     CSV_API_RETURN_SUCCESS(pCsv);
 }
-
 
 static BOOL CsviReleaseObject(
     _In_ const CSV_HANDLE hHandle
@@ -643,10 +564,10 @@ static BOOL CsviReleaseObject(
         }
         UtilsHeapFreeAndNullHelper(gs_pCsvHeap, pCsv->header.pptHeaderValues);
     }
-    
+
     UtilsHeapFreeAndNullHelper(gs_pCsvHeap, pCsv->file.ptFileName);
     UtilsHeapFreeAndNullHelper(gs_pCsvHeap, gs_sCsvHandleTable.pEntries[hHandle]);
-    
+
     gs_sCsvHandleTable.dwEntryCount -= 1;
 
     // Release the global mutex
@@ -657,7 +578,6 @@ static BOOL CsviReleaseObject(
     ReleaseMutex(gs_hCsvHandletableMutex);
     return bReturnValue;
 }
-
 
 static BOOL CsviOptionSetFieldSeparator(
     _In_ const PCSV_OBJECT pCsv,
@@ -670,8 +590,64 @@ static BOOL CsviOptionSetFieldSeparator(
     CSV_API_RETURN_SUCCESS(pCsv);
 }
 
-
 /* --- PUBLIC FUNCTIONS ----------------------------------------------------- */
+BOOL
+CsvLibInit (
+)
+{
+   BOOL bResult = FALSE;
+
+   bResult = UtilsHeapCreate(&gs_pCsvHeap, CSV_HEAP_NAME, NULL);
+   if (API_FAILED(bResult)) {
+      return ERROR_VALUE;
+   }
+
+   gs_hCsvHandletableMutex = CreateMutex(NULL, FALSE, NULL);
+   if (gs_hCsvHandletableMutex == NULL)
+   {
+      return ERROR_VALUE;
+   }
+
+   return SUCCESS_VALUE;
+}
+
+BOOL
+CsvLibCleanup (
+)
+{
+   BOOL bResult = FALSE, bReturnValue = SUCCESS_VALUE;
+   DWORD i = 0, dwWaitResult = 0;
+   CSV_HANDLE hCsv = CSV_INVALID_HANDLE_VALUE;
+
+   // Lock the CsvHandleTable
+   dwWaitResult = WaitForSingleObject(gs_hCsvHandletableMutex, INFINITE);
+   if (dwWaitResult != WAIT_OBJECT_0) {
+      bReturnValue = ERROR_VALUE;
+      goto exit;
+   }
+
+   if (gs_sCsvHandleTable.dwEntryCount > 0) {
+      for (i = 0; i < gs_sCsvHandleTable.dwTableSize; i++) {
+         if (gs_sCsvHandleTable.pEntries[i] != NULL) {
+            hCsv = (CSV_HANDLE)i;
+            CsvClose(&hCsv);
+         }
+      }
+   }
+   UtilsHeapFreeAndNullHelper(gs_pCsvHeap, gs_sCsvHandleTable.pEntries);
+
+   bResult = UtilsHeapDestroy(&gs_pCsvHeap);
+   if (API_FAILED(bResult)) {
+      bReturnValue = ERROR_VALUE;
+      goto exit;
+   }
+
+exit:
+   // Release the global mutex
+   ReleaseMutex(gs_hCsvHandletableMutex);
+   return bReturnValue;
+}
+
 BOOL CsvOpenReadW(
     _In_ const LPWSTR ptCsvFilename,
     _Out_opt_ PDWORD pdwCsvHeaderCount,
@@ -772,7 +748,7 @@ BOOL CsvOpenReadWithFilteredSetW(
 
     bResult = CsviGetObjectByHandle((*pCsvHandle), &pCsv);
     CSV_API_RETURN_ERROR_IF_FAILED_GETTING_CSV(bResult, CSV_API_SAME_ERROR(pCsv)); // TODO: WPP
-    
+
     // Get the filtered set indexes
     pCsv->header.dwNumberOfFilteredFields = dwFilteredSetCount;
     pCsv->header.pdwFilteredSetIndexes = UtilsHeapAllocArrayHelper(gs_pCsvHeap, DWORD, dwFilteredSetCount);
@@ -842,10 +818,10 @@ BOOL CsvGetNextRecordW(
        CSV_API_RETURN_ERROR(pCsv, CSV_ERROR_INVALID_OPERATION); // TODO: WPP
     }
 
-	// How many field pointers do we need.
-	// Caller has no idea and should not be expected to allocate the returned set pointers array
-	// Caller is expected to free it with CsvFree
-	if (pCsv->header.dwNumberOfFields) *pptCsvRecordValues = UtilsHeapAllocArrayHelper(gs_pCsvHeap, LPWSTR, pCsv->header.dwNumberOfFields);
+    // How many field pointers do we need.
+    // Caller has no idea and should not be expected to allocate the returned set pointers array
+    // Caller is expected to free it with CsvFree
+    if (pCsv->header.dwNumberOfFields) *pptCsvRecordValues = UtilsHeapAllocArrayHelper(gs_pCsvHeap, LPWSTR, pCsv->header.dwNumberOfFields);
 
     // Read the next record
     // If we are in a filtered set, read but do not copy the unwanted fields
@@ -882,22 +858,22 @@ BOOL CsvGetNextRecordA(
     _Out_opt_ PDWORD pdwCsvRecordNumber
     ) {
     BOOL bReturn = FALSE;
-	LPWSTR *ppwCsvRecordValues;
-	BOOL bResult = FALSE;
-	PCSV_OBJECT pCsv = NULL;
+    LPWSTR *ppwCsvRecordValues;
+    BOOL bResult = FALSE;
+    PCSV_OBJECT pCsv = NULL;
 
-	bResult = CsviGetObjectByHandle(hCsvHandle, &pCsv);
-	CSV_API_RETURN_ERROR_IF_FAILED_GETTING_CSV(bResult, CSV_API_SAME_ERROR(pCsv)); // TODO: WPP
+    bResult = CsviGetObjectByHandle(hCsvHandle, &pCsv);
+    CSV_API_RETURN_ERROR_IF_FAILED_GETTING_CSV(bResult, CSV_API_SAME_ERROR(pCsv)); // TODO: WPP
 
-	// How many field pointers do we need.
-	// Caller has no idea and should not be expected to allocate the returned set pointers array
-	// Caller is expected to free it with CsvFree
+    // How many field pointers do we need.
+    // Caller has no idea and should not be expected to allocate the returned set pointers array
+    // Caller is expected to free it with CsvFree
     if (pCsv->header.dwNumberOfFields) *pptCsvRecordValues = UtilsHeapAllocArrayHelper(gs_pCsvHeap, LPWSTR, pCsv->header.dwNumberOfFields);
 
     bReturn = CsvGetNextRecordW(hCsvHandle, &ppwCsvRecordValues, pdwCsvRecordNumber);
 
-	for (DWORD i = 0; i < pCsv->header.dwNumberOfFields; i++) {
-		UtilsHeapAllocAStrAndConvertWStr(gs_pCsvHeap, ppwCsvRecordValues[i], &((*pptCsvRecordValues)[i]));
+    for (DWORD i = 0; i < pCsv->header.dwNumberOfFields; i++) {
+        UtilsHeapAllocAStrAndConvertWStr(gs_pCsvHeap, ppwCsvRecordValues[i], &((*pptCsvRecordValues)[i]));
     }
 
     if (pCsv->header.dwNumberOfFields) UtilsHeapFreeArrayHelper(gs_pCsvHeap, ppwCsvRecordValues, pCsv->header.dwNumberOfFields);
@@ -968,7 +944,7 @@ BOOL CsvOpenAppendW(
     bResult = CsviOpenFile(lpcwCsvFilename, &pCsv, pCsvHandle, CsvFileOperationAppend);
     CSV_API_RETURN_ERROR_IF_FAILED(pCsv, bResult, CSV_API_SAME_ERROR(pCsv)); // TODO: WPP
 
-    // Mapping needed due to CsviReadHeader call 
+    // Mapping needed due to CsviReadHeader call
     bResult = CsviCreateMapping(pCsv);
     CSV_API_RETURN_ERROR_IF_FAILED(pCsv, bResult, CSV_API_SAME_ERROR(pCsv)); // TODO: WPP
 
@@ -1055,12 +1031,12 @@ BOOL CsvWriteNextRecordA(
     _Out_opt_ PDWORD pdwCsvRecordNumber
     ) {
     BOOL bReturn = FALSE;
-	BOOL bResult = FALSE;
+    BOOL bResult = FALSE;
     LPWSTR *ppwCsvRecordValues = NULL;
-	PCSV_OBJECT pCsv = NULL;
+    PCSV_OBJECT pCsv = NULL;
 
-	bResult = CsviGetObjectByHandle(hCsvHandle, &pCsv);
-	CSV_API_RETURN_ERROR_IF_FAILED_GETTING_CSV(bResult, CSV_API_SAME_ERROR(pCsv)); // TODO: WPP
+    bResult = CsviGetObjectByHandle(hCsvHandle, &pCsv);
+    CSV_API_RETURN_ERROR_IF_FAILED_GETTING_CSV(bResult, CSV_API_SAME_ERROR(pCsv)); // TODO: WPP
 
     if (pCsv->header.dwNumberOfFields) UtilsHeapAllocWStrArrAndConvertAStrArr(gs_pCsvHeap, pptCsvRecordValues, pCsv->header.dwNumberOfFields, &ppwCsvRecordValues);
 
@@ -1087,7 +1063,6 @@ BOOL CsvWriteNextRecordWithTypes(
     return SUCCESS_VALUE;
 }
 
-
 BOOL CsvClose(
     _Inout_ PCSV_HANDLE phCsvHandle
     ) {
@@ -1110,7 +1085,7 @@ BOOL CsvClose(
 
     bResult = CloseHandle(pCsv->file.hFileHandle);
     CSV_API_RETURN_ERROR_IF_FAILED(pCsv, bResult, GLE()); // TODO: WPP
-        
+
     bResult = CsviReleaseObject((*phCsvHandle));
     if (API_FAILED(bResult)) {
        return ERROR_VALUE; // TODO: WPP
@@ -1121,13 +1096,12 @@ BOOL CsvClose(
     return SUCCESS_VALUE;
 }
 
-
 BOOL CsvResetFile(
     _In_ const CSV_HANDLE hCsvHandle
     ) {
     BOOL bResult = FALSE;
     PCSV_OBJECT pCsv = NULL;
-    
+
     bResult = CsviGetObjectByHandle(hCsvHandle, &pCsv);
     CSV_API_RETURN_ERROR_IF_FAILED_GETTING_CSV(bResult, CSV_API_SAME_ERROR(pCsv)); // TODO: WPP
 
@@ -1149,7 +1123,7 @@ BOOL CsvSetOption(
     ) {
     BOOL bResult = ERROR_VALUE;
     PCSV_OBJECT pCsv = NULL;
-    
+
     bResult = CsviGetObjectByHandle(hCsvHandle, &pCsv);
     CSV_API_RETURN_ERROR_IF_FAILED_GETTING_CSV(bResult, CSV_API_SAME_ERROR(pCsv)); // TODO: WPP
 
@@ -1169,7 +1143,6 @@ BOOL CsvSetOption(
     CSV_SET_OPTION(pCsv, eCsvOption);
     CSV_API_RETURN_SUCCESS(pCsv);
 }
-
 
 BOOL CsvUnsetOption(
     _In_ const CSV_HANDLE hCsvHandle,
@@ -1198,7 +1171,6 @@ BOOL CsvUnsetOption(
     CSV_API_RETURN_SUCCESS(pCsv);
 }
 
-
 DWORD CsvGetLastError(
    _In_ const CSV_HANDLE hCsvHandle
    ) {
@@ -1209,25 +1181,6 @@ DWORD CsvGetLastError(
    CSV_API_RETURN_ERROR_IF_FAILED_GETTING_CSV(bResult, CSV_API_SAME_ERROR(pCsv)); // TODO: WPP
 
    return pCsv->infos.dwLastError;
-}
-
-BOOL WINAPI DllMain(
-    _In_  HINSTANCE hinstDLL,
-    _In_  DWORD fdwReason,
-    _In_  LPVOID lpvReserved
-    ) {
-    BOOL bResult = FALSE;
-
-    UNREFERENCED_PARAMETER(hinstDLL);
-    UNREFERENCED_PARAMETER(lpvReserved);
-
-    switch (fdwReason) {
-    case DLL_PROCESS_ATTACH: bResult = CsviLibInit(); break;
-    case DLL_PROCESS_DETACH: bResult = CsviLibCleanup(); break;
-    default: bResult = TRUE; break;
-    }
-
-    return bResult;
 }
 
 BOOL CsvGetHeaderNumberOfFields(
@@ -1246,14 +1199,35 @@ BOOL CsvGetHeaderNumberOfFields(
 }
 
 VOID CsvHeapFree(
-	_In_ PVOID pMem
+    _In_ PVOID pMem
 ) {
-	UtilsHeapFree(0, gs_pCsvHeap, pMem);
+    UtilsHeapFree(0, gs_pCsvHeap, pMem);
 }
 
 VOID CsvRecordArrayHeapFree(
-	_In_ PVOID *ppMemArr,
-	_In_ DWORD dwCount
+    _In_ PVOID *ppMemArr,
+    _In_ DWORD dwCount
 ) {
-	UtilsHeapFreeArrayHelper(gs_pCsvHeap, ppMemArr, dwCount);
+    UtilsHeapFreeArrayHelper(gs_pCsvHeap, ppMemArr, dwCount);
 }
+
+#ifdef DLL_MODE
+BOOL WINAPI DllMain(
+   _In_  HINSTANCE hinstDLL,
+   _In_  DWORD fdwReason,
+   _In_  LPVOID lpvReserved
+) {
+   BOOL bResult = FALSE;
+
+   UNREFERENCED_PARAMETER(hinstDLL);
+   UNREFERENCED_PARAMETER(lpvReserved);
+
+   switch (fdwReason) {
+   case DLL_PROCESS_ATTACH: bResult = CsvLibInit(); break;
+   case DLL_PROCESS_DETACH: bResult = CsvLibCleanup(); break;
+   default: bResult = TRUE; break;
+   }
+
+   return bResult;
+}
+#endif
