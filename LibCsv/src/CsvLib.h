@@ -14,12 +14,7 @@ extern "C" {
 #endif
 
 /* --- INCLUDES ------------------------------------------------------------- */
-#ifdef _WIN32
-    #include "..\..\LibUtils\src\UtilsLib.h"
-#else
-    #include "CsvLinukse.h"
-#endif
-
+/* --- DEFINES -------------------------------------------------------------- */
 #ifdef VLD_DBG
     #define VLD_FORCE_ENABLE
     #include <vld.h>
@@ -37,7 +32,6 @@ extern "C" {
     #define DLL_FCT
 #endif
 
-/* --- DEFINES -------------------------------------------------------------- */
 //
 // Custom LibCsv error codes
 //

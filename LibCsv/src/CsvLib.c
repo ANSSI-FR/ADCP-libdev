@@ -6,8 +6,15 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 XXX XXX XXX XXX XXX XXX XXX XXX XXX
 \******************************************************************************/
 
-/* --- INCLUDES ------------------------------------------------------------- */
 #define LIB_ERROR_VAL NOT_USED_IN_THIS_LIB
+
+/* --- INCLUDES ------------------------------------------------------------- */
+#ifdef _WIN32
+#include "..\..\LibUtils\src\UtilsLib.h"
+#else
+#include "CsvLinukse.h"
+#endif
+
 #include "CsvInternals.h"
 
 #ifdef _WIN32

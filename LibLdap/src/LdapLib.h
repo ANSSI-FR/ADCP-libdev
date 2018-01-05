@@ -18,10 +18,10 @@ extern "C" {
 #endif
 
 /* --- INCLUDES ------------------------------------------------------------- */
-#include "..\..\LibUtils\src\UtilsLib.h"
 #include <Winldap.h>
 #include <NtLdap.h>
 
+/* --- DEFINES -------------------------------------------------------------- */
 #ifdef VLD_DBG
     #define VLD_FORCE_ENABLE
     #include <vld.h>
@@ -38,8 +38,6 @@ extern "C" {
 #else
     #define DLL_FCT
 #endif
-
-/* --- DEFINES -------------------------------------------------------------- */
 
 //
 // Custom LdapLib error codes

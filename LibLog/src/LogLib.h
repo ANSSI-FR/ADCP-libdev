@@ -10,8 +10,7 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 #define __LOG_LIB_H__
 
 /* --- INCLUDES ------------------------------------------------------------- */
-#include "..\..\LibUtils\src\UtilsLib.h"
-
+/* --- DEFINES -------------------------------------------------------------- */
 #ifdef VLD_DBG
     #define VLD_FORCE_ENABLE
     #include <vld.h>
@@ -29,7 +28,6 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
     #define DLL_FCT
 #endif
 
-/* --- DEFINES -------------------------------------------------------------- */
 #define LOG_LIBERR                  (0xCCCC)
 #define LOG_ERR_UNKNOWN_TODO        ERROR_CODE(LOG_LIBERR, 1)
 
@@ -45,7 +43,7 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 #define LOG_CHR_Dbg     "?"
 #define LOG_CHR_Info    "."
 #define LOG_CHR_Warn    "!"
-#define LOG_CHR_Err     "-"
+#define LOG_CHR_Err     "X"
 #define LOG_CHR_Succ    "+"
 #define LOG_CHR_Bypass  " "
 

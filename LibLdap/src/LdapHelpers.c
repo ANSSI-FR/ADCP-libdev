@@ -8,6 +8,7 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 
 /* --- INCLUDES ------------------------------------------------------------- */
 #define LIB_ERROR_VAL gs_dwLdapLastError
+#include "..\..\LibUtils\src\UtilsLib.h"
 #include "LdapInternals.h"
 #include "LdapHelpers.h"
 
@@ -33,7 +34,9 @@ BOOL LdapLocateNamedAttrW(
 
     for (i = 0; i < pEntry->dwAttributesCount; i++)
     {
-        if (STR_EQ(ptAttrName, pEntry->ppAttributes[i]->ptName))
+        // Sometimes, the LDAP server return attributes names with different cases
+        // that one we request.We must use case insensitive string comparison.
+        if (STR_EQI(ptAttrName, pEntry->ppAttributes[i]->ptName))
         {
             (*pdwIndex) = i;
             API_RETURN_SUCCESS(); // TODO: WPP message ?

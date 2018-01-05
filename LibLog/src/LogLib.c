@@ -6,8 +6,11 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 XXX XXX XXX XXX XXX XXX XXX XXX XXX
 \******************************************************************************/
 
-/* --- INCLUDES ------------------------------------------------------------- */
+/* --- DEFINES -------------------------------------------------------------- */
 #define LIB_ERROR_VAL gs_dwLogLastError
+
+/* --- INCLUDES ------------------------------------------------------------- */
+#include "..\..\LibUtils\src\UtilsLib.h"
 #include "LogInternals.h"
 #include "LogLib.h"
 

@@ -1,8 +1,9 @@
-//d77014539f17b0691955a39dcb5c3238 Generated File. Do not edit.
-// File created by WPP compiler version 0.01-Mon Sep 15 00:01:59 2014
-// from template C:\Program Files (x86)\Windows Kits\8.1\bin\WppConfig\Rev1\um-default.tpl
+// 9d3d0a22965d0b3b627b3ef343f072df Generated file. Do not edit.
+// File created by WPP compiler version 10.0.16299-Fri Sep 29 02:03:49 2017
+// from template um-default.tpl
 
-// template C:\Program Files (x86)\Windows Kits\8.1\bin\WppConfig\Rev1\um-header.tpl
+// template um-header.tpl
+
 #ifdef  WPP_THIS_FILE
 // included twice
 #       define  WPP_ALREADY_INCLUDED
@@ -78,6 +79,11 @@ typedef struct _WPP_TRACE_CONTROL_BLOCK
     USHORT          Options;
     ULONG           Flags[1];
     LPCGUID         ControlGuid;
+#if ENABLE_WPP_RECORDER    
+    PVOID           AutoLogContext;
+    USHORT          AutoLogVerboseEnabled;
+    USHORT          AutoLogAttachToMiniDump;
+#endif    
 } WPP_TRACE_CONTROL_BLOCK, *PWPP_TRACE_CONTROL_BLOCK;
 #pragma warning(pop)
 
@@ -174,8 +180,55 @@ enum {
     WPP_VER_LH_CB_FORWARD_PTR = 0x03
 };
 
+#if ENABLE_WPP_RECORDER
+
+#ifndef WPP_RECORDER
+#define WPP_RECORDER WppAutoLogTrace
+#endif
+
+#if !defined(WPP_RECORDER_LEVEL_FLAGS_ARGS)
+#define WPP_RECORDER_LEVEL_FLAGS_ARGS(lvl, flags) WPP_CONTROL(WPP_BIT_ ## flags).AutoLogContext, lvl, WPP_BIT_ ## flags
+#define WPP_RECORDER_LEVEL_FLAGS_FILTER(lvl,flags) (lvl < TRACE_LEVEL_VERBOSE || WPP_CONTROL(WPP_BIT_ ## flags).AutoLogVerboseEnabled)
+#endif
+
+#if !defined(WPP_RECORDER_FLAGS_LEVEL_ARGS)
+#define WPP_RECORDER_FLAGS_LEVEL_ARGS(flags, lvl) WPP_RECORDER_LEVEL_FLAGS_ARGS(lvl, flags)
+#define WPP_RECORDER_FLAGS_LEVEL_FILTER(flags, lvl) WPP_RECORDER_LEVEL_FLAGS_FILTER(lvl, flags)
+#endif
+
+#if !defined(WPP_RECORDER_LEVEL_ARGS)
+#define WPP_RECORDER_LEVEL_ARGS(lvl) WPP_CONTROL(WPP_BIT_ ## lvl).AutoLogContext, 0, WPP_BIT_ ## lvl
+#define WPP_RECORDER_LEVEL_FILTER(lvl) (WPP_CONTROL(WPP_BIT_ ## lvl).AutoLogVerboseEnabled)
+#endif
+
+NTSTATUS
+WppAutoLogTrace(
+    _In_ PVOID              AutoLogContext,
+    _In_ UCHAR              MessageLevel,
+    _In_ ULONG              MessageFlags,
+    _In_ LPGUID             MessageGuid,
+    _In_ USHORT             MessageNumber,
+    _In_ ...
+    );
+
+#endif // ENABLE_WPP_RECORDER
+
+//  
+// WPP_INIT_TRACING and WPP_CLEANUP macros are defined differently for kernel 
+// mode and user mode. In order to support mode-agnostic WDF drivers, 
+// WPP_INIT_TRACING and WPP_CLEANUP macros for UMDF 2.x user-mode drivers are
+// being updated to be same as kernel mode macros. This difference is based
+// upon the macro WPP_MACRO_USE_KM_VERSION_FOR_UM.    
+//
+
+#ifdef WPP_MACRO_USE_KM_VERSION_FOR_UM
+
+VOID WppCleanupUm( VOID );
+#define WPP_CLEANUP(DrvObj) WppCleanupUm()
+#else
 VOID WppCleanupUm( VOID );
 #define WPP_CLEANUP() WppCleanupUm()
+#endif
 
 #define WppLoadTracingSupport 
 
@@ -226,6 +279,16 @@ VOID
 
 
  
+// template control.tpl
+
+//
+//     Defines a set of macro that expand control model specified
+//     with WPP_CONTROL_GUIDS (example shown below)
+//     into an enum of trace levels and required structures that
+//     contain the mask of levels, logger handle and some information
+//     required for registration.
+//
+
 #ifndef WPP_ALREADY_INCLUDED
 
 #define WPP_EVAL(x) x
@@ -237,15 +300,6 @@ VOID
 #define WPP_XGLUE(a, b) WPP_GLUE(a, b)
 #define WPP_XGLUE3(a, b, c) WPP_GLUE3(a, b, c)
 #define WPP_XGLUE4(a, b, c, d) WPP_GLUE4(a, b, c, d)
-
-// template C:\Program Files (x86)\Windows Kits\8.1\bin\WppConfig\Rev1\control.tpl
-//
-//     Defines a set of macro that expand control model specified
-//     with WPP_CONTROL_GUIDS (example shown below)
-//     into an enum of trace levels and required structures that
-//     contain the mask of levels, logger handle and some information
-//     required for registration.
-//
 
 ///////////////////////////////////////////////////////////////////////////////////
 //
@@ -432,18 +486,21 @@ extern __declspec(selectany) WPP_CB_TYPE *WPP_CB = (WPP_CB_TYPE*)&WPP_CB;
 #endif  // #ifndef WPP_ALREADY_INCLUDED
 
 
+
+#if ENABLE_WPP_RECORDER
+// template tracemacro-ifr.tpl
+
+// This template expects:
+//      WPP_THIS_FILE defined (see header.tpl)
+//      WPP_LOGGER_ARG  defined
+//      WPP_GET_LOGGER  defined
+//      WPP_ENABLED() defined
+
 #if defined(__cplusplus)
 extern "C" {
 #endif
 
 #ifndef WPP_ALREADY_INCLUDED
-
-// template C:\Program Files (x86)\Windows Kits\8.1\bin\WppConfig\Rev1\tracemacro.tpl
-//   expects:
-//      WPP_THIS_FILE defined (see header.tpl)
-//      WPP_LOGGER_ARG  defined
-//      WPP_GET_LOGGER  defined
-//      WPP_ENABLED() defined
 
 #ifndef NO_CHECK_FOR_NULL_STRING
 #ifndef WPP_CHECK_FOR_NULL_STRING
@@ -498,7 +555,6 @@ WPP_LOCAL_MSG_GUID(WPP_USER_MSG_GUID);
 #endif
 #endif
 
-
 #ifndef WPP_ALREADY_INCLUDED
 
 #if !defined(WPP_TRACE_OPTIONS)
@@ -509,11 +565,9 @@ enum {WPP_TRACE_OPTIONS = TRACE_MESSAGE_SEQUENCE   | TRACE_MESSAGE_GUID
 #ifndef WPP_LOGPAIR_SEPARATOR
 # define WPP_LOGPAIR_SEPARATOR ,
 #endif
-
 #ifndef WPP_LOGPAIR_SIZET
 # define WPP_LOGPAIR_SIZET SIZE_T
 #endif
-
 #if !defined(WPP_LOGPAIR)
 # define WPP_LOGPAIR(_Size, _Addr)     (_Addr),((WPP_LOGPAIR_SIZET)(_Size))WPP_LOGPAIR_SEPARATOR
 #endif
@@ -535,7 +589,7 @@ enum {WPP_TRACE_OPTIONS = TRACE_MESSAGE_SEQUENCE   | TRACE_MESSAGE_GUID
 # if !defined(WPP_CHECK_FOR_NULL_STRING)
 #  define WPP_LOGWSTR(_value)  WPP_LOGPAIR( (wcslen(_value)+1) * sizeof(WCHAR), _value)
 # else
-#  define WPP_LOGWSTR(_value)  WPP_LOGPAIR( (_value)?(((_value)[0] == 0)?7 * sizeof(WCHAR):(wcslen(_value) + 1)* sizeof(WCHAR)):5 * sizeof(WCHAR), (_value)?(((_value)[0] == 0) ? L"<NULL>" : (_value)):L"NULL")
+#  define WPP_LOGWSTR(_value)  WPP_LOGPAIR( ((_value)?wcslen(_value) + 1:5) * sizeof(WCHAR), (_value)?(_value):L"NULL" )
 # endif
 #endif
 
@@ -569,8 +623,8 @@ enum {WPP_TRACE_OPTIONS = TRACE_MESSAGE_SEQUENCE   | TRACE_MESSAGE_GUID
 #if !defined(WPP_CHECK_FOR_NULL_STRING)
 # define WPP_LOGPUSTR(_x) WPP_LOGUSTR(*(_x))
 #else
-# define WPP_LOGPUSTR(_x) WPP_LOGPAIR( sizeof(USHORT), (_x && (*(_x)).Length)? &(*(_x)).Length : L"\5")\
-                          WPP_LOGPAIR( (_x && (*(_x)).Buffer)?(*(_x)).Length:5*sizeof(WCHAR), (_x && (*(_x)).Buffer)?(*(_x)).Buffer:L"NULL")
+# define WPP_LOGPUSTR(_x) WPP_LOGPAIR( sizeof(USHORT), (_x)?&(_x)->Length:L"\x08" ) \
+                          WPP_LOGPAIR( (_x)?(_x)->Length:0x08, (_x)?(_x)->Buffer:L"NULL" )
 #endif
 #endif
 
@@ -578,8 +632,8 @@ enum {WPP_TRACE_OPTIONS = TRACE_MESSAGE_SEQUENCE   | TRACE_MESSAGE_GUID
 #if !defined(WPP_CHECK_FOR_NULL_STRING)
 # define WPP_LOGPCSTR(_x) WPP_LOGCSTR(*(_x))
 #else
-# define WPP_LOGPCSTR(_x) WPP_LOGPAIR( sizeof(USHORT), (_x && (*(_x)).Length)? &(*(_x)).Length : L"\5")\
-                          WPP_LOGPAIR( (_x && (*(_x)).Buffer)?(*(_x)).Length:5*sizeof(char), (_x && (*(_x)).Buffer)?((const char *)(*(_x)).Buffer):"NULL")
+# define WPP_LOGPCSTR(_x) WPP_LOGPAIR( sizeof(USHORT), (_x)?&(_x)->Length:L"\x04" ) \
+                          WPP_LOGPAIR( (_x)?(_x)->Length:0x04, (_x)?(_x)->Buffer:"NULL" )
 #endif
 #endif
 
@@ -589,10 +643,9 @@ enum {WPP_TRACE_OPTIONS = TRACE_MESSAGE_SEQUENCE   | TRACE_MESSAGE_GUID
 
 #endif  //  #ifndef WPP_ALREADY_INCLUDED
 
-#if !defined(WPP_CHECK_INIT)
-# define WPP_CHECK_INIT (WPP_CB != (WPP_CB_TYPE*)&WPP_CB) && 
+#if !defined(WPP_ENABLE_FLAG_BIT)
+#define WPP_ENABLE_FLAG_BIT(flag) (WPP_CB[((flag) >> 16)].Control).Flags[( (0xFFFF & ((flag)-1) ) / 32)] & (1 << ( ((flag)-1) & 31 ))
 #endif
-
 
 #ifndef WPP_POST
 #  define WPP_POST()
@@ -604,7 +657,7 @@ enum {WPP_TRACE_OPTIONS = TRACE_MESSAGE_SEQUENCE   | TRACE_MESSAGE_GUID
 
 #ifndef WPP_LOG_ALWAYS
 #  define WPP_LOG_ALWAYS(...)
-#endif      
+#endif
 
 #ifdef WPP_DEBUG
 #else
@@ -621,6 +674,198 @@ enum {WPP_TRACE_OPTIONS = TRACE_MESSAGE_SEQUENCE   | TRACE_MESSAGE_GUID
 };
 #endif
 
+#else
+// template tracemacro.tpl
+
+// This template expects:
+//      WPP_THIS_FILE defined (see header.tpl)
+//      WPP_LOGGER_ARG  defined
+//      WPP_GET_LOGGER  defined
+//      WPP_ENABLED() defined
+
+#if defined(__cplusplus)
+extern "C" {
+#endif
+
+#ifndef WPP_ALREADY_INCLUDED
+
+#ifndef NO_CHECK_FOR_NULL_STRING
+#ifndef WPP_CHECK_FOR_NULL_STRING
+#define WPP_CHECK_FOR_NULL_STRING 1
+#endif
+#endif
+
+#define WPP_EVAL(_value_) _value_
+#define WPP_(Id) WPP_EVAL(WPP_) ## WPP_EVAL(Id) ## WPP_EVAL(_) ## WPP_EVAL(WPP_THIS_FILE) ## WPP_EVAL(__LINE__)
+
+#if !defined(WPP_INLINE)
+#define WPP_INLINE DECLSPEC_NOINLINE __inline
+#endif
+
+#else   // #ifndef WPP_ALREADY_INCLUDED
+
+#undef WPP_LOCAL_TraceGuids
+
+#endif  // #ifndef WPP_ALREADY_INCLUDED
+
+#if !defined(WPP_NO_ANNOTATIONS)
+
+#ifdef WPP_EMIT_FUNC_NAME
+#define WPP_FUNC_NAME L" FUNC=" _WPPW(__FUNCTION__)
+#else
+#define WPP_FUNC_NAME
+#endif
+
+# define WPP_ANNOTATE(x) WPP_ANNOTATE_ ## x,
+
+#else
+# define WPP_ANNOTATE(x)
+#endif
+
+
+#if 0
+#if !defined(WPP_USER_MSG_GUID)
+
+#define WPP_LOCAL_TraceGuids WPP_Traceguids
+extern const __declspec(selectany) GUID WPP_LOCAL_TraceGuids[] = {};
+
+#else
+
+#define WPP_LOCAL_MSG_VAR(Guid) WPP_XGLUE3(WPP_, WPP_GUID_NORM Guid, _Traceguids)
+
+#define WPP_LOCAL_MSG_GUID(Guid) \
+extern const __declspec(selectany) GUID WPP_LOCAL_MSG_VAR(Guid)[] = { WPP_GUID_STRUCT Guid }
+
+WPP_LOCAL_MSG_GUID(WPP_USER_MSG_GUID);
+#define WPP_LOCAL_TraceGuids WPP_LOCAL_MSG_VAR(WPP_USER_MSG_GUID)
+
+#endif
+#endif
+
+#ifndef WPP_ALREADY_INCLUDED
+
+#if !defined(WPP_TRACE_OPTIONS)
+enum {WPP_TRACE_OPTIONS = TRACE_MESSAGE_SEQUENCE   | TRACE_MESSAGE_GUID
+                        | TRACE_MESSAGE_SYSTEMINFO | TRACE_MESSAGE_TIMESTAMP };
+#endif
+
+#ifndef WPP_LOGPAIR_SEPARATOR
+# define WPP_LOGPAIR_SEPARATOR ,
+#endif
+#ifndef WPP_LOGPAIR_SIZET
+# define WPP_LOGPAIR_SIZET SIZE_T
+#endif
+#if !defined(WPP_LOGPAIR)
+# define WPP_LOGPAIR(_Size, _Addr)     (_Addr),((WPP_LOGPAIR_SIZET)(_Size))WPP_LOGPAIR_SEPARATOR
+#endif
+
+#define WPP_LOGTYPEVAL(_Type, _Value) WPP_LOGPAIR(sizeof(_Type), &(_Value))
+#define WPP_LOGTYPEPTR(_Value)        WPP_LOGPAIR(sizeof(*(_Value)), (_Value))
+
+// Marshalling macros.
+
+#if !defined(WPP_LOGASTR)
+# if !defined(WPP_CHECK_FOR_NULL_STRING)
+#  define WPP_LOGASTR(_value)  WPP_LOGPAIR(strlen(_value) + 1, _value )
+# else
+#  define WPP_LOGASTR(_value)  WPP_LOGPAIR( (_value)?strlen(_value) + 1:5, (_value)?(_value):"NULL" )
+# endif
+#endif
+
+#if !defined(WPP_LOGWSTR)
+# if !defined(WPP_CHECK_FOR_NULL_STRING)
+#  define WPP_LOGWSTR(_value)  WPP_LOGPAIR( (wcslen(_value)+1) * sizeof(WCHAR), _value)
+# else
+#  define WPP_LOGWSTR(_value)  WPP_LOGPAIR( ((_value)?wcslen(_value) + 1:5) * sizeof(WCHAR), (_value)?(_value):L"NULL" )
+# endif
+#endif
+
+#if !defined(WPP_LOGPGUID)
+# define WPP_LOGPGUID(_value) WPP_LOGPAIR( sizeof(GUID), (_value) )
+#endif
+
+
+#if !defined(WPP_LOGPSID)
+# if !defined(WPP_CHECK_FOR_NULL_STRING)
+# define WPP_LOGPSID(_value)  WPP_LOGPAIR( WPP_GetLengthSid(_value), (_value) )
+# else
+# define WPP_LOGPSID(_value)  WPP_LOGPAIR( (_value)? (WPP_IsValidSid(_value)? \
+                                                                        WPP_GetLengthSid(_value):5):5, \
+                                                                        (_value)? (WPP_IsValidSid(_value)?\
+                                                                        (_value):"NULL"):"NULL")
+#endif
+#endif
+
+#if !defined(WPP_LOGCSTR)
+# define WPP_LOGCSTR(_x) \
+    WPP_LOGPAIR( sizeof((_x).Length), &(_x).Length ) WPP_LOGPAIR( (_x).Length, (_x).Buffer )
+#endif
+
+#if !defined(WPP_LOGUSTR)
+# define WPP_LOGUSTR(_x) \
+    WPP_LOGPAIR( sizeof((_x).Length), &(_x).Length ) WPP_LOGPAIR( (_x).Length, (_x).Buffer )
+#endif
+
+#if !defined(WPP_LOGPUSTR)
+#if !defined(WPP_CHECK_FOR_NULL_STRING)
+# define WPP_LOGPUSTR(_x) WPP_LOGUSTR(*(_x))
+#else
+# define WPP_LOGPUSTR(_x) WPP_LOGPAIR( sizeof(USHORT), (_x)?&(_x)->Length:L"\x08" ) \
+                          WPP_LOGPAIR( (_x)?(_x)->Length:0x08, (_x)?(_x)->Buffer:L"NULL" )
+#endif
+#endif
+
+#if !defined(WPP_LOGPCSTR)
+#if !defined(WPP_CHECK_FOR_NULL_STRING)
+# define WPP_LOGPCSTR(_x) WPP_LOGCSTR(*(_x))
+#else
+# define WPP_LOGPCSTR(_x) WPP_LOGPAIR( sizeof(USHORT), (_x)?&(_x)->Length:L"\x04" ) \
+                          WPP_LOGPAIR( (_x)?(_x)->Length:0x04, (_x)?(_x)->Buffer:"NULL" )
+#endif
+#endif
+
+#if !defined(WPP_LOGSTDSTR)
+#define WPP_LOGSTDSTR(_value)  WPP_LOGPAIR( (_value).size()+1, (_value).c_str() )
+#endif
+
+#endif  //  #ifndef WPP_ALREADY_INCLUDED
+
+#if !defined(WPP_CHECK_INIT)
+# define WPP_CHECK_INIT (WPP_CB != (WPP_CB_TYPE*)&WPP_CB) &&
+#endif
+
+#ifndef WPP_POST
+#  define WPP_POST()
+#endif
+
+#ifndef WPP_PRE
+#  define WPP_PRE()
+#endif
+
+#ifndef WPP_LOG_ALWAYS
+#  define WPP_LOG_ALWAYS(...)
+#endif
+
+#ifdef WPP_DEBUG
+#else
+#endif
+
+
+#ifdef WPP_DEBUG
+#else
+#endif
+
+
+
+#if defined(__cplusplus)
+};
+#endif
+
+#endif
+
+// 9d3d0a22965d0b3b627b3ef343f072df Generated file. Do not edit.
+// File created by WPP compiler version 10.0.16299-Fri Sep 29 02:03:49 2017
+// from template provider.tpl
 
 #pragma once
 
@@ -809,7 +1054,7 @@ EXTERN_C __declspec(selectany) const GUID ;// = {0x00000000, 0x0000, 0x0000, {0x
 #ifndef MCGEN_DISABLE_PROVIDER_CODE_GENERATION
 
 
-EXTERN_C __declspec(selectany) REGHANDLE Handle;// = (REGHANDLE)0;
+#define Handle (_Context.RegistrationHandle)
 
 EXTERN_C __declspec(selectany) MCGEN_TRACE_CONTEXT _Context;// = {0};
 
@@ -942,534 +1187,6 @@ Remarks:
 
 #endif
 
-
-#define WPPINIT_EXPORT 
-  // template C:\Program Files (x86)\Windows Kits\8.1\bin\WppConfig\Rev1\um-init.tpl
-//
-//     Defines a set of functions that simplifies
-//     User mode registration for tracing
-//
-
-#if defined(__cplusplus)
-extern "C" {
-#endif
-
-#define __WARNING_BANNED_LEGACY_INSTRUMENTATION_API_USAGE 28735
-
-// define annotation record that will carry control information to pdb (in case somebody needs it)
-WPP_FORCEINLINE void WPP_CONTROL_ANNOTATION() {
-#if !defined(WPP_NO_ANNOTATIONS)
-
-#ifndef WPP_TMC_ANNOT_SUFIX
-#ifdef WPP_PUBLIC_TMC
-    #define WPP_TMC_ANNOT_SUFIX ,L"PUBLIC_TMF:"
-#else
-    #define WPP_TMC_ANNOT_SUFIX
-#endif
-#endif
-
-#  define WPP_DEFINE_CONTROL_GUID(Name,Guid,Bits) __annotation(L"TMC:", WPP_GUID_WTEXT Guid, _WPPW(WPP_STRINGIZE(Name)) Bits WPP_TMC_ANNOT_SUFIX);
-#  define WPP_DEFINE_BIT(Name) , _WPPW(#Name)
-
-    WPP_CONTROL_GUIDS 
-#  undef WPP_DEFINE_BIT
-#  undef WPP_DEFINE_CONTROL_GUID
-#endif
-}
-
-LPCGUID WPP_REGISTRATION_GUIDS[WPP_LAST_CTL];
-
-WPP_CB_TYPE WPP_MAIN_CB[WPP_LAST_CTL];
-
-#define WPP_NEXT(Name) ((WPP_TRACE_CONTROL_BLOCK*) \
-    (WPP_XGLUE(WPP_CTL_, WPP_EVAL(Name)) + 1 == WPP_LAST_CTL ? 0:WPP_MAIN_CB + WPP_XGLUE(WPP_CTL_, WPP_EVAL(Name)) + 1))    
-
-__inline void WPP_INIT_CONTROL_ARRAY(WPP_CB_TYPE* Arr) {
-#define WPP_DEFINE_CONTROL_GUID(Name,Guid,Bits)                        \
-   Arr->Control.Ptr = NULL;                                            \
-   Arr->Control.Next = WPP_NEXT(WPP_EVAL(Name));                       \
-   Arr->Control.FlagsLen = WPP_FLAG_LEN;                               \
-   Arr->Control.Level = 0;                                             \
-   Arr->Control.Options = 0;                                           \
-   Arr->Control.Flags[0] = 0;                                          \
-   ++Arr;
-#define WPP_DEFINE_BIT(BitName) L" " L ## #BitName
-WPP_CONTROL_GUIDS
-#undef WPP_DEFINE_BIT
-#undef WPP_DEFINE_CONTROL_GUID
-}
-
-#undef WPP_INIT_STATIC_DATA
-#define WPP_INIT_STATIC_DATA WPP_INIT_CONTROL_ARRAY(WPP_MAIN_CB)
-
-__inline void WPP_INIT_GUID_ARRAY(LPCGUID* Arr) {
-#define WPP_DEFINE_CONTROL_GUID(Name,Guid,Bits)                         \
-   WPP_XGLUE4(*Arr = &WPP_, ThisDir, _CTLGUID_, WPP_EVAL(Name));        \
-   ++Arr;
-WPP_CONTROL_GUIDS
-#undef WPP_DEFINE_CONTROL_GUID
-}
-
-
- 
-VOID WppInitUm(_In_opt_ LPCWSTR AppName);
- 
-#define WPP_INIT_TRACING(AppName)                                           \
-                WppLoadTracingSupport;                                      \
-                (WPP_CONTROL_ANNOTATION(),WPP_INIT_STATIC_DATA,             \
-                 WPP_INIT_GUID_ARRAY((LPCGUID*)&WPP_REGISTRATION_GUIDS),    \
-                 WPP_CB= WPP_MAIN_CB,                                       \
-                 WppInitUm(AppName))
-
-
-void WPP_Set_Dll_CB(
-                    PWPP_TRACE_CONTROL_BLOCK Control, 
-                    VOID * DllControlBlock,
-                    USHORT Flags)
-{
-
-    if (*(PVOID*)DllControlBlock != DllControlBlock){
-        Control->Ptr = DllControlBlock;
-    } else {
-        if (Flags == WPP_VER_WHISTLER_CB_FORWARD_PTR ){
-            memset(Control, 0, sizeof(WPP_TRACE_CONTROL_BLOCK));
-            *(PWPP_TRACE_CONTROL_BLOCK*)DllControlBlock = Control;
-            Control->Options = WPP_VER_LH_CB_FORWARD_PTR;
-            
-        }
-    }
-
-}
-
-
-#define WPP_SET_FORWARD_PTR(CTL, FLAGS, PTR) (\
-    (WPP_MAIN_CB[WPP_CTRL_NO(WPP_BIT_ ## CTL )].Control.Options = (FLAGS)));\
-    WPP_Set_Dll_CB(&WPP_MAIN_CB[WPP_CTRL_NO(WPP_BIT_ ## CTL )].Control,(PTR),(USHORT)FLAGS)
-
-
-#define DEFAULT_LOGGER_NAME             L"stdout"
-
-#if !defined(WppDebug)
-#  define WppDebug(a,b)
-#endif
-
-#if !defined(WPPINIT_STATIC)
-#  define WPPINIT_STATIC
-#endif
-
-#if !defined(WPPINIT_EXPORT)
-#  define WPPINIT_EXPORT
-#endif
-
-#define WPP_GUID_FORMAT     "%08x-%04x-%04x-%02x%02x-%02x%02x%02x%02x%02x%02x"
-#define WPP_GUID_ELEMENTS(p) \
-    p->Data1,                 p->Data2,    p->Data3,\
-    p->Data4[0], p->Data4[1], p->Data4[2], p->Data4[3],\
-    p->Data4[4], p->Data4[5], p->Data4[6], p->Data4[7]
-
-#define WPP_MAX_LEVEL 255
-#define WPP_MAX_FLAGS 0xFFFFFFFF
-
-
-
-#if defined (WPP_GLOBALLOGGER)
-
-__inline 
-TRACEHANDLE 
-WppQueryLogger(
-    _In_opt_ PCWSTR LoggerName
-    )
-{
-    ULONG Status;
-    EVENT_TRACE_PROPERTIES LoggerInfo;
-
-    ZeroMemory(&LoggerInfo, sizeof(LoggerInfo));
-    LoggerInfo.Wnode.BufferSize = sizeof(LoggerInfo);
-    LoggerInfo.Wnode.Flags = WNODE_FLAG_TRACED_GUID;
-
-    Status = ControlTraceW(0, LoggerName ? LoggerName : L"stdout", &LoggerInfo, EVENT_TRACE_CONTROL_QUERY);
-    if (Status == ERROR_SUCCESS || Status == ERROR_MORE_DATA) {
-        return (TRACEHANDLE) LoggerInfo.Wnode.HistoricalContext;
-    }
-    return 0;
-}
-
-#define WPP_REG_GLOBALLOGGER_FLAGS             L"Flags"
-#define WPP_REG_GLOBALLOGGER_LEVEL             L"Level"
-#define WPP_REG_GLOBALLOGGER_START             L"Start"
-
-#define WPP_TEXTGUID_LEN  38
-#define WPP_REG_GLOBALLOGGER_KEY            L"SYSTEM\\CurrentControlSet\\Control\\Wmi\\GlobalLogger"
-
-WPPINIT_STATIC
-void WppIntToHex(
-    _Out_writes_(digits) PWCHAR Buf,
-    unsigned int value,
-    int digits
-    )
-{
-    static LPCWSTR hexDigit = L"0123456789abcdef";
-    while (--digits >= 0) {
-        Buf[digits] = hexDigit[ value & 15 ];
-        value /= 16;
-    }
-}
-
-WPPINIT_EXPORT
-void WppInitGlobalLogger(
-        IN LPCGUID ControlGuid,
-        IN PTRACEHANDLE LoggerHandle,
-        OUT PULONG Flags,
-        _Out_writes_(sizeof(UCHAR)) PUCHAR Level )
-{
-WCHAR    GuidBuf[WPP_TEXTGUID_LEN];
-ULONG    CurrentFlags = 0;
-ULONG    CurrentLevel = 0;
-DWORD    Start = 0;
-DWORD    DataSize ;
-ULONG    Status ;
-HKEY     GloblaLoggerHandleKey;
-HKEY     ValueHandleKey ;
-
-
-
-   WppDebug(0,("WPP checking Global Logger %S",WPP_REG_GLOBALLOGGER_KEY));
-
-   if ((Status = RegOpenKeyExW(HKEY_LOCAL_MACHINE,
-                        (LPWSTR)WPP_REG_GLOBALLOGGER_KEY,
-                        0,
-                        KEY_READ,
-                        &GloblaLoggerHandleKey
-                        )) != ERROR_SUCCESS) {
-       WppDebug(0,("GlobalLogger key does not exist (0x%08X)",Status));
-       return ;
-   }
-
-   DataSize = sizeof(DWORD);
-   Status = RegQueryValueExW(GloblaLoggerHandleKey,
-                             (LPWSTR)WPP_REG_GLOBALLOGGER_START,
-                             0,
-                             NULL,
-                             (LPBYTE)&Start,
-                             &DataSize);
-    if (Status != ERROR_SUCCESS || Start == 0 ) {
-        WppDebug(0,("Global Logger not started (0x%08X)",Status));
-        goto Cleanup;
-    }
-
-
-   WppDebug(0,("Global Logger exists and is set to be started"));
-
-   {
-        static LPCWSTR hexDigit = L"0123456789abcdef";
-        int i;
-
-        WppIntToHex(GuidBuf, ControlGuid->Data1, 8);
-        GuidBuf[8]  = '-';
-
-        WppIntToHex(&GuidBuf[9], ControlGuid->Data2, 4);
-        GuidBuf[13] = '-';
-
-        WppIntToHex(&GuidBuf[14], ControlGuid->Data3, 4);
-        GuidBuf[18] = '-';
-
-        GuidBuf[19] =  hexDigit[(ControlGuid->Data4[0] & 0xF0) >> 4];
-        GuidBuf[20] =  hexDigit[ControlGuid->Data4[0] & 0x0F ];
-        GuidBuf[21] =  hexDigit[(ControlGuid->Data4[1] & 0xF0) >> 4];
-        GuidBuf[22] =  hexDigit[ControlGuid->Data4[1] & 0x0F ];
-        GuidBuf[23] = '-';
-
-        for( i=2; i < 8 ; i++ ){
-            GuidBuf[i*2+20] =  hexDigit[(ControlGuid->Data4[i] & 0xF0) >> 4];
-            GuidBuf[i*2+21] =  hexDigit[ControlGuid->Data4[i] & 0x0F ];
-        }
-        GuidBuf[36] = 0;
-
-    }
-
-   //
-   // Perform the query
-   //
-
-   if ((Status = RegOpenKeyExW(GloblaLoggerHandleKey,
-                        (LPWSTR)GuidBuf,
-                        0,
-                        KEY_READ,
-                        &ValueHandleKey
-                        )) != ERROR_SUCCESS) {
-       WppDebug(0,("Global Logger Key not set for this Control Guid %S (0x%08X)",GuidBuf,Status));
-       goto Cleanup;
-   }
-   // Get the Flags Parameter
-   DataSize = sizeof(DWORD);
-   Status = RegQueryValueExW(ValueHandleKey,
-                             (LPWSTR)WPP_REG_GLOBALLOGGER_FLAGS,
-                             0,
-                             NULL,
-                             (LPBYTE)&CurrentFlags,
-                             &DataSize);
-    if (Status != ERROR_SUCCESS || CurrentFlags == 0 ) {
-        WppDebug(0,("GlobalLogger for %S Flags not set (0x%08X)",GuidBuf,Status));
-    }
-   // Get the levels Parameter
-   DataSize = sizeof(DWORD);
-   Status = RegQueryValueExW(ValueHandleKey,
-                             (LPWSTR)WPP_REG_GLOBALLOGGER_LEVEL,
-                             0,
-                             NULL,
-                             (LPBYTE)&CurrentLevel,
-                             &DataSize);
-    if (Status != ERROR_SUCCESS || CurrentLevel == 0 ) {
-        WppDebug(0,("GlobalLogger for %S Level not set (0x%08X)",GuidBuf,Status));
-    }
-
-    if (Start==1) {
-
-       if ((*LoggerHandle= WppQueryLogger( L"GlobalLogger")) != (TRACEHANDLE)NULL) {
-           *Flags = CurrentFlags & 0x7FFFFFFF ;
-           *Level = (UCHAR)(CurrentLevel & 0xFF) ;
-           WppDebug(0,("WPP Enabled via Global Logger Flags=0x%08X Level=0x%02X",CurrentFlags,CurrentLevel));
-       } else {
-           WppDebug(0,("GlobalLogger set for start but not running (Flags=0x%08X Level=0x%02X)",CurrentFlags,CurrentLevel));
-       }
-
-    }
-
-   RegCloseKey(ValueHandleKey);
-Cleanup:
-   RegCloseKey(GloblaLoggerHandleKey);
-}
-#endif  //#ifdef WPP_GLOBALLOGGER
-
-#ifdef WPP_MANAGED_CPP
-#pragma managed(push, off)
-#endif 
-
-ULONG
-__stdcall
-WppControlCallback(
-    IN WMIDPREQUESTCODE RequestCode,
-    IN PVOID Context,
-    _Inout_ ULONG *InOutBufferSize,
-    _Inout_ PVOID Buffer
-    )
-{
-    PWPP_TRACE_CONTROL_BLOCK Ctx = (PWPP_TRACE_CONTROL_BLOCK)Context;
-    TRACEHANDLE Logger;
-    UCHAR Level;
-    DWORD Flags;
-
-    *InOutBufferSize = 0;
-
-    switch (RequestCode)
-    {
-        case WMI_ENABLE_EVENTS:
-        {
-            Logger = WPP_GET_TRACE_LOGGER_HANDLE( Buffer );
-            Level = WPP_GET_TRACE_ENABLE_LEVEL(Logger);
-            Flags = WPP_GET_TRACE_ENABLE_FLAGS(Logger);
-
-            WppDebug(1, ("[WppInit] WMI_ENABLE_EVENTS Ctx %p Flags %x"
-                     " Lev %d Logger %I64x\n",
-                     Ctx, Flags, Level, Logger) );
-            break;
-        }
-
-        case WMI_DISABLE_EVENTS:
-        {
-            Logger = 0;
-            Flags  = 0;
-            Level  = 0;
-            WppDebug(1, ("[WppInit] WMI_DISABLE_EVENTS Ctx 0x%08p\n", Ctx));
-            break;
-        }
-
-#ifdef WPP_CAPTURE_STATE_CALLBACK
-
-        case WMI_CAPTURE_STATE:
-        {
-            Logger = WPP_GET_TRACE_LOGGER_HANDLE(Buffer);
-            Level = WPP_GET_TRACE_ENABLE_LEVEL(Logger);
-            Flags = WPP_GET_TRACE_ENABLE_FLAGS(Logger);
-            WPP_CAPTURE_STATE_CALLBACK(Ctx->ControlGuid,
-                                       Logger,
-                                       Flags,
-                                       Level);
-
-            return ERROR_SUCCESS;
-        }
-
-#endif
-
-        default:
-        {
-            return ERROR_INVALID_PARAMETER;
-        }
-    }
-
-    if (Ctx->Options & WPP_VER_WHISTLER_CB_FORWARD_PTR && Ctx->Cb) {
-        Ctx = Ctx->Cb; // use forwarding address
-    }
-    
-    Ctx->Logger   = Logger;
-    Ctx->Level    = Level;
-    Ctx->Flags[0] = Flags;
-        
-#ifdef WPP_PRIVATE_ENABLE_CALLBACK
-    WPP_PRIVATE_ENABLE_CALLBACK(Ctx->ControlGuid,
-                                Logger,
-                                (RequestCode != WMI_DISABLE_EVENTS) ? TRUE : FALSE,
-                                Flags,
-                                Level);
-#endif 
-
-    return(ERROR_SUCCESS);
-}
-
-#ifdef WPP_MANAGED_CPP
-#pragma managed(pop)
-#endif 
-
-#pragma warning(push)
-#pragma warning(disable:4068)
-
-WPPINIT_EXPORT
-VOID WppInitUm(_In_opt_ LPCWSTR AppName)
-{
-    C_ASSERT(WPP_MAX_FLAG_LEN_CHECK); 
-
-    PWPP_TRACE_CONTROL_BLOCK Control = &WPP_CB[0].Control;
-    TRACE_GUID_REGISTRATION TraceRegistration;
-    LPCGUID *               RegistrationGuids = (LPCGUID *)&WPP_REGISTRATION_GUIDS;
-    LPCGUID                 ControlGuid;
-
-    ULONG Status;
-
-#ifdef WPP_MOF_RESOURCENAME
-#ifdef WPP_DLL
-    HMODULE hModule = NULL;
-#endif
-    WCHAR ImagePath[MAX_PATH] = {UNICODE_NULL} ;
-    WCHAR WppMofResourceName[] = WPP_MOF_RESOURCENAME ;
-#else
-    UNREFERENCED_PARAMETER(AppName);
-#endif //#ifdef WPP_MOF_RESOURCENAME
-
-    WppDebug(1, ("Registering %ws\n", AppName) );
-
-    for(; Control; Control = Control->Next) {
-        
-        ControlGuid = *RegistrationGuids++;
-        TraceRegistration.Guid = ControlGuid;
-        TraceRegistration.RegHandle = 0;
-        Control->ControlGuid = ControlGuid;
-
-        WppDebug(1,(WPP_GUID_FORMAT " %ws : %d\n",
-                    WPP_GUID_ELEMENTS(ControlGuid),
-                    AppName,
-                    Control->FlagsLen));
-                    
-
-#ifdef WPP_MOF_RESOURCENAME
-        if (AppName != NULL) {
-
-#ifdef WPP_DLL
-           if ((hModule = GetModuleHandleW(AppName)) != NULL) {
-               Status = GetModuleFileNameW(hModule, ImagePath, MAX_PATH) ;
-               ImagePath[MAX_PATH-1] = '\0';
-               if (Status == 0) {
-                  WppDebug(1,("RegisterTraceGuids => GetModuleFileName(DLL) Failed 0x%08X\n",GetLastError()));
-               }
-           } else {
-               WppDebug(1,("RegisterTraceGuids => GetModuleHandleW failed for %ws (0x%08X)\n",AppName,GetLastError()));
-           }
-#else   // #ifdef WPP_DLL
-           Status = GetModuleFileNameW(NULL,ImagePath,MAX_PATH);
-           if (Status == 0) {
-               WppDebug(1,("GetModuleFileName(EXE) Failed 0x%08X\n",GetLastError()));
-           }
-#endif  //  #ifdef WPP_DLL
-        }
-        WppDebug(1,("registerTraceGuids => registering with WMI, App=%ws, Mof=%ws, ImagePath=%ws\n",AppName,WppMofResourceName,ImagePath));
-        
-#pragma prefast(suppress:__WARNING_BANNED_LEGACY_INSTRUMENTATION_API_USAGE, "WPP generated, requires legacy providers");
-        Status = RegisterTraceGuidsW(                   // Always use Unicode
-#else   // ifndef WPP_MOF_RESOURCENAME
-
-#pragma prefast(suppress:__WARNING_BANNED_LEGACY_INSTRUMENTATION_API_USAGE, "WPP generated, requires legacy providers");
-        Status = WPP_REGISTER_TRACE_GUIDS(
-#endif  // ifndef WPP_MOF_RESOURCENAME
-
-            WppControlCallback,
-            Control,              // Context for the callback
-            ControlGuid,
-            1,
-            &TraceRegistration,
-#ifndef WPP_MOF_RESOURCENAME
-            0, //ImagePath,
-            0, //ResourceName,
-#else   // #ifndef WPP_MOF_RESOURCENAME
-            ImagePath,
-            WppMofResourceName,
-#endif // #ifndef WPP_MOF_RESOURCENAME
-            &Control->UmRegistrationHandle
-        );
-    
-    
-    if (Status != ERROR_SUCCESS) {
-    
-        WppDebug(1, ("RegisterTraceGuid failed %d\n", Status) );
-
-    }
-
-#if defined (WPP_GLOBALLOGGER)
-
-        //
-        // Check if Global logger is active if we have not been immediately activated
-        //
-        if (Control->Logger == (TRACEHANDLE)NULL) {          
-            WppInitGlobalLogger( ControlGuid, (PTRACEHANDLE)&Control->Logger, &Control->Flags[0], &Control->Level);
-        }
-        
-#endif  //#if defined (WPP_GLOBALLOGGER) 
-
-    }
-
-    
-}
-
-WPPINIT_EXPORT
-VOID WppCleanupUm(    VOID   )
-{
-    PWPP_TRACE_CONTROL_BLOCK Control; 
-
-    if (WPP_CB == (WPP_CB_TYPE*)&WPP_CB){
-        //
-        // WPP_INIT_TRACING macro has not been called
-        //
-        return;
-    }
-    WppDebug(1, ("Cleanup\n") );
-    Control = &WPP_CB[0].Control;
-    for(; Control; Control = Control->Next) {
-        WppDebug(1,("UnRegistering %I64x\n", Control->UmRegistrationHandle) );
-        if (Control->UmRegistrationHandle) {
-
-#pragma prefast(suppress:__WARNING_BANNED_LEGACY_INSTRUMENTATION_API_USAGE, "WPP generated, requires legacy providers");
-            WPP_UNREGISTER_TRACE_GUIDS(Control->UmRegistrationHandle);
-
-            Control->UmRegistrationHandle = (TRACEHANDLE)NULL ;
-        }
-    }
-    
-    WPP_CB = (WPP_CB_TYPE*)&WPP_CB;
-}
-#pragma warning(pop)
-
-
-#if defined(__cplusplus)
-};
-#endif
 
 //
 // Tracing Macro name redefinition

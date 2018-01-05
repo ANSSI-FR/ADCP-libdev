@@ -8,6 +8,7 @@ Descr. : Lightweight JSON Library written in C Windows
 
 /* --- INCLUDES ------------------------------------------------------------- */
 #define LIB_ERROR_VAL gs_dwJsonLastError
+#include "LibUtils\src\UtilsLib.h"
 #include "JsonInternals.h"
 
 #ifdef _WIN32

@@ -1,4 +1,4 @@
-// b8a19be2c1d26d145c8986cc12ab26aa Generated file. Do not edit.
+// a3b837228661e124eed3b164baec6031 Generated file. Do not edit.
 // File created by WPP compiler version 10.0.16299-Fri Sep 29 02:03:49 2017
 // from template um-default.tpl
 
@@ -10,7 +10,7 @@
 #       undef   WPP_THIS_FILE
 #endif  // #ifdef WPP_THIS_FILE
 
-#define WPP_THIS_FILE CsvLib_c
+#define WPP_THIS_FILE JsonInternals_c
 
 #ifndef WPP_ALREADY_INCLUDED
 
@@ -863,7 +863,7 @@ enum {WPP_TRACE_OPTIONS = TRACE_MESSAGE_SEQUENCE   | TRACE_MESSAGE_GUID
 
 #endif
 
-// b8a19be2c1d26d145c8986cc12ab26aa Generated file. Do not edit.
+// a3b837228661e124eed3b164baec6031 Generated file. Do not edit.
 // File created by WPP compiler version 10.0.16299-Fri Sep 29 02:03:49 2017
 // from template provider.tpl
 
@@ -1173,7 +1173,7 @@ Remarks:
 
 #endif
 
-#define ETW_THIS_FILE CsvLib_c
+#define ETW_THIS_FILE JsonInternals_c
 
 #define ETW_EVAL(_value_) _value_
 #define Event(Id) ETW_EVAL(Event) ## ETW_EVAL(Id) ## ETW_EVAL(_) ## ETW_EVAL(ETW_THIS_FILE) ## ETW_EVAL(__LINE__)
@@ -1200,6 +1200,8 @@ Remarks:
 #define DoDebugTrace WPP_(CALL)
 #undef DoTraceMessage
 #define DoTraceMessage WPP_(CALL)
+#undef JsonWppMessage
+#define JsonWppMessage WPP_(CALL)
 // MsgArgs
 
 // NoMsgArgs and Etw

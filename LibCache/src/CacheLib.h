@@ -15,6 +15,7 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 #include "CacheAvlTable.h"
 #include "..\..\LibUtils\src\UtilsLib.h"
 
+/* --- DEFINES -------------------------------------------------------------- */
 #ifdef VLD_DBG
     #define VLD_FORCE_ENABLE
     #include <vld.h>
@@ -32,7 +33,6 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
     #define DLL_FCT
 #endif
 
-/* --- DEFINES -------------------------------------------------------------- */
 #define CACHE_LIBERR                (0xDDDD)
 #define CACHE_ERR_UNKNOWN_TODO      ERROR_CODE(CACHE_LIBERR, 1)
 

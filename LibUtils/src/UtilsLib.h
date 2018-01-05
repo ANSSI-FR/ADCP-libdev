@@ -18,6 +18,7 @@ extern "C" {
 #include <stdio.h>
 #include <tchar.h>
 
+/* --- DEFINES -------------------------------------------------------------- */
 #ifdef VLD_DBG
     #define VLD_FORCE_ENABLE
     #include <vld.h>
@@ -56,7 +57,6 @@ extern "C" {
     #include "UtilsGetoptComplex.h"
 #endif
 
-/* --- DEFINES -------------------------------------------------------------- */
 //
 // Custom 'LibUtils' error codes
 //

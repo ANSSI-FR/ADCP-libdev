@@ -8,6 +8,7 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 
 /* --- INCLUDES ------------------------------------------------------------- */
 #define LIB_ERROR_VAL gs_dwLdapLastError
+#include "..\..\LibUtils\src\UtilsLib.h"
 #include "LdapInternals.h"
 #include "LdapHelpers.h"
 

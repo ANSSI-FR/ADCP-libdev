@@ -15,8 +15,8 @@ extern "C" {
 
 /* --- INCLUDES ------------------------------------------------------------- */
 #include <assert.h>
-#include "LibUtils\src\UtilsLib.h"
 
+/* --- DEFINES -------------------------------------------------------------- */
 #ifdef VLD_DBG
     #define VLD_FORCE_ENABLE
     #include <vld.h>
@@ -34,7 +34,6 @@ extern "C" {
     #define DLL_FCT
 #endif
 
-/* --- DEFINES -------------------------------------------------------------- */
 //
 // Custom LibJson error codes
 //
