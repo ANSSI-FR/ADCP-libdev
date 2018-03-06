@@ -246,7 +246,7 @@ static BOOL CsviReadField(
         CSV_API_RETURN_ERROR(pCsv, CSV_ERROR_END_OF_FILE); // TODO: ERR+WPP
     }
 
-    if ((ULONGLONG)llRemaining < sizeof(WCHAR)) {
+    if ((ULONGLONG)llRemaining < 1) {
         pCsv->file.read.llPosition = pCsv->file.read.llFileSize;
         pCsv->file.read.bEofReached = TRUE;
         CSV_API_RETURN_ERROR(pCsv, CSV_ERROR_READ_UNEXPECTED_EOF); // TODO: ERR+WPP
@@ -303,7 +303,7 @@ static BOOL CsviReadField(
     //
     llRemaining = CSV_CHARS_AVAILABLE(pCsv);
 
-    if ((ULONGLONG)llRemaining < sizeof(WCHAR)) {
+    if ((ULONGLONG)llRemaining < 1) {
         CSV_API_RETURN_ERROR(pCsv, CSV_ERROR_READ_UNEXPECTED_EOF); // TODO: ERR+WPP
     }
 
