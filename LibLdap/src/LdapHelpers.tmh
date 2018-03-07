@@ -1,4 +1,4 @@
-// 7c02d0d5b977404da0daeeeb0d3775c7 Generated file. Do not edit.
+// d37b267a89fbf18ded4a29caeb8ddfc0 Generated file. Do not edit.
 // File created by WPP compiler version 10.0.16299-Fri Sep 29 02:03:49 2017
 // from template um-default.tpl
 
@@ -524,34 +524,34 @@ extern "C" {
 #if !defined(WPP_NO_ANNOTATIONS)
 
 #ifdef WPP_PUBLIC_
-#define WPP_PUBLIC_ANNOT_LdapHelpers_c131
+#define WPP_PUBLIC_ANNOT_LdapHelpers_c130
 #endif
 #ifdef WPP_PUBLIC_
-#define WPP_PUBLIC_ANNOT_LdapHelpers_c161
+#define WPP_PUBLIC_ANNOT_LdapHelpers_c160
 #endif
 #ifdef WPP_PUBLIC_
-#define WPP_PUBLIC_ANNOT_LdapHelpers_c196
+#define WPP_PUBLIC_ANNOT_LdapHelpers_c195
 #endif
 #ifdef WPP_PUBLIC_
-#define WPP_PUBLIC_ANNOT_LdapHelpers_c246
+#define WPP_PUBLIC_ANNOT_LdapHelpers_c245
 #endif
 #ifdef WPP_PUBLIC_
-#define WPP_PUBLIC_ANNOT_LdapHelpers_c268
+#define WPP_PUBLIC_ANNOT_LdapHelpers_c267
 #endif
 #ifdef WPP_PUBLIC_
-#define WPP_PUBLIC_ANNOT_LdapHelpers_c309
+#define WPP_PUBLIC_ANNOT_LdapHelpers_c308
 #endif
 #ifdef WPP_PUBLIC_
-#define WPP_PUBLIC_ANNOT_LdapHelpers_c372
+#define WPP_PUBLIC_ANNOT_LdapHelpers_c371
 #endif
 #ifdef WPP_PUBLIC_
-#define WPP_PUBLIC_ANNOT_LdapHelpers_c399
+#define WPP_PUBLIC_ANNOT_LdapHelpers_c398
 #endif
 #ifdef WPP_PUBLIC_
-#define WPP_PUBLIC_ANNOT_LdapHelpers_c46
+#define WPP_PUBLIC_ANNOT_LdapHelpers_c45
 #endif
 #ifdef WPP_PUBLIC_
-#define WPP_PUBLIC_ANNOT_LdapHelpers_c84
+#define WPP_PUBLIC_ANNOT_LdapHelpers_c83
 #endif
 #ifdef WPP_EMIT_FUNC_NAME
 #define WPP_FUNC_NAME L" FUNC=" _WPPW(__FUNCTION__)
@@ -560,154 +560,154 @@ extern "C" {
 #endif
 
 #if !defined(WPP_USER_MSG_GUID)
-# define WPP_ANNOTATE_LdapHelpers_c131_FINAL(P, File, Name, ...)    __annotation(L ## P, L"f5f72813-d7dd-3a8e-9ffd-c1ca84859306 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 12 \"%0Failed to extract numeric attribute, requesting <%10!u!> values, has <%11!u!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c130_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 12 \"%0Failed to extract numeric attribute, requesting <%10!u!> values, has <%11!u!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #else
-# define WPP_ANNOTATE_LdapHelpers_c131_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 12 \"%0Failed to extract numeric attribute, requesting <%10!u!> values, has <%11!u!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c130_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 12 \"%0Failed to extract numeric attribute, requesting <%10!u!> values, has <%11!u!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #endif
 
-#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c131
-    #define WPP_ANNOTATE_LdapHelpers_c131 WPP_ANNOTATE_LdapHelpers_c131_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemLong -- 10" , L"Arg, ItemLong -- 11" , L"}", L"PUBLIC_TMF:")
+#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c130
+    #define WPP_ANNOTATE_LdapHelpers_c130 WPP_ANNOTATE_LdapHelpers_c130_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemLong -- 10" , L"Arg, ItemLong -- 11" , L"}", L"PUBLIC_TMF:")
 
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
 #else
-    #define WPP_ANNOTATE_LdapHelpers_c131 WPP_ANNOTATE_LdapHelpers_c131_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c131", L"{", L"dwNumCount, ItemLong -- 10" , L"pNumAttr->dwValuesCount, ItemLong -- 11" , L"}")
+    #define WPP_ANNOTATE_LdapHelpers_c130 WPP_ANNOTATE_LdapHelpers_c130_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c130", L"{", L"dwNumCount, ItemLong -- 10" , L"pNumAttr->dwValuesCount, ItemLong -- 11" , L"}")
 #endif
 #if !defined(WPP_USER_MSG_GUID)
-# define WPP_ANNOTATE_LdapHelpers_c161_FINAL(P, File, Name, ...)    __annotation(L ## P, L"f5f72813-d7dd-3a8e-9ffd-c1ca84859306 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 13 \"%0Failed to extract boolean attribute, requesting <%10!u!> values, has <%11!u!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c160_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 13 \"%0Failed to extract boolean attribute, requesting <%10!u!> values, has <%11!u!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #else
-# define WPP_ANNOTATE_LdapHelpers_c161_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 13 \"%0Failed to extract boolean attribute, requesting <%10!u!> values, has <%11!u!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c160_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 13 \"%0Failed to extract boolean attribute, requesting <%10!u!> values, has <%11!u!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #endif
 
-#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c161
-    #define WPP_ANNOTATE_LdapHelpers_c161 WPP_ANNOTATE_LdapHelpers_c161_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemLong -- 10" , L"Arg, ItemLong -- 11" , L"}", L"PUBLIC_TMF:")
+#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c160
+    #define WPP_ANNOTATE_LdapHelpers_c160 WPP_ANNOTATE_LdapHelpers_c160_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemLong -- 10" , L"Arg, ItemLong -- 11" , L"}", L"PUBLIC_TMF:")
 
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
 #else
-    #define WPP_ANNOTATE_LdapHelpers_c161 WPP_ANNOTATE_LdapHelpers_c161_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c161", L"{", L"dwBoolCount, ItemLong -- 10" , L"pBoolAttr->dwValuesCount, ItemLong -- 11" , L"}")
+    #define WPP_ANNOTATE_LdapHelpers_c160 WPP_ANNOTATE_LdapHelpers_c160_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c160", L"{", L"dwBoolCount, ItemLong -- 10" , L"pBoolAttr->dwValuesCount, ItemLong -- 11" , L"}")
 #endif
 #if !defined(WPP_USER_MSG_GUID)
-# define WPP_ANNOTATE_LdapHelpers_c196_FINAL(P, File, Name, ...)    __annotation(L ## P, L"f5f72813-d7dd-3a8e-9ffd-c1ca84859306 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 14 \"%0Failed to extract string named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c195_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 14 \"%0Failed to extract string named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #else
-# define WPP_ANNOTATE_LdapHelpers_c196_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 14 \"%0Failed to extract string named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c195_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 14 \"%0Failed to extract string named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #endif
 
-#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c196
-    #define WPP_ANNOTATE_LdapHelpers_c196 WPP_ANNOTATE_LdapHelpers_c196_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemWString -- 10" , L"}", L"PUBLIC_TMF:")
+#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c195
+    #define WPP_ANNOTATE_LdapHelpers_c195 WPP_ANNOTATE_LdapHelpers_c195_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemWString -- 10" , L"}", L"PUBLIC_TMF:")
 
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
 #else
-    #define WPP_ANNOTATE_LdapHelpers_c196 WPP_ANNOTATE_LdapHelpers_c196_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c196", L"{", L"ptAttrName, ItemWString -- 10" , L"}")
+    #define WPP_ANNOTATE_LdapHelpers_c195 WPP_ANNOTATE_LdapHelpers_c195_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c195", L"{", L"ptAttrName, ItemWString -- 10" , L"}")
 #endif
 #if !defined(WPP_USER_MSG_GUID)
-# define WPP_ANNOTATE_LdapHelpers_c246_FINAL(P, File, Name, ...)    __annotation(L ## P, L"f5f72813-d7dd-3a8e-9ffd-c1ca84859306 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 15 \"%0Failed to alloc and extract string named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c245_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 15 \"%0Failed to alloc and extract string named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #else
-# define WPP_ANNOTATE_LdapHelpers_c246_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 15 \"%0Failed to alloc and extract string named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c245_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 15 \"%0Failed to alloc and extract string named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #endif
 
-#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c246
-    #define WPP_ANNOTATE_LdapHelpers_c246 WPP_ANNOTATE_LdapHelpers_c246_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemWString -- 10" , L"}", L"PUBLIC_TMF:")
+#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c245
+    #define WPP_ANNOTATE_LdapHelpers_c245 WPP_ANNOTATE_LdapHelpers_c245_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemWString -- 10" , L"}", L"PUBLIC_TMF:")
 
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
 #else
-    #define WPP_ANNOTATE_LdapHelpers_c246 WPP_ANNOTATE_LdapHelpers_c246_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c246", L"{", L"ptAttrName, ItemWString -- 10" , L"}")
+    #define WPP_ANNOTATE_LdapHelpers_c245 WPP_ANNOTATE_LdapHelpers_c245_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c245", L"{", L"ptAttrName, ItemWString -- 10" , L"}")
 #endif
 #if !defined(WPP_USER_MSG_GUID)
-# define WPP_ANNOTATE_LdapHelpers_c268_FINAL(P, File, Name, ...)    __annotation(L ## P, L"f5f72813-d7dd-3a8e-9ffd-c1ca84859306 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 16 \"%0Failed to extract numeric named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c267_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 16 \"%0Failed to extract numeric named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #else
-# define WPP_ANNOTATE_LdapHelpers_c268_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 16 \"%0Failed to extract numeric named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c267_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 16 \"%0Failed to extract numeric named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #endif
 
-#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c268
-    #define WPP_ANNOTATE_LdapHelpers_c268 WPP_ANNOTATE_LdapHelpers_c268_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemWString -- 10" , L"}", L"PUBLIC_TMF:")
+#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c267
+    #define WPP_ANNOTATE_LdapHelpers_c267 WPP_ANNOTATE_LdapHelpers_c267_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemWString -- 10" , L"}", L"PUBLIC_TMF:")
 
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
 #else
-    #define WPP_ANNOTATE_LdapHelpers_c268 WPP_ANNOTATE_LdapHelpers_c268_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c268", L"{", L"ptAttrName, ItemWString -- 10" , L"}")
+    #define WPP_ANNOTATE_LdapHelpers_c267 WPP_ANNOTATE_LdapHelpers_c267_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c267", L"{", L"ptAttrName, ItemWString -- 10" , L"}")
 #endif
 #if !defined(WPP_USER_MSG_GUID)
-# define WPP_ANNOTATE_LdapHelpers_c309_FINAL(P, File, Name, ...)    __annotation(L ## P, L"f5f72813-d7dd-3a8e-9ffd-c1ca84859306 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 17 \"%0Failed to extract boolean named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c308_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 17 \"%0Failed to extract boolean named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #else
-# define WPP_ANNOTATE_LdapHelpers_c309_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 17 \"%0Failed to extract boolean named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c308_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 17 \"%0Failed to extract boolean named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #endif
 
-#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c309
-    #define WPP_ANNOTATE_LdapHelpers_c309 WPP_ANNOTATE_LdapHelpers_c309_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemWString -- 10" , L"}", L"PUBLIC_TMF:")
+#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c308
+    #define WPP_ANNOTATE_LdapHelpers_c308 WPP_ANNOTATE_LdapHelpers_c308_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemWString -- 10" , L"}", L"PUBLIC_TMF:")
 
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
 #else
-    #define WPP_ANNOTATE_LdapHelpers_c309 WPP_ANNOTATE_LdapHelpers_c309_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c309", L"{", L"ptAttrName, ItemWString -- 10" , L"}")
+    #define WPP_ANNOTATE_LdapHelpers_c308 WPP_ANNOTATE_LdapHelpers_c308_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c308", L"{", L"ptAttrName, ItemWString -- 10" , L"}")
 #endif
 #if !defined(WPP_USER_MSG_GUID)
-# define WPP_ANNOTATE_LdapHelpers_c372_FINAL(P, File, Name, ...)    __annotation(L ## P, L"f5f72813-d7dd-3a8e-9ffd-c1ca84859306 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 18 \"%0Failed to duplicate attribute\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c371_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 18 \"%0Failed to duplicate attribute\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #else
-# define WPP_ANNOTATE_LdapHelpers_c372_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 18 \"%0Failed to duplicate attribute\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c371_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 18 \"%0Failed to duplicate attribute\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #endif
 
-#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c372
-    #define WPP_ANNOTATE_LdapHelpers_c372 WPP_ANNOTATE_LdapHelpers_c372_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"}", L"PUBLIC_TMF:")
+#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c371
+    #define WPP_ANNOTATE_LdapHelpers_c371 WPP_ANNOTATE_LdapHelpers_c371_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"}", L"PUBLIC_TMF:")
 
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
 #else
-    #define WPP_ANNOTATE_LdapHelpers_c372 WPP_ANNOTATE_LdapHelpers_c372_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c372", L"{", L"}")
+    #define WPP_ANNOTATE_LdapHelpers_c371 WPP_ANNOTATE_LdapHelpers_c371_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c371", L"{", L"}")
 #endif
 #if !defined(WPP_USER_MSG_GUID)
-# define WPP_ANNOTATE_LdapHelpers_c399_FINAL(P, File, Name, ...)    __annotation(L ## P, L"f5f72813-d7dd-3a8e-9ffd-c1ca84859306 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 19 \"%0Failed to duplicate named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c398_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 19 \"%0Failed to duplicate named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #else
-# define WPP_ANNOTATE_LdapHelpers_c399_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 19 \"%0Failed to duplicate named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c398_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 19 \"%0Failed to duplicate named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #endif
 
-#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c399
-    #define WPP_ANNOTATE_LdapHelpers_c399 WPP_ANNOTATE_LdapHelpers_c399_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemWString -- 10" , L"}", L"PUBLIC_TMF:")
+#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c398
+    #define WPP_ANNOTATE_LdapHelpers_c398 WPP_ANNOTATE_LdapHelpers_c398_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemWString -- 10" , L"}", L"PUBLIC_TMF:")
 
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
 #else
-    #define WPP_ANNOTATE_LdapHelpers_c399 WPP_ANNOTATE_LdapHelpers_c399_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c399", L"{", L"ptAttrName, ItemWString -- 10" , L"}")
+    #define WPP_ANNOTATE_LdapHelpers_c398 WPP_ANNOTATE_LdapHelpers_c398_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c398", L"{", L"ptAttrName, ItemWString -- 10" , L"}")
 #endif
 #if !defined(WPP_USER_MSG_GUID)
-# define WPP_ANNOTATE_LdapHelpers_c46_FINAL(P, File, Name, ...)    __annotation(L ## P, L"f5f72813-d7dd-3a8e-9ffd-c1ca84859306 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 10 \"%0Failed to locate named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_VERBOSE FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c45_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 10 \"%0Failed to locate named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_VERBOSE FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #else
-# define WPP_ANNOTATE_LdapHelpers_c46_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 10 \"%0Failed to locate named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_VERBOSE FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c45_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 10 \"%0Failed to locate named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_VERBOSE FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #endif
 
-#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c46
-    #define WPP_ANNOTATE_LdapHelpers_c46 WPP_ANNOTATE_LdapHelpers_c46_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemWString -- 10" , L"}", L"PUBLIC_TMF:")
+#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c45
+    #define WPP_ANNOTATE_LdapHelpers_c45 WPP_ANNOTATE_LdapHelpers_c45_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemWString -- 10" , L"}", L"PUBLIC_TMF:")
 
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
 #else
-    #define WPP_ANNOTATE_LdapHelpers_c46 WPP_ANNOTATE_LdapHelpers_c46_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c46", L"{", L"ptAttrName, ItemWString -- 10" , L"}")
+    #define WPP_ANNOTATE_LdapHelpers_c45 WPP_ANNOTATE_LdapHelpers_c45_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c45", L"{", L"ptAttrName, ItemWString -- 10" , L"}")
 #endif
 #if !defined(WPP_USER_MSG_GUID)
-# define WPP_ANNOTATE_LdapHelpers_c84_FINAL(P, File, Name, ...)    __annotation(L ## P, L"f5f72813-d7dd-3a8e-9ffd-c1ca84859306 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 11 \"%0Failed to extract string attribute, requesting <%10!u!> values, has <%11!u!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c83_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 11 \"%0Failed to extract string attribute, requesting <%10!u!> values, has <%11!u!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #else
-# define WPP_ANNOTATE_LdapHelpers_c84_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 11 \"%0Failed to extract string attribute, requesting <%10!u!> values, has <%11!u!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c83_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 11 \"%0Failed to extract string attribute, requesting <%10!u!> values, has <%11!u!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #endif
 
-#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c84
-    #define WPP_ANNOTATE_LdapHelpers_c84 WPP_ANNOTATE_LdapHelpers_c84_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemLong -- 10" , L"Arg, ItemLong -- 11" , L"}", L"PUBLIC_TMF:")
+#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c83
+    #define WPP_ANNOTATE_LdapHelpers_c83 WPP_ANNOTATE_LdapHelpers_c83_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemLong -- 10" , L"Arg, ItemLong -- 11" , L"}", L"PUBLIC_TMF:")
 
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
 #else
-    #define WPP_ANNOTATE_LdapHelpers_c84 WPP_ANNOTATE_LdapHelpers_c84_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c84", L"{", L"dwStrCount, ItemLong -- 10" , L"pStrAttr->dwValuesCount, ItemLong -- 11" , L"}")
+    #define WPP_ANNOTATE_LdapHelpers_c83 WPP_ANNOTATE_LdapHelpers_c83_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c83", L"{", L"dwStrCount, ItemLong -- 10" , L"pStrAttr->dwValuesCount, ItemLong -- 11" , L"}")
 #endif
 # define WPP_ANNOTATE(x) WPP_ANNOTATE_ ## x,
 
@@ -719,8 +719,8 @@ extern "C" {
 #if 1
 #if !defined(WPP_USER_MSG_GUID)
 
-#define WPP_LOCAL_TraceGuids WPP_f5f72813d7dd3a8e9ffdc1ca84859306_Traceguids
-extern const __declspec(selectany) GUID WPP_LOCAL_TraceGuids[] = { {0xf5f72813,0xd7dd,0x3a8e,{0x9f,0xfd,0xc1,0xca,0x84,0x85,0x93,0x06}}, };
+#define WPP_LOCAL_TraceGuids WPP_3f91c6c3cf6b311a327fcec1195a6a85_Traceguids
+extern const __declspec(selectany) GUID WPP_LOCAL_TraceGuids[] = { {0x3f91c6c3,0xcf6b,0x311a,{0x32,0x7f,0xce,0xc1,0x19,0x5a,0x6a,0x85}}, };
 
 #else
 
@@ -960,10 +960,10 @@ WPP_RECORDER_SF_S(
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c131(LEVEL, FLAGS, MSG,a10,a11) \
+#define WPP_CALL_LdapHelpers_c130(LEVEL, FLAGS, MSG,a10,a11) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10,a11)\
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c131) \
+    WPP_ANNOTATE(LdapHelpers_c130) \
     (( \
         WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
         WPP_DEBUG((MSG,a10,a11)), \
@@ -979,10 +979,10 @@ WPP_RECORDER_SF_S(
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c161(LEVEL, FLAGS, MSG,a10,a11) \
+#define WPP_CALL_LdapHelpers_c160(LEVEL, FLAGS, MSG,a10,a11) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10,a11)\
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c161) \
+    WPP_ANNOTATE(LdapHelpers_c160) \
     (( \
         WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
         WPP_DEBUG((MSG,a10,a11)), \
@@ -998,10 +998,10 @@ WPP_RECORDER_SF_S(
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c196(LEVEL, FLAGS, MSG,a10) \
+#define WPP_CALL_LdapHelpers_c195(LEVEL, FLAGS, MSG,a10) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10)\
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c196) \
+    WPP_ANNOTATE(LdapHelpers_c195) \
     (( \
         WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
         WPP_DEBUG((MSG,a10)), \
@@ -1017,10 +1017,10 @@ WPP_RECORDER_SF_S(
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c246(LEVEL, FLAGS, MSG,a10) \
+#define WPP_CALL_LdapHelpers_c245(LEVEL, FLAGS, MSG,a10) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10)\
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c246) \
+    WPP_ANNOTATE(LdapHelpers_c245) \
     (( \
         WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
         WPP_DEBUG((MSG,a10)), \
@@ -1036,10 +1036,10 @@ WPP_RECORDER_SF_S(
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c268(LEVEL, FLAGS, MSG,a10) \
+#define WPP_CALL_LdapHelpers_c267(LEVEL, FLAGS, MSG,a10) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10)\
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c268) \
+    WPP_ANNOTATE(LdapHelpers_c267) \
     (( \
         WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
         WPP_DEBUG((MSG,a10)), \
@@ -1055,10 +1055,10 @@ WPP_RECORDER_SF_S(
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c309(LEVEL, FLAGS, MSG,a10) \
+#define WPP_CALL_LdapHelpers_c308(LEVEL, FLAGS, MSG,a10) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10)\
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c309) \
+    WPP_ANNOTATE(LdapHelpers_c308) \
     (( \
         WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
         WPP_DEBUG((MSG,a10)), \
@@ -1074,10 +1074,10 @@ WPP_RECORDER_SF_S(
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c372(LEVEL, FLAGS, MSG) \
+#define WPP_CALL_LdapHelpers_c371(LEVEL, FLAGS, MSG) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG)\
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c372) \
+    WPP_ANNOTATE(LdapHelpers_c371) \
     (( \
         WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
         WPP_DEBUG((MSG)), \
@@ -1093,10 +1093,10 @@ WPP_RECORDER_SF_S(
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c399(LEVEL, FLAGS, MSG,a10) \
+#define WPP_CALL_LdapHelpers_c398(LEVEL, FLAGS, MSG,a10) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10)\
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c399) \
+    WPP_ANNOTATE(LdapHelpers_c398) \
     (( \
         WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
         WPP_DEBUG((MSG,a10)), \
@@ -1112,10 +1112,10 @@ WPP_RECORDER_SF_S(
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c46(LEVEL, FLAGS, MSG,a10) \
+#define WPP_CALL_LdapHelpers_c45(LEVEL, FLAGS, MSG,a10) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10)\
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c46) \
+    WPP_ANNOTATE(LdapHelpers_c45) \
     (( \
         WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
         WPP_DEBUG((MSG,a10)), \
@@ -1131,10 +1131,10 @@ WPP_RECORDER_SF_S(
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c84(LEVEL, FLAGS, MSG,a10,a11) \
+#define WPP_CALL_LdapHelpers_c83(LEVEL, FLAGS, MSG,a10,a11) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10,a11)\
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c84) \
+    WPP_ANNOTATE(LdapHelpers_c83) \
     (( \
         WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
         WPP_DEBUG((MSG,a10,a11)), \
@@ -1151,10 +1151,10 @@ WPP_RECORDER_SF_S(
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c131(LEVEL, FLAGS, MSG,a10,a11) \
+#define WPP_CALL_LdapHelpers_c130(LEVEL, FLAGS, MSG,a10,a11) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10,a11) \
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c131) \
+    WPP_ANNOTATE(LdapHelpers_c130) \
     (( \
         WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
          WPP_RECORDER_SF_DD(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
@@ -1169,10 +1169,10 @@ WPP_RECORDER_SF_S(
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c161(LEVEL, FLAGS, MSG,a10,a11) \
+#define WPP_CALL_LdapHelpers_c160(LEVEL, FLAGS, MSG,a10,a11) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10,a11) \
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c161) \
+    WPP_ANNOTATE(LdapHelpers_c160) \
     (( \
         WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
          WPP_RECORDER_SF_DD(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
@@ -1187,10 +1187,10 @@ WPP_RECORDER_SF_S(
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c196(LEVEL, FLAGS, MSG,a10) \
+#define WPP_CALL_LdapHelpers_c195(LEVEL, FLAGS, MSG,a10) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10) \
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c196) \
+    WPP_ANNOTATE(LdapHelpers_c195) \
     (( \
         WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
          WPP_RECORDER_SF_S(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
@@ -1205,10 +1205,10 @@ WPP_RECORDER_SF_S(
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c246(LEVEL, FLAGS, MSG,a10) \
+#define WPP_CALL_LdapHelpers_c245(LEVEL, FLAGS, MSG,a10) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10) \
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c246) \
+    WPP_ANNOTATE(LdapHelpers_c245) \
     (( \
         WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
          WPP_RECORDER_SF_S(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
@@ -1223,10 +1223,10 @@ WPP_RECORDER_SF_S(
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c268(LEVEL, FLAGS, MSG,a10) \
+#define WPP_CALL_LdapHelpers_c267(LEVEL, FLAGS, MSG,a10) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10) \
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c268) \
+    WPP_ANNOTATE(LdapHelpers_c267) \
     (( \
         WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
          WPP_RECORDER_SF_S(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
@@ -1241,10 +1241,10 @@ WPP_RECORDER_SF_S(
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c309(LEVEL, FLAGS, MSG,a10) \
+#define WPP_CALL_LdapHelpers_c308(LEVEL, FLAGS, MSG,a10) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10) \
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c309) \
+    WPP_ANNOTATE(LdapHelpers_c308) \
     (( \
         WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
          WPP_RECORDER_SF_S(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
@@ -1259,10 +1259,10 @@ WPP_RECORDER_SF_S(
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c372(LEVEL, FLAGS, MSG) \
+#define WPP_CALL_LdapHelpers_c371(LEVEL, FLAGS, MSG) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG) \
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c372) \
+    WPP_ANNOTATE(LdapHelpers_c371) \
     (( \
         WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
          WPP_RECORDER_SF_(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
@@ -1277,10 +1277,10 @@ WPP_RECORDER_SF_S(
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c399(LEVEL, FLAGS, MSG,a10) \
+#define WPP_CALL_LdapHelpers_c398(LEVEL, FLAGS, MSG,a10) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10) \
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c399) \
+    WPP_ANNOTATE(LdapHelpers_c398) \
     (( \
         WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
          WPP_RECORDER_SF_S(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
@@ -1295,10 +1295,10 @@ WPP_RECORDER_SF_S(
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c46(LEVEL, FLAGS, MSG,a10) \
+#define WPP_CALL_LdapHelpers_c45(LEVEL, FLAGS, MSG,a10) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10) \
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c46) \
+    WPP_ANNOTATE(LdapHelpers_c45) \
     (( \
         WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
          WPP_RECORDER_SF_S(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
@@ -1313,10 +1313,10 @@ WPP_RECORDER_SF_S(
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c84(LEVEL, FLAGS, MSG,a10,a11) \
+#define WPP_CALL_LdapHelpers_c83(LEVEL, FLAGS, MSG,a10,a11) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10,a11) \
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c84) \
+    WPP_ANNOTATE(LdapHelpers_c83) \
     (( \
         WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
          WPP_RECORDER_SF_DD(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
@@ -1375,34 +1375,34 @@ extern "C" {
 #if !defined(WPP_NO_ANNOTATIONS)
 
 #ifdef WPP_PUBLIC_
-#define WPP_PUBLIC_ANNOT_LdapHelpers_c131
+#define WPP_PUBLIC_ANNOT_LdapHelpers_c130
 #endif
 #ifdef WPP_PUBLIC_
-#define WPP_PUBLIC_ANNOT_LdapHelpers_c161
+#define WPP_PUBLIC_ANNOT_LdapHelpers_c160
 #endif
 #ifdef WPP_PUBLIC_
-#define WPP_PUBLIC_ANNOT_LdapHelpers_c196
+#define WPP_PUBLIC_ANNOT_LdapHelpers_c195
 #endif
 #ifdef WPP_PUBLIC_
-#define WPP_PUBLIC_ANNOT_LdapHelpers_c246
+#define WPP_PUBLIC_ANNOT_LdapHelpers_c245
 #endif
 #ifdef WPP_PUBLIC_
-#define WPP_PUBLIC_ANNOT_LdapHelpers_c268
+#define WPP_PUBLIC_ANNOT_LdapHelpers_c267
 #endif
 #ifdef WPP_PUBLIC_
-#define WPP_PUBLIC_ANNOT_LdapHelpers_c309
+#define WPP_PUBLIC_ANNOT_LdapHelpers_c308
 #endif
 #ifdef WPP_PUBLIC_
-#define WPP_PUBLIC_ANNOT_LdapHelpers_c372
+#define WPP_PUBLIC_ANNOT_LdapHelpers_c371
 #endif
 #ifdef WPP_PUBLIC_
-#define WPP_PUBLIC_ANNOT_LdapHelpers_c399
+#define WPP_PUBLIC_ANNOT_LdapHelpers_c398
 #endif
 #ifdef WPP_PUBLIC_
-#define WPP_PUBLIC_ANNOT_LdapHelpers_c46
+#define WPP_PUBLIC_ANNOT_LdapHelpers_c45
 #endif
 #ifdef WPP_PUBLIC_
-#define WPP_PUBLIC_ANNOT_LdapHelpers_c84
+#define WPP_PUBLIC_ANNOT_LdapHelpers_c83
 #endif
 #ifdef WPP_EMIT_FUNC_NAME
 #define WPP_FUNC_NAME L" FUNC=" _WPPW(__FUNCTION__)
@@ -1411,154 +1411,154 @@ extern "C" {
 #endif
 
 #if !defined(WPP_USER_MSG_GUID)
-# define WPP_ANNOTATE_LdapHelpers_c131_FINAL(P, File, Name, ...)    __annotation(L ## P, L"f5f72813-d7dd-3a8e-9ffd-c1ca84859306 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 12 \"%0Failed to extract numeric attribute, requesting <%10!u!> values, has <%11!u!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c130_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 12 \"%0Failed to extract numeric attribute, requesting <%10!u!> values, has <%11!u!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #else
-# define WPP_ANNOTATE_LdapHelpers_c131_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 12 \"%0Failed to extract numeric attribute, requesting <%10!u!> values, has <%11!u!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c130_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 12 \"%0Failed to extract numeric attribute, requesting <%10!u!> values, has <%11!u!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #endif
 
-#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c131
-    #define WPP_ANNOTATE_LdapHelpers_c131 WPP_ANNOTATE_LdapHelpers_c131_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemLong -- 10" , L"Arg, ItemLong -- 11" , L"}", L"PUBLIC_TMF:")
+#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c130
+    #define WPP_ANNOTATE_LdapHelpers_c130 WPP_ANNOTATE_LdapHelpers_c130_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemLong -- 10" , L"Arg, ItemLong -- 11" , L"}", L"PUBLIC_TMF:")
 
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
 #else
-    #define WPP_ANNOTATE_LdapHelpers_c131 WPP_ANNOTATE_LdapHelpers_c131_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c131", L"{", L"dwNumCount, ItemLong -- 10" , L"pNumAttr->dwValuesCount, ItemLong -- 11" , L"}")
+    #define WPP_ANNOTATE_LdapHelpers_c130 WPP_ANNOTATE_LdapHelpers_c130_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c130", L"{", L"dwNumCount, ItemLong -- 10" , L"pNumAttr->dwValuesCount, ItemLong -- 11" , L"}")
 #endif
 #if !defined(WPP_USER_MSG_GUID)
-# define WPP_ANNOTATE_LdapHelpers_c161_FINAL(P, File, Name, ...)    __annotation(L ## P, L"f5f72813-d7dd-3a8e-9ffd-c1ca84859306 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 13 \"%0Failed to extract boolean attribute, requesting <%10!u!> values, has <%11!u!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c160_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 13 \"%0Failed to extract boolean attribute, requesting <%10!u!> values, has <%11!u!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #else
-# define WPP_ANNOTATE_LdapHelpers_c161_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 13 \"%0Failed to extract boolean attribute, requesting <%10!u!> values, has <%11!u!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c160_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 13 \"%0Failed to extract boolean attribute, requesting <%10!u!> values, has <%11!u!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #endif
 
-#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c161
-    #define WPP_ANNOTATE_LdapHelpers_c161 WPP_ANNOTATE_LdapHelpers_c161_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemLong -- 10" , L"Arg, ItemLong -- 11" , L"}", L"PUBLIC_TMF:")
+#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c160
+    #define WPP_ANNOTATE_LdapHelpers_c160 WPP_ANNOTATE_LdapHelpers_c160_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemLong -- 10" , L"Arg, ItemLong -- 11" , L"}", L"PUBLIC_TMF:")
 
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
 #else
-    #define WPP_ANNOTATE_LdapHelpers_c161 WPP_ANNOTATE_LdapHelpers_c161_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c161", L"{", L"dwBoolCount, ItemLong -- 10" , L"pBoolAttr->dwValuesCount, ItemLong -- 11" , L"}")
+    #define WPP_ANNOTATE_LdapHelpers_c160 WPP_ANNOTATE_LdapHelpers_c160_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c160", L"{", L"dwBoolCount, ItemLong -- 10" , L"pBoolAttr->dwValuesCount, ItemLong -- 11" , L"}")
 #endif
 #if !defined(WPP_USER_MSG_GUID)
-# define WPP_ANNOTATE_LdapHelpers_c196_FINAL(P, File, Name, ...)    __annotation(L ## P, L"f5f72813-d7dd-3a8e-9ffd-c1ca84859306 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 14 \"%0Failed to extract string named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c195_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 14 \"%0Failed to extract string named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #else
-# define WPP_ANNOTATE_LdapHelpers_c196_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 14 \"%0Failed to extract string named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c195_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 14 \"%0Failed to extract string named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #endif
 
-#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c196
-    #define WPP_ANNOTATE_LdapHelpers_c196 WPP_ANNOTATE_LdapHelpers_c196_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemWString -- 10" , L"}", L"PUBLIC_TMF:")
+#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c195
+    #define WPP_ANNOTATE_LdapHelpers_c195 WPP_ANNOTATE_LdapHelpers_c195_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemWString -- 10" , L"}", L"PUBLIC_TMF:")
 
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
 #else
-    #define WPP_ANNOTATE_LdapHelpers_c196 WPP_ANNOTATE_LdapHelpers_c196_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c196", L"{", L"ptAttrName, ItemWString -- 10" , L"}")
+    #define WPP_ANNOTATE_LdapHelpers_c195 WPP_ANNOTATE_LdapHelpers_c195_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c195", L"{", L"ptAttrName, ItemWString -- 10" , L"}")
 #endif
 #if !defined(WPP_USER_MSG_GUID)
-# define WPP_ANNOTATE_LdapHelpers_c246_FINAL(P, File, Name, ...)    __annotation(L ## P, L"f5f72813-d7dd-3a8e-9ffd-c1ca84859306 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 15 \"%0Failed to alloc and extract string named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c245_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 15 \"%0Failed to alloc and extract string named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #else
-# define WPP_ANNOTATE_LdapHelpers_c246_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 15 \"%0Failed to alloc and extract string named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c245_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 15 \"%0Failed to alloc and extract string named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #endif
 
-#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c246
-    #define WPP_ANNOTATE_LdapHelpers_c246 WPP_ANNOTATE_LdapHelpers_c246_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemWString -- 10" , L"}", L"PUBLIC_TMF:")
+#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c245
+    #define WPP_ANNOTATE_LdapHelpers_c245 WPP_ANNOTATE_LdapHelpers_c245_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemWString -- 10" , L"}", L"PUBLIC_TMF:")
 
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
 #else
-    #define WPP_ANNOTATE_LdapHelpers_c246 WPP_ANNOTATE_LdapHelpers_c246_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c246", L"{", L"ptAttrName, ItemWString -- 10" , L"}")
+    #define WPP_ANNOTATE_LdapHelpers_c245 WPP_ANNOTATE_LdapHelpers_c245_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c245", L"{", L"ptAttrName, ItemWString -- 10" , L"}")
 #endif
 #if !defined(WPP_USER_MSG_GUID)
-# define WPP_ANNOTATE_LdapHelpers_c268_FINAL(P, File, Name, ...)    __annotation(L ## P, L"f5f72813-d7dd-3a8e-9ffd-c1ca84859306 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 16 \"%0Failed to extract numeric named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c267_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 16 \"%0Failed to extract numeric named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #else
-# define WPP_ANNOTATE_LdapHelpers_c268_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 16 \"%0Failed to extract numeric named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c267_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 16 \"%0Failed to extract numeric named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #endif
 
-#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c268
-    #define WPP_ANNOTATE_LdapHelpers_c268 WPP_ANNOTATE_LdapHelpers_c268_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemWString -- 10" , L"}", L"PUBLIC_TMF:")
+#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c267
+    #define WPP_ANNOTATE_LdapHelpers_c267 WPP_ANNOTATE_LdapHelpers_c267_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemWString -- 10" , L"}", L"PUBLIC_TMF:")
 
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
 #else
-    #define WPP_ANNOTATE_LdapHelpers_c268 WPP_ANNOTATE_LdapHelpers_c268_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c268", L"{", L"ptAttrName, ItemWString -- 10" , L"}")
+    #define WPP_ANNOTATE_LdapHelpers_c267 WPP_ANNOTATE_LdapHelpers_c267_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c267", L"{", L"ptAttrName, ItemWString -- 10" , L"}")
 #endif
 #if !defined(WPP_USER_MSG_GUID)
-# define WPP_ANNOTATE_LdapHelpers_c309_FINAL(P, File, Name, ...)    __annotation(L ## P, L"f5f72813-d7dd-3a8e-9ffd-c1ca84859306 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 17 \"%0Failed to extract boolean named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c308_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 17 \"%0Failed to extract boolean named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #else
-# define WPP_ANNOTATE_LdapHelpers_c309_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 17 \"%0Failed to extract boolean named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c308_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 17 \"%0Failed to extract boolean named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #endif
 
-#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c309
-    #define WPP_ANNOTATE_LdapHelpers_c309 WPP_ANNOTATE_LdapHelpers_c309_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemWString -- 10" , L"}", L"PUBLIC_TMF:")
+#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c308
+    #define WPP_ANNOTATE_LdapHelpers_c308 WPP_ANNOTATE_LdapHelpers_c308_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemWString -- 10" , L"}", L"PUBLIC_TMF:")
 
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
 #else
-    #define WPP_ANNOTATE_LdapHelpers_c309 WPP_ANNOTATE_LdapHelpers_c309_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c309", L"{", L"ptAttrName, ItemWString -- 10" , L"}")
+    #define WPP_ANNOTATE_LdapHelpers_c308 WPP_ANNOTATE_LdapHelpers_c308_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c308", L"{", L"ptAttrName, ItemWString -- 10" , L"}")
 #endif
 #if !defined(WPP_USER_MSG_GUID)
-# define WPP_ANNOTATE_LdapHelpers_c372_FINAL(P, File, Name, ...)    __annotation(L ## P, L"f5f72813-d7dd-3a8e-9ffd-c1ca84859306 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 18 \"%0Failed to duplicate attribute\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c371_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 18 \"%0Failed to duplicate attribute\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #else
-# define WPP_ANNOTATE_LdapHelpers_c372_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 18 \"%0Failed to duplicate attribute\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c371_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 18 \"%0Failed to duplicate attribute\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #endif
 
-#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c372
-    #define WPP_ANNOTATE_LdapHelpers_c372 WPP_ANNOTATE_LdapHelpers_c372_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"}", L"PUBLIC_TMF:")
+#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c371
+    #define WPP_ANNOTATE_LdapHelpers_c371 WPP_ANNOTATE_LdapHelpers_c371_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"}", L"PUBLIC_TMF:")
 
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
 #else
-    #define WPP_ANNOTATE_LdapHelpers_c372 WPP_ANNOTATE_LdapHelpers_c372_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c372", L"{", L"}")
+    #define WPP_ANNOTATE_LdapHelpers_c371 WPP_ANNOTATE_LdapHelpers_c371_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c371", L"{", L"}")
 #endif
 #if !defined(WPP_USER_MSG_GUID)
-# define WPP_ANNOTATE_LdapHelpers_c399_FINAL(P, File, Name, ...)    __annotation(L ## P, L"f5f72813-d7dd-3a8e-9ffd-c1ca84859306 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 19 \"%0Failed to duplicate named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c398_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 19 \"%0Failed to duplicate named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #else
-# define WPP_ANNOTATE_LdapHelpers_c399_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 19 \"%0Failed to duplicate named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c398_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 19 \"%0Failed to duplicate named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #endif
 
-#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c399
-    #define WPP_ANNOTATE_LdapHelpers_c399 WPP_ANNOTATE_LdapHelpers_c399_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemWString -- 10" , L"}", L"PUBLIC_TMF:")
+#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c398
+    #define WPP_ANNOTATE_LdapHelpers_c398 WPP_ANNOTATE_LdapHelpers_c398_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemWString -- 10" , L"}", L"PUBLIC_TMF:")
 
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
 #else
-    #define WPP_ANNOTATE_LdapHelpers_c399 WPP_ANNOTATE_LdapHelpers_c399_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c399", L"{", L"ptAttrName, ItemWString -- 10" , L"}")
+    #define WPP_ANNOTATE_LdapHelpers_c398 WPP_ANNOTATE_LdapHelpers_c398_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c398", L"{", L"ptAttrName, ItemWString -- 10" , L"}")
 #endif
 #if !defined(WPP_USER_MSG_GUID)
-# define WPP_ANNOTATE_LdapHelpers_c46_FINAL(P, File, Name, ...)    __annotation(L ## P, L"f5f72813-d7dd-3a8e-9ffd-c1ca84859306 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 10 \"%0Failed to locate named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_VERBOSE FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c45_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 10 \"%0Failed to locate named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_VERBOSE FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #else
-# define WPP_ANNOTATE_LdapHelpers_c46_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 10 \"%0Failed to locate named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_VERBOSE FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c45_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 10 \"%0Failed to locate named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_VERBOSE FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #endif
 
-#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c46
-    #define WPP_ANNOTATE_LdapHelpers_c46 WPP_ANNOTATE_LdapHelpers_c46_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemWString -- 10" , L"}", L"PUBLIC_TMF:")
+#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c45
+    #define WPP_ANNOTATE_LdapHelpers_c45 WPP_ANNOTATE_LdapHelpers_c45_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemWString -- 10" , L"}", L"PUBLIC_TMF:")
 
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
 #else
-    #define WPP_ANNOTATE_LdapHelpers_c46 WPP_ANNOTATE_LdapHelpers_c46_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c46", L"{", L"ptAttrName, ItemWString -- 10" , L"}")
+    #define WPP_ANNOTATE_LdapHelpers_c45 WPP_ANNOTATE_LdapHelpers_c45_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c45", L"{", L"ptAttrName, ItemWString -- 10" , L"}")
 #endif
 #if !defined(WPP_USER_MSG_GUID)
-# define WPP_ANNOTATE_LdapHelpers_c84_FINAL(P, File, Name, ...)    __annotation(L ## P, L"f5f72813-d7dd-3a8e-9ffd-c1ca84859306 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 11 \"%0Failed to extract string attribute, requesting <%10!u!> values, has <%11!u!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c83_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 11 \"%0Failed to extract string attribute, requesting <%10!u!> values, has <%11!u!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #else
-# define WPP_ANNOTATE_LdapHelpers_c84_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 11 \"%0Failed to extract string attribute, requesting <%10!u!> values, has <%11!u!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c83_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 11 \"%0Failed to extract string attribute, requesting <%10!u!> values, has <%11!u!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
 #endif
 
-#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c84
-    #define WPP_ANNOTATE_LdapHelpers_c84 WPP_ANNOTATE_LdapHelpers_c84_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemLong -- 10" , L"Arg, ItemLong -- 11" , L"}", L"PUBLIC_TMF:")
+#ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c83
+    #define WPP_ANNOTATE_LdapHelpers_c83 WPP_ANNOTATE_LdapHelpers_c83_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemLong -- 10" , L"Arg, ItemLong -- 11" , L"}", L"PUBLIC_TMF:")
 
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
 #else
-    #define WPP_ANNOTATE_LdapHelpers_c84 WPP_ANNOTATE_LdapHelpers_c84_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c84", L"{", L"dwStrCount, ItemLong -- 10" , L"pStrAttr->dwValuesCount, ItemLong -- 11" , L"}")
+    #define WPP_ANNOTATE_LdapHelpers_c83 WPP_ANNOTATE_LdapHelpers_c83_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c83", L"{", L"dwStrCount, ItemLong -- 10" , L"pStrAttr->dwValuesCount, ItemLong -- 11" , L"}")
 #endif
 # define WPP_ANNOTATE(x) WPP_ANNOTATE_ ## x,
 
@@ -1570,8 +1570,8 @@ extern "C" {
 #if 1
 #if !defined(WPP_USER_MSG_GUID)
 
-#define WPP_LOCAL_TraceGuids WPP_f5f72813d7dd3a8e9ffdc1ca84859306_Traceguids
-extern const __declspec(selectany) GUID WPP_LOCAL_TraceGuids[] = { {0xf5f72813,0xd7dd,0x3a8e,{0x9f,0xfd,0xc1,0xca,0x84,0x85,0x93,0x06}}, };
+#define WPP_LOCAL_TraceGuids WPP_3f91c6c3cf6b311a327fcec1195a6a85_Traceguids
+extern const __declspec(selectany) GUID WPP_LOCAL_TraceGuids[] = { {0x3f91c6c3,0xcf6b,0x311a,{0x32,0x7f,0xce,0xc1,0x19,0x5a,0x6a,0x85}}, };
 
 #else
 
@@ -1712,10 +1712,10 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c131(LEVEL, FLAGS, MSG,a10,a11) \
+#define WPP_CALL_LdapHelpers_c130(LEVEL, FLAGS, MSG,a10,a11) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10,a11)\
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c131) \
+    WPP_ANNOTATE(LdapHelpers_c130) \
     (( \
         WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
         WPP_DEBUG((MSG,a10,a11)), \
@@ -1731,10 +1731,10 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c161(LEVEL, FLAGS, MSG,a10,a11) \
+#define WPP_CALL_LdapHelpers_c160(LEVEL, FLAGS, MSG,a10,a11) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10,a11)\
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c161) \
+    WPP_ANNOTATE(LdapHelpers_c160) \
     (( \
         WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
         WPP_DEBUG((MSG,a10,a11)), \
@@ -1750,10 +1750,10 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c196(LEVEL, FLAGS, MSG,a10) \
+#define WPP_CALL_LdapHelpers_c195(LEVEL, FLAGS, MSG,a10) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10)\
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c196) \
+    WPP_ANNOTATE(LdapHelpers_c195) \
     (( \
         WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
         WPP_DEBUG((MSG,a10)), \
@@ -1769,10 +1769,10 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c246(LEVEL, FLAGS, MSG,a10) \
+#define WPP_CALL_LdapHelpers_c245(LEVEL, FLAGS, MSG,a10) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10)\
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c246) \
+    WPP_ANNOTATE(LdapHelpers_c245) \
     (( \
         WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
         WPP_DEBUG((MSG,a10)), \
@@ -1788,10 +1788,10 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c268(LEVEL, FLAGS, MSG,a10) \
+#define WPP_CALL_LdapHelpers_c267(LEVEL, FLAGS, MSG,a10) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10)\
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c268) \
+    WPP_ANNOTATE(LdapHelpers_c267) \
     (( \
         WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
         WPP_DEBUG((MSG,a10)), \
@@ -1807,10 +1807,10 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c309(LEVEL, FLAGS, MSG,a10) \
+#define WPP_CALL_LdapHelpers_c308(LEVEL, FLAGS, MSG,a10) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10)\
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c309) \
+    WPP_ANNOTATE(LdapHelpers_c308) \
     (( \
         WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
         WPP_DEBUG((MSG,a10)), \
@@ -1826,10 +1826,10 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c372(LEVEL, FLAGS, MSG) \
+#define WPP_CALL_LdapHelpers_c371(LEVEL, FLAGS, MSG) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG)\
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c372) \
+    WPP_ANNOTATE(LdapHelpers_c371) \
     (( \
         WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
         WPP_DEBUG((MSG)), \
@@ -1845,10 +1845,10 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c399(LEVEL, FLAGS, MSG,a10) \
+#define WPP_CALL_LdapHelpers_c398(LEVEL, FLAGS, MSG,a10) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10)\
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c399) \
+    WPP_ANNOTATE(LdapHelpers_c398) \
     (( \
         WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
         WPP_DEBUG((MSG,a10)), \
@@ -1864,10 +1864,10 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c46(LEVEL, FLAGS, MSG,a10) \
+#define WPP_CALL_LdapHelpers_c45(LEVEL, FLAGS, MSG,a10) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10)\
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c46) \
+    WPP_ANNOTATE(LdapHelpers_c45) \
     (( \
         WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
         WPP_DEBUG((MSG,a10)), \
@@ -1883,10 +1883,10 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c84(LEVEL, FLAGS, MSG,a10,a11) \
+#define WPP_CALL_LdapHelpers_c83(LEVEL, FLAGS, MSG,a10,a11) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10,a11)\
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c84) \
+    WPP_ANNOTATE(LdapHelpers_c83) \
     (( \
         WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
         WPP_DEBUG((MSG,a10,a11)), \
@@ -1903,10 +1903,10 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c131(LEVEL, FLAGS, MSG,a10,a11) \
+#define WPP_CALL_LdapHelpers_c130(LEVEL, FLAGS, MSG,a10,a11) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10,a11) \
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c131) \
+    WPP_ANNOTATE(LdapHelpers_c130) \
     (( \
          WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
          WPP_SF_DD(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) \
@@ -1921,10 +1921,10 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c161(LEVEL, FLAGS, MSG,a10,a11) \
+#define WPP_CALL_LdapHelpers_c160(LEVEL, FLAGS, MSG,a10,a11) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10,a11) \
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c161) \
+    WPP_ANNOTATE(LdapHelpers_c160) \
     (( \
          WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
          WPP_SF_DD(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) \
@@ -1939,10 +1939,10 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c196(LEVEL, FLAGS, MSG,a10) \
+#define WPP_CALL_LdapHelpers_c195(LEVEL, FLAGS, MSG,a10) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10) \
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c196) \
+    WPP_ANNOTATE(LdapHelpers_c195) \
     (( \
          WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
          WPP_SF_S(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) \
@@ -1957,10 +1957,10 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c246(LEVEL, FLAGS, MSG,a10) \
+#define WPP_CALL_LdapHelpers_c245(LEVEL, FLAGS, MSG,a10) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10) \
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c246) \
+    WPP_ANNOTATE(LdapHelpers_c245) \
     (( \
          WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
          WPP_SF_S(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) \
@@ -1975,10 +1975,10 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c268(LEVEL, FLAGS, MSG,a10) \
+#define WPP_CALL_LdapHelpers_c267(LEVEL, FLAGS, MSG,a10) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10) \
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c268) \
+    WPP_ANNOTATE(LdapHelpers_c267) \
     (( \
          WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
          WPP_SF_S(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) \
@@ -1993,10 +1993,10 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c309(LEVEL, FLAGS, MSG,a10) \
+#define WPP_CALL_LdapHelpers_c308(LEVEL, FLAGS, MSG,a10) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10) \
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c309) \
+    WPP_ANNOTATE(LdapHelpers_c308) \
     (( \
          WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
          WPP_SF_S(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) \
@@ -2011,10 +2011,10 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c372(LEVEL, FLAGS, MSG) \
+#define WPP_CALL_LdapHelpers_c371(LEVEL, FLAGS, MSG) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG) \
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c372) \
+    WPP_ANNOTATE(LdapHelpers_c371) \
     (( \
          WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
          WPP_SF_(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) \
@@ -2029,10 +2029,10 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c399(LEVEL, FLAGS, MSG,a10) \
+#define WPP_CALL_LdapHelpers_c398(LEVEL, FLAGS, MSG,a10) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10) \
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c399) \
+    WPP_ANNOTATE(LdapHelpers_c398) \
     (( \
          WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
          WPP_SF_S(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) \
@@ -2047,10 +2047,10 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c46(LEVEL, FLAGS, MSG,a10) \
+#define WPP_CALL_LdapHelpers_c45(LEVEL, FLAGS, MSG,a10) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10) \
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c46) \
+    WPP_ANNOTATE(LdapHelpers_c45) \
     (( \
          WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
          WPP_SF_S(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) \
@@ -2065,10 +2065,10 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #ifndef WPP_LEVEL_FLAGS_PRE
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
-#define WPP_CALL_LdapHelpers_c84(LEVEL, FLAGS, MSG,a10,a11) \
+#define WPP_CALL_LdapHelpers_c83(LEVEL, FLAGS, MSG,a10,a11) \
     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10,a11) \
     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c84) \
+    WPP_ANNOTATE(LdapHelpers_c83) \
     (( \
          WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
          WPP_SF_DD(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) \
@@ -2092,7 +2092,7 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 
 #endif
 
-// 7c02d0d5b977404da0daeeeb0d3775c7 Generated file. Do not edit.
+// d37b267a89fbf18ded4a29caeb8ddfc0 Generated file. Do not edit.
 // File created by WPP compiler version 10.0.16299-Fri Sep 29 02:03:49 2017
 // from template provider.tpl
 
