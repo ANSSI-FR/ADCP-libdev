@@ -7,7 +7,6 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 \******************************************************************************/
 
 /* --- INCLUDES ------------------------------------------------------------- */
-#define LIB_ERROR_VAL gs_dwCacheLastError
 #include "CacheInternals.h"
 
 #ifdef _WIN32
@@ -202,7 +201,7 @@ BOOL CacheEntryRemove(
 
 DWORD CacheGetLastError(
     ) {
-    return LIB_ERROR_VAL;
+    return gs_dwCacheLastError;
 }
 
 RTL_GENERIC_COMPARE_RESULTS CacheCompareNums(

@@ -13,6 +13,10 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 #include "JsonLib.h"
 
 /* --- DEFINES -------------------------------------------------------------- */
+#define API_RETURN_SUCCESS()                return gs_dwJsonLastError = (NO_ERROR), (SUCCESS_VALUE);
+#define API_RETURN_ERROR(dwErrorCode)       return gs_dwJsonLastError = (dwErrorCode), (ERROR_VALUE);
+#define SAME_ERROR()                        (gs_dwJsonLastError)
+
 //
 // Misc
 //

@@ -6,11 +6,9 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 XXX XXX XXX XXX XXX XXX XXX XXX XXX
 \******************************************************************************/
 
-#define LIB_ERROR_VAL NOT_USED_IN_THIS_LIB
-
 /* --- INCLUDES ------------------------------------------------------------- */
 #ifdef _WIN32
-#include "..\..\LibUtils\src\UtilsLib.h"
+#include "UtilsLib.h"
 #else
 #include "CsvLinukse.h"
 #endif

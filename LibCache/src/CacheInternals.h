@@ -13,6 +13,10 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 #include "CacheLib.h"
 
 /* --- DEFINES -------------------------------------------------------------- */
+#define API_RETURN_SUCCESS()                return gs_dwCacheLastError = (NO_ERROR), (SUCCESS_VALUE);
+#define API_RETURN_ERROR(dwErrorCode)       return gs_dwCacheLastError = (dwErrorCode), (ERROR_VALUE);
+#define SAME_ERROR()                        (gs_dwCacheLastError)
+
 #define NTDLL_MODULE_NAME                   _T("ntdll.dll")
 #define AVL_FOREACH(table, ptype, element)  ptype element = NULL;                                           \
                                             for (element = (ptype)gs_pfnRtlEnumerateGenericTableAvl(table, TRUE); \

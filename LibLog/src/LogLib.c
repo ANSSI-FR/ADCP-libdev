@@ -6,11 +6,8 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 XXX XXX XXX XXX XXX XXX XXX XXX XXX
 \******************************************************************************/
 
-/* --- DEFINES -------------------------------------------------------------- */
-#define LIB_ERROR_VAL gs_dwLogLastError
-
 /* --- INCLUDES ------------------------------------------------------------- */
-#include "..\..\LibUtils\src\UtilsLib.h"
+#include "UtilsLib.h"
 #include "LogInternals.h"
 #include "LogLib.h"
 
@@ -178,7 +175,7 @@ BOOL LogSetLogLevel(
 
 DWORD LogGetLastError(
     ) {
-    return LIB_ERROR_VAL;
+    return gs_dwLogLastError;
 }
 
 void Log(

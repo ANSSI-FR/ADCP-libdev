@@ -19,6 +19,10 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 #include "LdapLib.h"
 
 /* --- DEFINES -------------------------------------------------------------- */
+#define API_RETURN_SUCCESS()                return gs_dwLdapLastError = (NO_ERROR), (SUCCESS_VALUE);
+#define API_RETURN_ERROR(dwErrorCode)       return gs_dwLdapLastError = (dwErrorCode), (ERROR_VALUE);
+#define SAME_ERROR()                        (gs_dwLdapLastError)
+
 #define LDAP_INIT_OPTION(pOpt, iOpt, pvVal) MULTI_LINE_MACRO_BEGIN          \
                                                 (pOpt)->iOption = iOpt;     \
                                                 (pOpt)->pvValue = pvVal;    \

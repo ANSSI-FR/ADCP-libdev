@@ -14,10 +14,10 @@
     <ClInclude Include="src\JsonInternals.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\JsonLib.h">
+    <ClInclude Include="src\JsonWpp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\JsonWpp.h">
+    <ClInclude Include="..\Include\JsonLib.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

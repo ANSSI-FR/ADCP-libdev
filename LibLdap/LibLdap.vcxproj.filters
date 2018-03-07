@@ -18,13 +18,13 @@
     <ClInclude Include="src\LdapWpp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\LdapLib.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\LdapHelpers.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\LdapInternals.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\LdapHelpers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\LdapLib.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -7,7 +7,6 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 \******************************************************************************/
 
 /* --- INCLUDES ------------------------------------------------------------- */
-#define LIB_ERROR_VAL gs_dwLibLastError
 #include "UtilsInternals.h"
 #include "UtilsLib.h"
 
@@ -288,7 +287,7 @@ BOOL StrNextToken(
 
 DWORD UtilsGetLastError(
     ) {
-    return LIB_ERROR_VAL;
+    return gs_dwLibLastError;
 }
 
 BOOL SetPrivilege(
