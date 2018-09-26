@@ -1,4 +1,4 @@
-// d37b267a89fbf18ded4a29caeb8ddfc0 Generated file. Do not edit.
+// 8db6b437b17744c165688ff10c3f8b9f Generated file. Do not edit.
 // File created by WPP compiler version 10.0.16299-Fri Sep 29 02:03:49 2017
 // from template um-default.tpl
 
@@ -553,21 +553,15 @@ extern "C" {
 #ifdef WPP_PUBLIC_
 #define WPP_PUBLIC_ANNOT_LdapHelpers_c83
 #endif
-#ifdef WPP_EMIT_FUNC_NAME
-#define WPP_FUNC_NAME L" FUNC=" _WPPW(__FUNCTION__)
-#else
-#define WPP_FUNC_NAME
-#endif
-
 #if !defined(WPP_USER_MSG_GUID)
-# define WPP_ANNOTATE_LdapHelpers_c130_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 12 \"%0Failed to extract numeric attribute, requesting <%10!u!> values, has <%11!u!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c130_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 12 \"%0Failed to extract numeric attribute, requesting <%10!u!> values, has <%11!u!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST", __VA_ARGS__)
 #else
-# define WPP_ANNOTATE_LdapHelpers_c130_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 12 \"%0Failed to extract numeric attribute, requesting <%10!u!> values, has <%11!u!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c130_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 12 \"%0Failed to extract numeric attribute, requesting <%10!u!> values, has <%11!u!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST", __VA_ARGS__)
 #endif
 
 #ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c130
     #define WPP_ANNOTATE_LdapHelpers_c130 WPP_ANNOTATE_LdapHelpers_c130_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemLong -- 10" , L"Arg, ItemLong -- 11" , L"}", L"PUBLIC_TMF:")
-
+                                        
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
@@ -575,14 +569,14 @@ extern "C" {
     #define WPP_ANNOTATE_LdapHelpers_c130 WPP_ANNOTATE_LdapHelpers_c130_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c130", L"{", L"dwNumCount, ItemLong -- 10" , L"pNumAttr->dwValuesCount, ItemLong -- 11" , L"}")
 #endif
 #if !defined(WPP_USER_MSG_GUID)
-# define WPP_ANNOTATE_LdapHelpers_c160_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 13 \"%0Failed to extract boolean attribute, requesting <%10!u!> values, has <%11!u!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c160_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 13 \"%0Failed to extract boolean attribute, requesting <%10!u!> values, has <%11!u!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST", __VA_ARGS__)
 #else
-# define WPP_ANNOTATE_LdapHelpers_c160_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 13 \"%0Failed to extract boolean attribute, requesting <%10!u!> values, has <%11!u!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c160_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 13 \"%0Failed to extract boolean attribute, requesting <%10!u!> values, has <%11!u!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST", __VA_ARGS__)
 #endif
 
 #ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c160
     #define WPP_ANNOTATE_LdapHelpers_c160 WPP_ANNOTATE_LdapHelpers_c160_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemLong -- 10" , L"Arg, ItemLong -- 11" , L"}", L"PUBLIC_TMF:")
-
+                                        
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
@@ -590,14 +584,14 @@ extern "C" {
     #define WPP_ANNOTATE_LdapHelpers_c160 WPP_ANNOTATE_LdapHelpers_c160_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c160", L"{", L"dwBoolCount, ItemLong -- 10" , L"pBoolAttr->dwValuesCount, ItemLong -- 11" , L"}")
 #endif
 #if !defined(WPP_USER_MSG_GUID)
-# define WPP_ANNOTATE_LdapHelpers_c195_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 14 \"%0Failed to extract string named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c195_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 14 \"%0Failed to extract string named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST", __VA_ARGS__)
 #else
-# define WPP_ANNOTATE_LdapHelpers_c195_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 14 \"%0Failed to extract string named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c195_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 14 \"%0Failed to extract string named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST", __VA_ARGS__)
 #endif
 
 #ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c195
     #define WPP_ANNOTATE_LdapHelpers_c195 WPP_ANNOTATE_LdapHelpers_c195_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemWString -- 10" , L"}", L"PUBLIC_TMF:")
-
+                                        
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
@@ -605,14 +599,14 @@ extern "C" {
     #define WPP_ANNOTATE_LdapHelpers_c195 WPP_ANNOTATE_LdapHelpers_c195_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c195", L"{", L"ptAttrName, ItemWString -- 10" , L"}")
 #endif
 #if !defined(WPP_USER_MSG_GUID)
-# define WPP_ANNOTATE_LdapHelpers_c245_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 15 \"%0Failed to alloc and extract string named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c245_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 15 \"%0Failed to alloc and extract string named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST", __VA_ARGS__)
 #else
-# define WPP_ANNOTATE_LdapHelpers_c245_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 15 \"%0Failed to alloc and extract string named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c245_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 15 \"%0Failed to alloc and extract string named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST", __VA_ARGS__)
 #endif
 
 #ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c245
     #define WPP_ANNOTATE_LdapHelpers_c245 WPP_ANNOTATE_LdapHelpers_c245_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemWString -- 10" , L"}", L"PUBLIC_TMF:")
-
+                                        
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
@@ -620,14 +614,14 @@ extern "C" {
     #define WPP_ANNOTATE_LdapHelpers_c245 WPP_ANNOTATE_LdapHelpers_c245_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c245", L"{", L"ptAttrName, ItemWString -- 10" , L"}")
 #endif
 #if !defined(WPP_USER_MSG_GUID)
-# define WPP_ANNOTATE_LdapHelpers_c267_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 16 \"%0Failed to extract numeric named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c267_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 16 \"%0Failed to extract numeric named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST", __VA_ARGS__)
 #else
-# define WPP_ANNOTATE_LdapHelpers_c267_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 16 \"%0Failed to extract numeric named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c267_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 16 \"%0Failed to extract numeric named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST", __VA_ARGS__)
 #endif
 
 #ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c267
     #define WPP_ANNOTATE_LdapHelpers_c267 WPP_ANNOTATE_LdapHelpers_c267_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemWString -- 10" , L"}", L"PUBLIC_TMF:")
-
+                                        
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
@@ -635,14 +629,14 @@ extern "C" {
     #define WPP_ANNOTATE_LdapHelpers_c267 WPP_ANNOTATE_LdapHelpers_c267_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c267", L"{", L"ptAttrName, ItemWString -- 10" , L"}")
 #endif
 #if !defined(WPP_USER_MSG_GUID)
-# define WPP_ANNOTATE_LdapHelpers_c308_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 17 \"%0Failed to extract boolean named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c308_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 17 \"%0Failed to extract boolean named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST", __VA_ARGS__)
 #else
-# define WPP_ANNOTATE_LdapHelpers_c308_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 17 \"%0Failed to extract boolean named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c308_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 17 \"%0Failed to extract boolean named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST", __VA_ARGS__)
 #endif
 
 #ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c308
     #define WPP_ANNOTATE_LdapHelpers_c308 WPP_ANNOTATE_LdapHelpers_c308_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemWString -- 10" , L"}", L"PUBLIC_TMF:")
-
+                                        
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
@@ -650,14 +644,14 @@ extern "C" {
     #define WPP_ANNOTATE_LdapHelpers_c308 WPP_ANNOTATE_LdapHelpers_c308_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c308", L"{", L"ptAttrName, ItemWString -- 10" , L"}")
 #endif
 #if !defined(WPP_USER_MSG_GUID)
-# define WPP_ANNOTATE_LdapHelpers_c371_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 18 \"%0Failed to duplicate attribute\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c371_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 18 \"%0Failed to duplicate attribute\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST", __VA_ARGS__)
 #else
-# define WPP_ANNOTATE_LdapHelpers_c371_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 18 \"%0Failed to duplicate attribute\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c371_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 18 \"%0Failed to duplicate attribute\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST", __VA_ARGS__)
 #endif
 
 #ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c371
     #define WPP_ANNOTATE_LdapHelpers_c371 WPP_ANNOTATE_LdapHelpers_c371_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"}", L"PUBLIC_TMF:")
-
+                                        
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
@@ -665,14 +659,14 @@ extern "C" {
     #define WPP_ANNOTATE_LdapHelpers_c371 WPP_ANNOTATE_LdapHelpers_c371_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c371", L"{", L"}")
 #endif
 #if !defined(WPP_USER_MSG_GUID)
-# define WPP_ANNOTATE_LdapHelpers_c398_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 19 \"%0Failed to duplicate named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c398_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 19 \"%0Failed to duplicate named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST", __VA_ARGS__)
 #else
-# define WPP_ANNOTATE_LdapHelpers_c398_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 19 \"%0Failed to duplicate named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c398_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 19 \"%0Failed to duplicate named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST", __VA_ARGS__)
 #endif
 
 #ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c398
     #define WPP_ANNOTATE_LdapHelpers_c398 WPP_ANNOTATE_LdapHelpers_c398_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemWString -- 10" , L"}", L"PUBLIC_TMF:")
-
+                                        
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
@@ -680,14 +674,14 @@ extern "C" {
     #define WPP_ANNOTATE_LdapHelpers_c398 WPP_ANNOTATE_LdapHelpers_c398_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c398", L"{", L"ptAttrName, ItemWString -- 10" , L"}")
 #endif
 #if !defined(WPP_USER_MSG_GUID)
-# define WPP_ANNOTATE_LdapHelpers_c45_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 10 \"%0Failed to locate named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_VERBOSE FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c45_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 10 \"%0Failed to locate named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_VERBOSE FLAGS=REQUEST", __VA_ARGS__)
 #else
-# define WPP_ANNOTATE_LdapHelpers_c45_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 10 \"%0Failed to locate named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_VERBOSE FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c45_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 10 \"%0Failed to locate named attribute <%10!s!>\" //   LEVEL=TRACE_LEVEL_VERBOSE FLAGS=REQUEST", __VA_ARGS__)
 #endif
 
 #ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c45
     #define WPP_ANNOTATE_LdapHelpers_c45 WPP_ANNOTATE_LdapHelpers_c45_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemWString -- 10" , L"}", L"PUBLIC_TMF:")
-
+                                        
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
@@ -695,14 +689,14 @@ extern "C" {
     #define WPP_ANNOTATE_LdapHelpers_c45 WPP_ANNOTATE_LdapHelpers_c45_FINAL("TMF:", "LdapHelpers.c", "LdapHelpers_c45", L"{", L"ptAttrName, ItemWString -- 10" , L"}")
 #endif
 #if !defined(WPP_USER_MSG_GUID)
-# define WPP_ANNOTATE_LdapHelpers_c83_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 11 \"%0Failed to extract string attribute, requesting <%10!u!> values, has <%11!u!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c83_FINAL(P, File, Name, ...)    __annotation(L ## P, L"3f91c6c3-cf6b-311a-327f-cec1195a6a85 src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 11 \"%0Failed to extract string attribute, requesting <%10!u!> values, has <%11!u!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST", __VA_ARGS__)
 #else
-# define WPP_ANNOTATE_LdapHelpers_c83_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 11 \"%0Failed to extract string attribute, requesting <%10!u!> values, has <%11!u!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST" WPP_FUNC_NAME, __VA_ARGS__)
+# define WPP_ANNOTATE_LdapHelpers_c83_FINAL(P, File, Name, ...)    __annotation(L ## P, WPP_GUID_WTEXT WPP_USER_MSG_GUID L"src // SRC=" _WPPW(File) L" MJ= MN=", L"#typev "  _WPPW(Name) L" 11 \"%0Failed to extract string attribute, requesting <%10!u!> values, has <%11!u!>\" //   LEVEL=TRACE_LEVEL_WARNING FLAGS=REQUEST", __VA_ARGS__)
 #endif
 
 #ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c83
     #define WPP_ANNOTATE_LdapHelpers_c83 WPP_ANNOTATE_LdapHelpers_c83_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemLong -- 10" , L"Arg, ItemLong -- 11" , L"}", L"PUBLIC_TMF:")
-
+                                        
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
@@ -715,24 +709,10 @@ extern "C" {
 # define WPP_ANNOTATE(x)
 #endif
 
+#define WPP_LOCAL_TraceGuids WPP_3f91c6c3cf6b311a327fcec1195a6a85_Traceguids
 
 #if 1
-#if !defined(WPP_USER_MSG_GUID)
-
-#define WPP_LOCAL_TraceGuids WPP_3f91c6c3cf6b311a327fcec1195a6a85_Traceguids
 extern const __declspec(selectany) GUID WPP_LOCAL_TraceGuids[] = { {0x3f91c6c3,0xcf6b,0x311a,{0x32,0x7f,0xce,0xc1,0x19,0x5a,0x6a,0x85}}, };
-
-#else
-
-#define WPP_LOCAL_MSG_VAR(Guid) WPP_XGLUE3(WPP_, WPP_GUID_NORM Guid, _Traceguids)
-
-#define WPP_LOCAL_MSG_GUID(Guid) \
-extern const __declspec(selectany) GUID WPP_LOCAL_MSG_VAR(Guid)[] = { WPP_GUID_STRUCT Guid }
-
-WPP_LOCAL_MSG_GUID(WPP_USER_MSG_GUID);
-#define WPP_LOCAL_TraceGuids WPP_LOCAL_MSG_VAR(WPP_USER_MSG_GUID)
-
-#endif
 #endif
 
 #ifndef WPP_ALREADY_INCLUDED
@@ -742,14 +722,8 @@ enum {WPP_TRACE_OPTIONS = TRACE_MESSAGE_SEQUENCE   | TRACE_MESSAGE_GUID
                         | TRACE_MESSAGE_SYSTEMINFO | TRACE_MESSAGE_TIMESTAMP };
 #endif
 
-#ifndef WPP_LOGPAIR_SEPARATOR
-# define WPP_LOGPAIR_SEPARATOR ,
-#endif
-#ifndef WPP_LOGPAIR_SIZET
-# define WPP_LOGPAIR_SIZET SIZE_T
-#endif
 #if !defined(WPP_LOGPAIR)
-# define WPP_LOGPAIR(_Size, _Addr)     (_Addr),((WPP_LOGPAIR_SIZET)(_Size))WPP_LOGPAIR_SEPARATOR
+# define WPP_LOGPAIR(_Size, _Addr)     (_Addr),((SIZE_T)(_Size)),
 #endif
 
 #define WPP_LOGTYPEVAL(_Type, _Value) WPP_LOGPAIR(sizeof(_Type), &(_Value))
@@ -824,13 +798,13 @@ enum {WPP_TRACE_OPTIONS = TRACE_MESSAGE_SEQUENCE   | TRACE_MESSAGE_GUID
 #endif  //  #ifndef WPP_ALREADY_INCLUDED
 
 #if !defined(WPP_ENABLE_FLAG_BIT)
-#define WPP_ENABLE_FLAG_BIT(flag) (WPP_CB[((flag) >> 16)].Control).Flags[( (0xFFFF & ((flag)-1) ) / 32)] & (1 << ( ((flag)-1) & 31 ))
+#define WPP_ENABLE_FLAG_BIT(flag) (WPP_CB[((flag) >> 16)].Control).Flags[( (0xFFFF & ((flag)-1) ) / 32)] & (1 << ( ((flag)-1) & 31 )) 
 #endif
 
 #ifndef WPP_SF__def
 #       define WPP_SF__def
 WPP_INLINE void WPP_SF_(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid)
-   { WPP_TRACE(WPP_GET_LOGGER, WPP_TRACE_OPTIONS, (LPGUID)TraceGuid, id,  (void*)0); }
+   { WPP_TRACE(WPP_GET_LOGGER, WPP_TRACE_OPTIONS, (LPGUID)TraceGuid, id,  0); }
 #endif  // #ifndef WPP_SF__def
 
 
@@ -850,17 +824,17 @@ WPP_RECORDER_SF_(
     
     )
 {
-    if (WPP_ENABLE_FLAG_BIT(flags) &&
+    if (WPP_ENABLE_FLAG_BIT(flags) && 
        (WPP_CONTROL(flags).Level >= level)) {
         WPP_TRACE( WPP_CONTROL(flags).Logger,
                    WPP_TRACE_OPTIONS,
                    (LPGUID)traceGuid,
                    id,
-                    (void*)0);
+                    0);
 
     }
-
-    WPP_RECORDER( AutoLogContext, level, flags, (LPGUID) traceGuid, id,  (void*)0);
+    
+    WPP_RECORDER( AutoLogContext, level, flags, (LPGUID) traceGuid, id,  0);
 }
 #endif  // #ifndef WPP_RECORDER_SF__def
 
@@ -868,7 +842,7 @@ WPP_RECORDER_SF_(
 #ifndef WPP_SF_DD_def
 #       define WPP_SF_DD_def
 WPP_INLINE void WPP_SF_DD(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, unsigned int _a1, unsigned int _a2)
-   { WPP_TRACE(WPP_GET_LOGGER, WPP_TRACE_OPTIONS, (LPGUID)TraceGuid, id, WPP_LOGTYPEVAL(unsigned int,_a1) WPP_LOGTYPEVAL(unsigned int,_a2)  (void*)0); }
+   { WPP_TRACE(WPP_GET_LOGGER, WPP_TRACE_OPTIONS, (LPGUID)TraceGuid, id, WPP_LOGTYPEVAL(unsigned int,_a1) WPP_LOGTYPEVAL(unsigned int,_a2)  0); }
 #endif  // #ifndef WPP_SF_DD_def
 
 
@@ -888,17 +862,17 @@ WPP_RECORDER_SF_DD(
     , unsigned int _a1, unsigned int _a2
     )
 {
-    if (WPP_ENABLE_FLAG_BIT(flags) &&
+    if (WPP_ENABLE_FLAG_BIT(flags) && 
        (WPP_CONTROL(flags).Level >= level)) {
         WPP_TRACE( WPP_CONTROL(flags).Logger,
                    WPP_TRACE_OPTIONS,
                    (LPGUID)traceGuid,
                    id,
-                   WPP_LOGTYPEVAL(unsigned int,_a1) WPP_LOGTYPEVAL(unsigned int,_a2)  (void*)0);
+                   WPP_LOGTYPEVAL(unsigned int,_a1) WPP_LOGTYPEVAL(unsigned int,_a2)  0);
 
     }
-
-    WPP_RECORDER( AutoLogContext, level, flags, (LPGUID) traceGuid, id, WPP_LOGTYPEVAL(unsigned int,_a1) WPP_LOGTYPEVAL(unsigned int,_a2)  (void*)0);
+    
+    WPP_RECORDER( AutoLogContext, level, flags, (LPGUID) traceGuid, id, WPP_LOGTYPEVAL(unsigned int,_a1) WPP_LOGTYPEVAL(unsigned int,_a2)  0);
 }
 #endif  // #ifndef WPP_RECORDER_SF_DD_def
 
@@ -906,7 +880,7 @@ WPP_RECORDER_SF_DD(
 #ifndef WPP_SF_S_def
 #       define WPP_SF_S_def
 WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LPCWSTR _a1)
-   { WPP_TRACE(WPP_GET_LOGGER, WPP_TRACE_OPTIONS, (LPGUID)TraceGuid, id, WPP_LOGWSTR(_a1)  (void*)0); }
+   { WPP_TRACE(WPP_GET_LOGGER, WPP_TRACE_OPTIONS, (LPGUID)TraceGuid, id, WPP_LOGWSTR(_a1)  0); }
 #endif  // #ifndef WPP_SF_S_def
 
 
@@ -926,17 +900,17 @@ WPP_RECORDER_SF_S(
     , LPCWSTR _a1
     )
 {
-    if (WPP_ENABLE_FLAG_BIT(flags) &&
+    if (WPP_ENABLE_FLAG_BIT(flags) && 
        (WPP_CONTROL(flags).Level >= level)) {
         WPP_TRACE( WPP_CONTROL(flags).Logger,
                    WPP_TRACE_OPTIONS,
                    (LPGUID)traceGuid,
                    id,
-                   WPP_LOGWSTR(_a1)  (void*)0);
+                   WPP_LOGWSTR(_a1)  0);
 
     }
-
-    WPP_RECORDER( AutoLogContext, level, flags, (LPGUID) traceGuid, id, WPP_LOGWSTR(_a1)  (void*)0);
+    
+    WPP_RECORDER( AutoLogContext, level, flags, (LPGUID) traceGuid, id, WPP_LOGWSTR(_a1)  0);
 }
 #endif  // #ifndef WPP_RECORDER_SF_S_def
 
@@ -949,9 +923,6 @@ WPP_RECORDER_SF_S(
 #  define WPP_PRE()
 #endif
 
-#ifndef WPP_LOG_ALWAYS
-#  define WPP_LOG_ALWAYS(...)
-#endif
 
 #ifdef WPP_DEBUG
 #ifndef WPP_LEVEL_FLAGS_POST
@@ -961,18 +932,16 @@ WPP_RECORDER_SF_S(
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c130(LEVEL, FLAGS, MSG,a10,a11) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10,a11)\
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c130) \
-    (( \
-        WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
-        WPP_DEBUG((MSG,a10,a11)), \
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c130) \
+     ((\
+       WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
         WPP_RECORDER_SF_DD(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
-                                    12, \
-                                    WPP_LOCAL_TraceGuids+0, a10, a11), \
-        1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+                             12,WPP_LOCAL_TraceGuids+0, a10, a11), \
+          WPP_DEBUG((MSG,a10,a11)), \
+          1:0  \
+      ))\
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #ifndef WPP_LEVEL_FLAGS_POST
 #  define WPP_LEVEL_FLAGS_POST(LEVEL,FLAGS)
 #endif
@@ -980,18 +949,16 @@ WPP_RECORDER_SF_S(
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c160(LEVEL, FLAGS, MSG,a10,a11) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10,a11)\
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c160) \
-    (( \
-        WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
-        WPP_DEBUG((MSG,a10,a11)), \
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c160) \
+     ((\
+       WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
         WPP_RECORDER_SF_DD(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
-                                    13, \
-                                    WPP_LOCAL_TraceGuids+0, a10, a11), \
-        1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+                             13,WPP_LOCAL_TraceGuids+0, a10, a11), \
+          WPP_DEBUG((MSG,a10,a11)), \
+          1:0  \
+      ))\
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #ifndef WPP_LEVEL_FLAGS_POST
 #  define WPP_LEVEL_FLAGS_POST(LEVEL,FLAGS)
 #endif
@@ -999,18 +966,16 @@ WPP_RECORDER_SF_S(
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c195(LEVEL, FLAGS, MSG,a10) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10)\
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c195) \
-    (( \
-        WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
-        WPP_DEBUG((MSG,a10)), \
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c195) \
+     ((\
+       WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
         WPP_RECORDER_SF_S(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
-                                    14, \
-                                    WPP_LOCAL_TraceGuids+0, a10), \
-        1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+                             14,WPP_LOCAL_TraceGuids+0, a10), \
+          WPP_DEBUG((MSG,a10)), \
+          1:0  \
+      ))\
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #ifndef WPP_LEVEL_FLAGS_POST
 #  define WPP_LEVEL_FLAGS_POST(LEVEL,FLAGS)
 #endif
@@ -1018,18 +983,16 @@ WPP_RECORDER_SF_S(
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c245(LEVEL, FLAGS, MSG,a10) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10)\
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c245) \
-    (( \
-        WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
-        WPP_DEBUG((MSG,a10)), \
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c245) \
+     ((\
+       WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
         WPP_RECORDER_SF_S(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
-                                    15, \
-                                    WPP_LOCAL_TraceGuids+0, a10), \
-        1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+                             15,WPP_LOCAL_TraceGuids+0, a10), \
+          WPP_DEBUG((MSG,a10)), \
+          1:0  \
+      ))\
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #ifndef WPP_LEVEL_FLAGS_POST
 #  define WPP_LEVEL_FLAGS_POST(LEVEL,FLAGS)
 #endif
@@ -1037,18 +1000,16 @@ WPP_RECORDER_SF_S(
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c267(LEVEL, FLAGS, MSG,a10) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10)\
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c267) \
-    (( \
-        WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
-        WPP_DEBUG((MSG,a10)), \
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c267) \
+     ((\
+       WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
         WPP_RECORDER_SF_S(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
-                                    16, \
-                                    WPP_LOCAL_TraceGuids+0, a10), \
-        1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+                             16,WPP_LOCAL_TraceGuids+0, a10), \
+          WPP_DEBUG((MSG,a10)), \
+          1:0  \
+      ))\
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #ifndef WPP_LEVEL_FLAGS_POST
 #  define WPP_LEVEL_FLAGS_POST(LEVEL,FLAGS)
 #endif
@@ -1056,18 +1017,16 @@ WPP_RECORDER_SF_S(
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c308(LEVEL, FLAGS, MSG,a10) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10)\
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c308) \
-    (( \
-        WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
-        WPP_DEBUG((MSG,a10)), \
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c308) \
+     ((\
+       WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
         WPP_RECORDER_SF_S(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
-                                    17, \
-                                    WPP_LOCAL_TraceGuids+0, a10), \
-        1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+                             17,WPP_LOCAL_TraceGuids+0, a10), \
+          WPP_DEBUG((MSG,a10)), \
+          1:0  \
+      ))\
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #ifndef WPP_LEVEL_FLAGS_POST
 #  define WPP_LEVEL_FLAGS_POST(LEVEL,FLAGS)
 #endif
@@ -1075,18 +1034,16 @@ WPP_RECORDER_SF_S(
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c371(LEVEL, FLAGS, MSG) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG)\
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c371) \
-    (( \
-        WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
-        WPP_DEBUG((MSG)), \
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c371) \
+     ((\
+       WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
         WPP_RECORDER_SF_(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
-                                    18, \
-                                    WPP_LOCAL_TraceGuids+0), \
-        1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+                             18,WPP_LOCAL_TraceGuids+0), \
+          WPP_DEBUG((MSG)), \
+          1:0  \
+      ))\
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #ifndef WPP_LEVEL_FLAGS_POST
 #  define WPP_LEVEL_FLAGS_POST(LEVEL,FLAGS)
 #endif
@@ -1094,18 +1051,16 @@ WPP_RECORDER_SF_S(
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c398(LEVEL, FLAGS, MSG,a10) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10)\
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c398) \
-    (( \
-        WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
-        WPP_DEBUG((MSG,a10)), \
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c398) \
+     ((\
+       WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
         WPP_RECORDER_SF_S(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
-                                    19, \
-                                    WPP_LOCAL_TraceGuids+0, a10), \
-        1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+                             19,WPP_LOCAL_TraceGuids+0, a10), \
+          WPP_DEBUG((MSG,a10)), \
+          1:0  \
+      ))\
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #ifndef WPP_LEVEL_FLAGS_POST
 #  define WPP_LEVEL_FLAGS_POST(LEVEL,FLAGS)
 #endif
@@ -1113,18 +1068,16 @@ WPP_RECORDER_SF_S(
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c45(LEVEL, FLAGS, MSG,a10) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10)\
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c45) \
-    (( \
-        WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
-        WPP_DEBUG((MSG,a10)), \
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c45) \
+     ((\
+       WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
         WPP_RECORDER_SF_S(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
-                                    10, \
-                                    WPP_LOCAL_TraceGuids+0, a10), \
-        1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+                             10,WPP_LOCAL_TraceGuids+0, a10), \
+          WPP_DEBUG((MSG,a10)), \
+          1:0  \
+      ))\
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #ifndef WPP_LEVEL_FLAGS_POST
 #  define WPP_LEVEL_FLAGS_POST(LEVEL,FLAGS)
 #endif
@@ -1132,18 +1085,16 @@ WPP_RECORDER_SF_S(
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c83(LEVEL, FLAGS, MSG,a10,a11) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10,a11)\
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c83) \
-    (( \
-        WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
-        WPP_DEBUG((MSG,a10,a11)), \
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c83) \
+     ((\
+       WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
         WPP_RECORDER_SF_DD(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
-                                    11, \
-                                    WPP_LOCAL_TraceGuids+0, a10, a11), \
-        1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+                             11,WPP_LOCAL_TraceGuids+0, a10, a11), \
+          WPP_DEBUG((MSG,a10,a11)), \
+          1:0  \
+      ))\
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #else
 #ifndef WPP_LEVEL_FLAGS_POST
 #  define WPP_LEVEL_FLAGS_POST(LEVEL,FLAGS)
@@ -1152,17 +1103,14 @@ WPP_RECORDER_SF_S(
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c130(LEVEL, FLAGS, MSG,a10,a11) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10,a11) \
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c130) \
-    (( \
-        WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
-         WPP_RECORDER_SF_DD(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
-                                     12, \
-                                     WPP_LOCAL_TraceGuids+0, a10, a11), \
-         1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c130) \
+     ((\
+       WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
+        WPP_RECORDER_SF_DD(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
+                             12,WPP_LOCAL_TraceGuids+0, a10, a11), 1:0\
+      ))\
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #ifndef WPP_LEVEL_FLAGS_POST
 #  define WPP_LEVEL_FLAGS_POST(LEVEL,FLAGS)
 #endif
@@ -1170,17 +1118,14 @@ WPP_RECORDER_SF_S(
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c160(LEVEL, FLAGS, MSG,a10,a11) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10,a11) \
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c160) \
-    (( \
-        WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
-         WPP_RECORDER_SF_DD(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
-                                     13, \
-                                     WPP_LOCAL_TraceGuids+0, a10, a11), \
-         1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c160) \
+     ((\
+       WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
+        WPP_RECORDER_SF_DD(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
+                             13,WPP_LOCAL_TraceGuids+0, a10, a11), 1:0\
+      ))\
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #ifndef WPP_LEVEL_FLAGS_POST
 #  define WPP_LEVEL_FLAGS_POST(LEVEL,FLAGS)
 #endif
@@ -1188,17 +1133,14 @@ WPP_RECORDER_SF_S(
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c195(LEVEL, FLAGS, MSG,a10) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10) \
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c195) \
-    (( \
-        WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
-         WPP_RECORDER_SF_S(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
-                                     14, \
-                                     WPP_LOCAL_TraceGuids+0, a10), \
-         1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c195) \
+     ((\
+       WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
+        WPP_RECORDER_SF_S(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
+                             14,WPP_LOCAL_TraceGuids+0, a10), 1:0\
+      ))\
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #ifndef WPP_LEVEL_FLAGS_POST
 #  define WPP_LEVEL_FLAGS_POST(LEVEL,FLAGS)
 #endif
@@ -1206,17 +1148,14 @@ WPP_RECORDER_SF_S(
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c245(LEVEL, FLAGS, MSG,a10) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10) \
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c245) \
-    (( \
-        WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
-         WPP_RECORDER_SF_S(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
-                                     15, \
-                                     WPP_LOCAL_TraceGuids+0, a10), \
-         1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c245) \
+     ((\
+       WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
+        WPP_RECORDER_SF_S(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
+                             15,WPP_LOCAL_TraceGuids+0, a10), 1:0\
+      ))\
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #ifndef WPP_LEVEL_FLAGS_POST
 #  define WPP_LEVEL_FLAGS_POST(LEVEL,FLAGS)
 #endif
@@ -1224,17 +1163,14 @@ WPP_RECORDER_SF_S(
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c267(LEVEL, FLAGS, MSG,a10) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10) \
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c267) \
-    (( \
-        WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
-         WPP_RECORDER_SF_S(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
-                                     16, \
-                                     WPP_LOCAL_TraceGuids+0, a10), \
-         1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c267) \
+     ((\
+       WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
+        WPP_RECORDER_SF_S(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
+                             16,WPP_LOCAL_TraceGuids+0, a10), 1:0\
+      ))\
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #ifndef WPP_LEVEL_FLAGS_POST
 #  define WPP_LEVEL_FLAGS_POST(LEVEL,FLAGS)
 #endif
@@ -1242,17 +1178,14 @@ WPP_RECORDER_SF_S(
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c308(LEVEL, FLAGS, MSG,a10) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10) \
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c308) \
-    (( \
-        WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
-         WPP_RECORDER_SF_S(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
-                                     17, \
-                                     WPP_LOCAL_TraceGuids+0, a10), \
-         1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c308) \
+     ((\
+       WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
+        WPP_RECORDER_SF_S(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
+                             17,WPP_LOCAL_TraceGuids+0, a10), 1:0\
+      ))\
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #ifndef WPP_LEVEL_FLAGS_POST
 #  define WPP_LEVEL_FLAGS_POST(LEVEL,FLAGS)
 #endif
@@ -1260,17 +1193,14 @@ WPP_RECORDER_SF_S(
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c371(LEVEL, FLAGS, MSG) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG) \
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c371) \
-    (( \
-        WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
-         WPP_RECORDER_SF_(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
-                                     18, \
-                                     WPP_LOCAL_TraceGuids+0), \
-         1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c371) \
+     ((\
+       WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
+        WPP_RECORDER_SF_(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
+                             18,WPP_LOCAL_TraceGuids+0), 1:0\
+      ))\
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #ifndef WPP_LEVEL_FLAGS_POST
 #  define WPP_LEVEL_FLAGS_POST(LEVEL,FLAGS)
 #endif
@@ -1278,17 +1208,14 @@ WPP_RECORDER_SF_S(
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c398(LEVEL, FLAGS, MSG,a10) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10) \
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c398) \
-    (( \
-        WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
-         WPP_RECORDER_SF_S(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
-                                     19, \
-                                     WPP_LOCAL_TraceGuids+0, a10), \
-         1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c398) \
+     ((\
+       WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
+        WPP_RECORDER_SF_S(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
+                             19,WPP_LOCAL_TraceGuids+0, a10), 1:0\
+      ))\
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #ifndef WPP_LEVEL_FLAGS_POST
 #  define WPP_LEVEL_FLAGS_POST(LEVEL,FLAGS)
 #endif
@@ -1296,17 +1223,14 @@ WPP_RECORDER_SF_S(
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c45(LEVEL, FLAGS, MSG,a10) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10) \
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c45) \
-    (( \
-        WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
-         WPP_RECORDER_SF_S(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
-                                     10, \
-                                     WPP_LOCAL_TraceGuids+0, a10), \
-         1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c45) \
+     ((\
+       WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
+        WPP_RECORDER_SF_S(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
+                             10,WPP_LOCAL_TraceGuids+0, a10), 1:0\
+      ))\
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #ifndef WPP_LEVEL_FLAGS_POST
 #  define WPP_LEVEL_FLAGS_POST(LEVEL,FLAGS)
 #endif
@@ -1314,17 +1238,14 @@ WPP_RECORDER_SF_S(
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c83(LEVEL, FLAGS, MSG,a10,a11) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10,a11) \
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c83) \
-    (( \
-        WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
-         WPP_RECORDER_SF_DD(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
-                                     11, \
-                                     WPP_LOCAL_TraceGuids+0, a10, a11), \
-         1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c83) \
+     ((\
+       WPP_RECORDER_LEVEL_FLAGS_FILTER(LEVEL, FLAGS) ? \
+        WPP_RECORDER_SF_DD(WPP_RECORDER_LEVEL_FLAGS_ARGS(LEVEL, FLAGS), \
+                             11,WPP_LOCAL_TraceGuids+0, a10, a11), 1:0\
+      ))\
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #endif
 
 
@@ -1337,6 +1258,7 @@ WPP_RECORDER_SF_S(
 #if defined(__cplusplus)
 };
 #endif
+
 
 #else
 // template tracemacro.tpl
@@ -1418,7 +1340,7 @@ extern "C" {
 
 #ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c130
     #define WPP_ANNOTATE_LdapHelpers_c130 WPP_ANNOTATE_LdapHelpers_c130_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemLong -- 10" , L"Arg, ItemLong -- 11" , L"}", L"PUBLIC_TMF:")
-
+                                        
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
@@ -1433,7 +1355,7 @@ extern "C" {
 
 #ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c160
     #define WPP_ANNOTATE_LdapHelpers_c160 WPP_ANNOTATE_LdapHelpers_c160_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemLong -- 10" , L"Arg, ItemLong -- 11" , L"}", L"PUBLIC_TMF:")
-
+                                        
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
@@ -1448,7 +1370,7 @@ extern "C" {
 
 #ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c195
     #define WPP_ANNOTATE_LdapHelpers_c195 WPP_ANNOTATE_LdapHelpers_c195_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemWString -- 10" , L"}", L"PUBLIC_TMF:")
-
+                                        
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
@@ -1463,7 +1385,7 @@ extern "C" {
 
 #ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c245
     #define WPP_ANNOTATE_LdapHelpers_c245 WPP_ANNOTATE_LdapHelpers_c245_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemWString -- 10" , L"}", L"PUBLIC_TMF:")
-
+                                        
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
@@ -1478,7 +1400,7 @@ extern "C" {
 
 #ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c267
     #define WPP_ANNOTATE_LdapHelpers_c267 WPP_ANNOTATE_LdapHelpers_c267_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemWString -- 10" , L"}", L"PUBLIC_TMF:")
-
+                                        
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
@@ -1493,7 +1415,7 @@ extern "C" {
 
 #ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c308
     #define WPP_ANNOTATE_LdapHelpers_c308 WPP_ANNOTATE_LdapHelpers_c308_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemWString -- 10" , L"}", L"PUBLIC_TMF:")
-
+                                        
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
@@ -1508,7 +1430,7 @@ extern "C" {
 
 #ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c371
     #define WPP_ANNOTATE_LdapHelpers_c371 WPP_ANNOTATE_LdapHelpers_c371_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"}", L"PUBLIC_TMF:")
-
+                                        
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
@@ -1523,7 +1445,7 @@ extern "C" {
 
 #ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c398
     #define WPP_ANNOTATE_LdapHelpers_c398 WPP_ANNOTATE_LdapHelpers_c398_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemWString -- 10" , L"}", L"PUBLIC_TMF:")
-
+                                        
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
@@ -1538,7 +1460,7 @@ extern "C" {
 
 #ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c45
     #define WPP_ANNOTATE_LdapHelpers_c45 WPP_ANNOTATE_LdapHelpers_c45_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemWString -- 10" , L"}", L"PUBLIC_TMF:")
-
+                                        
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
@@ -1553,7 +1475,7 @@ extern "C" {
 
 #ifdef WPP_PUBLIC_ANNOT_LdapHelpers_c83
     #define WPP_ANNOTATE_LdapHelpers_c83 WPP_ANNOTATE_LdapHelpers_c83_FINAL("TMF:", "Unknown_cxx00", "Unknown_cxx00", L"{", L"Arg, ItemLong -- 10" , L"Arg, ItemLong -- 11" , L"}", L"PUBLIC_TMF:")
-
+                                        
     #ifndef WPP_PUBLIC_TMC
         #define WPP_PUBLIC_TMC
     #endif
@@ -1586,6 +1508,7 @@ WPP_LOCAL_MSG_GUID(WPP_USER_MSG_GUID);
 #endif
 #endif
 
+
 #ifndef WPP_ALREADY_INCLUDED
 
 #if !defined(WPP_TRACE_OPTIONS)
@@ -1596,9 +1519,11 @@ enum {WPP_TRACE_OPTIONS = TRACE_MESSAGE_SEQUENCE   | TRACE_MESSAGE_GUID
 #ifndef WPP_LOGPAIR_SEPARATOR
 # define WPP_LOGPAIR_SEPARATOR ,
 #endif
+
 #ifndef WPP_LOGPAIR_SIZET
 # define WPP_LOGPAIR_SIZET SIZE_T
 #endif
+
 #if !defined(WPP_LOGPAIR)
 # define WPP_LOGPAIR(_Size, _Addr)     (_Addr),((WPP_LOGPAIR_SIZET)(_Size))WPP_LOGPAIR_SEPARATOR
 #endif
@@ -1675,23 +1600,24 @@ enum {WPP_TRACE_OPTIONS = TRACE_MESSAGE_SEQUENCE   | TRACE_MESSAGE_GUID
 #endif  //  #ifndef WPP_ALREADY_INCLUDED
 
 #if !defined(WPP_CHECK_INIT)
-# define WPP_CHECK_INIT (WPP_CB != (WPP_CB_TYPE*)&WPP_CB) &&
+# define WPP_CHECK_INIT (WPP_CB != (WPP_CB_TYPE*)&WPP_CB) && 
 #endif
+
 
 #ifndef WPP_SF__def
 #       define WPP_SF__def
 WPP_INLINE void WPP_SF_(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid)
-   { WPP_TRACE(WPP_GET_LOGGER, WPP_TRACE_OPTIONS, (LPGUID)TraceGuid, id,  (void*)0); }
+   { WPP_TRACE(WPP_GET_LOGGER, WPP_TRACE_OPTIONS, (LPGUID)TraceGuid, id,  0); }
 #endif  // #ifndef WPP_SF__def
 #ifndef WPP_SF_DD_def
 #       define WPP_SF_DD_def
 WPP_INLINE void WPP_SF_DD(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, unsigned int _a1, unsigned int _a2)
-   { WPP_TRACE(WPP_GET_LOGGER, WPP_TRACE_OPTIONS, (LPGUID)TraceGuid, id, WPP_LOGTYPEVAL(unsigned int,_a1) WPP_LOGTYPEVAL(unsigned int,_a2)  (void*)0); }
+   { WPP_TRACE(WPP_GET_LOGGER, WPP_TRACE_OPTIONS, (LPGUID)TraceGuid, id, WPP_LOGTYPEVAL(unsigned int,_a1) WPP_LOGTYPEVAL(unsigned int,_a2)  0); }
 #endif  // #ifndef WPP_SF_DD_def
 #ifndef WPP_SF_S_def
 #       define WPP_SF_S_def
 WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LPCWSTR _a1)
-   { WPP_TRACE(WPP_GET_LOGGER, WPP_TRACE_OPTIONS, (LPGUID)TraceGuid, id, WPP_LOGWSTR(_a1)  (void*)0); }
+   { WPP_TRACE(WPP_GET_LOGGER, WPP_TRACE_OPTIONS, (LPGUID)TraceGuid, id, WPP_LOGWSTR(_a1)  0); }
 #endif  // #ifndef WPP_SF_S_def
 #ifndef WPP_POST
 #  define WPP_POST()
@@ -1703,7 +1629,7 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 
 #ifndef WPP_LOG_ALWAYS
 #  define WPP_LOG_ALWAYS(...)
-#endif
+#endif      
 
 #ifdef WPP_DEBUG
 #ifndef WPP_LEVEL_FLAGS_POST
@@ -1713,18 +1639,16 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c130(LEVEL, FLAGS, MSG,a10,a11) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10,a11)\
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c130) \
-    (( \
-        WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
-        WPP_DEBUG((MSG,a10,a11)), \
-        WPP_SF_DD(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) \
-                           12, \
-                           WPP_LOCAL_TraceGuids+0, a10, a11), \
-        1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10,a11)\
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c130) \
+     ( ( \
+         WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
+          WPP_DEBUG((MSG,a10,a11)), \
+          WPP_SF_DD(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) 12, \
+                             WPP_LOCAL_TraceGuids+0, a10, a11), 1:0  \
+     ) ) \
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #ifndef WPP_LEVEL_FLAGS_POST
 #  define WPP_LEVEL_FLAGS_POST(LEVEL,FLAGS)
 #endif
@@ -1732,18 +1656,16 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c160(LEVEL, FLAGS, MSG,a10,a11) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10,a11)\
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c160) \
-    (( \
-        WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
-        WPP_DEBUG((MSG,a10,a11)), \
-        WPP_SF_DD(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) \
-                           13, \
-                           WPP_LOCAL_TraceGuids+0, a10, a11), \
-        1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10,a11)\
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c160) \
+     ( ( \
+         WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
+          WPP_DEBUG((MSG,a10,a11)), \
+          WPP_SF_DD(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) 13, \
+                             WPP_LOCAL_TraceGuids+0, a10, a11), 1:0  \
+     ) ) \
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #ifndef WPP_LEVEL_FLAGS_POST
 #  define WPP_LEVEL_FLAGS_POST(LEVEL,FLAGS)
 #endif
@@ -1751,18 +1673,16 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c195(LEVEL, FLAGS, MSG,a10) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10)\
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c195) \
-    (( \
-        WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
-        WPP_DEBUG((MSG,a10)), \
-        WPP_SF_S(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) \
-                           14, \
-                           WPP_LOCAL_TraceGuids+0, a10), \
-        1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10)\
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c195) \
+     ( ( \
+         WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
+          WPP_DEBUG((MSG,a10)), \
+          WPP_SF_S(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) 14, \
+                             WPP_LOCAL_TraceGuids+0, a10), 1:0  \
+     ) ) \
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #ifndef WPP_LEVEL_FLAGS_POST
 #  define WPP_LEVEL_FLAGS_POST(LEVEL,FLAGS)
 #endif
@@ -1770,18 +1690,16 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c245(LEVEL, FLAGS, MSG,a10) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10)\
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c245) \
-    (( \
-        WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
-        WPP_DEBUG((MSG,a10)), \
-        WPP_SF_S(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) \
-                           15, \
-                           WPP_LOCAL_TraceGuids+0, a10), \
-        1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10)\
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c245) \
+     ( ( \
+         WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
+          WPP_DEBUG((MSG,a10)), \
+          WPP_SF_S(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) 15, \
+                             WPP_LOCAL_TraceGuids+0, a10), 1:0  \
+     ) ) \
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #ifndef WPP_LEVEL_FLAGS_POST
 #  define WPP_LEVEL_FLAGS_POST(LEVEL,FLAGS)
 #endif
@@ -1789,18 +1707,16 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c267(LEVEL, FLAGS, MSG,a10) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10)\
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c267) \
-    (( \
-        WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
-        WPP_DEBUG((MSG,a10)), \
-        WPP_SF_S(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) \
-                           16, \
-                           WPP_LOCAL_TraceGuids+0, a10), \
-        1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10)\
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c267) \
+     ( ( \
+         WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
+          WPP_DEBUG((MSG,a10)), \
+          WPP_SF_S(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) 16, \
+                             WPP_LOCAL_TraceGuids+0, a10), 1:0  \
+     ) ) \
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #ifndef WPP_LEVEL_FLAGS_POST
 #  define WPP_LEVEL_FLAGS_POST(LEVEL,FLAGS)
 #endif
@@ -1808,18 +1724,16 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c308(LEVEL, FLAGS, MSG,a10) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10)\
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c308) \
-    (( \
-        WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
-        WPP_DEBUG((MSG,a10)), \
-        WPP_SF_S(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) \
-                           17, \
-                           WPP_LOCAL_TraceGuids+0, a10), \
-        1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10)\
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c308) \
+     ( ( \
+         WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
+          WPP_DEBUG((MSG,a10)), \
+          WPP_SF_S(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) 17, \
+                             WPP_LOCAL_TraceGuids+0, a10), 1:0  \
+     ) ) \
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #ifndef WPP_LEVEL_FLAGS_POST
 #  define WPP_LEVEL_FLAGS_POST(LEVEL,FLAGS)
 #endif
@@ -1827,18 +1741,16 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c371(LEVEL, FLAGS, MSG) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG)\
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c371) \
-    (( \
-        WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
-        WPP_DEBUG((MSG)), \
-        WPP_SF_(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) \
-                           18, \
-                           WPP_LOCAL_TraceGuids+0), \
-        1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG)\
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c371) \
+     ( ( \
+         WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
+          WPP_DEBUG((MSG)), \
+          WPP_SF_(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) 18, \
+                             WPP_LOCAL_TraceGuids+0), 1:0  \
+     ) ) \
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #ifndef WPP_LEVEL_FLAGS_POST
 #  define WPP_LEVEL_FLAGS_POST(LEVEL,FLAGS)
 #endif
@@ -1846,18 +1758,16 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c398(LEVEL, FLAGS, MSG,a10) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10)\
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c398) \
-    (( \
-        WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
-        WPP_DEBUG((MSG,a10)), \
-        WPP_SF_S(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) \
-                           19, \
-                           WPP_LOCAL_TraceGuids+0, a10), \
-        1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10)\
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c398) \
+     ( ( \
+         WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
+          WPP_DEBUG((MSG,a10)), \
+          WPP_SF_S(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) 19, \
+                             WPP_LOCAL_TraceGuids+0, a10), 1:0  \
+     ) ) \
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #ifndef WPP_LEVEL_FLAGS_POST
 #  define WPP_LEVEL_FLAGS_POST(LEVEL,FLAGS)
 #endif
@@ -1865,18 +1775,16 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c45(LEVEL, FLAGS, MSG,a10) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10)\
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c45) \
-    (( \
-        WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
-        WPP_DEBUG((MSG,a10)), \
-        WPP_SF_S(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) \
-                           10, \
-                           WPP_LOCAL_TraceGuids+0, a10), \
-        1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10)\
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c45) \
+     ( ( \
+         WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
+          WPP_DEBUG((MSG,a10)), \
+          WPP_SF_S(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) 10, \
+                             WPP_LOCAL_TraceGuids+0, a10), 1:0  \
+     ) ) \
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #ifndef WPP_LEVEL_FLAGS_POST
 #  define WPP_LEVEL_FLAGS_POST(LEVEL,FLAGS)
 #endif
@@ -1884,18 +1792,16 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c83(LEVEL, FLAGS, MSG,a10,a11) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10,a11)\
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c83) \
-    (( \
-        WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
-        WPP_DEBUG((MSG,a10,a11)), \
-        WPP_SF_DD(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) \
-                           11, \
-                           WPP_LOCAL_TraceGuids+0, a10, a11), \
-        1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10,a11)\
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c83) \
+     ( ( \
+         WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
+          WPP_DEBUG((MSG,a10,a11)), \
+          WPP_SF_DD(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) 11, \
+                             WPP_LOCAL_TraceGuids+0, a10, a11), 1:0  \
+     ) ) \
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #else
 #ifndef WPP_LEVEL_FLAGS_POST
 #  define WPP_LEVEL_FLAGS_POST(LEVEL,FLAGS)
@@ -1904,17 +1810,15 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c130(LEVEL, FLAGS, MSG,a10,a11) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10,a11) \
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c130) \
-    (( \
+     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10,a11) \
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c130) \
+     ( ( \
          WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
-         WPP_SF_DD(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) \
-                            12, \
-                            WPP_LOCAL_TraceGuids+0, a10, a11), \
-         1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+            WPP_SF_DD(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) 12, \
+                               WPP_LOCAL_TraceGuids+0, a10, a11), 1:0  \
+     ) ) \
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #ifndef WPP_LEVEL_FLAGS_POST
 #  define WPP_LEVEL_FLAGS_POST(LEVEL,FLAGS)
 #endif
@@ -1922,17 +1826,15 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c160(LEVEL, FLAGS, MSG,a10,a11) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10,a11) \
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c160) \
-    (( \
+     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10,a11) \
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c160) \
+     ( ( \
          WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
-         WPP_SF_DD(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) \
-                            13, \
-                            WPP_LOCAL_TraceGuids+0, a10, a11), \
-         1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+            WPP_SF_DD(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) 13, \
+                               WPP_LOCAL_TraceGuids+0, a10, a11), 1:0  \
+     ) ) \
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #ifndef WPP_LEVEL_FLAGS_POST
 #  define WPP_LEVEL_FLAGS_POST(LEVEL,FLAGS)
 #endif
@@ -1940,17 +1842,15 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c195(LEVEL, FLAGS, MSG,a10) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10) \
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c195) \
-    (( \
+     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10) \
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c195) \
+     ( ( \
          WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
-         WPP_SF_S(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) \
-                            14, \
-                            WPP_LOCAL_TraceGuids+0, a10), \
-         1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+            WPP_SF_S(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) 14, \
+                               WPP_LOCAL_TraceGuids+0, a10), 1:0  \
+     ) ) \
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #ifndef WPP_LEVEL_FLAGS_POST
 #  define WPP_LEVEL_FLAGS_POST(LEVEL,FLAGS)
 #endif
@@ -1958,17 +1858,15 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c245(LEVEL, FLAGS, MSG,a10) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10) \
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c245) \
-    (( \
+     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10) \
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c245) \
+     ( ( \
          WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
-         WPP_SF_S(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) \
-                            15, \
-                            WPP_LOCAL_TraceGuids+0, a10), \
-         1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+            WPP_SF_S(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) 15, \
+                               WPP_LOCAL_TraceGuids+0, a10), 1:0  \
+     ) ) \
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #ifndef WPP_LEVEL_FLAGS_POST
 #  define WPP_LEVEL_FLAGS_POST(LEVEL,FLAGS)
 #endif
@@ -1976,17 +1874,15 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c267(LEVEL, FLAGS, MSG,a10) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10) \
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c267) \
-    (( \
+     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10) \
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c267) \
+     ( ( \
          WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
-         WPP_SF_S(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) \
-                            16, \
-                            WPP_LOCAL_TraceGuids+0, a10), \
-         1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+            WPP_SF_S(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) 16, \
+                               WPP_LOCAL_TraceGuids+0, a10), 1:0  \
+     ) ) \
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #ifndef WPP_LEVEL_FLAGS_POST
 #  define WPP_LEVEL_FLAGS_POST(LEVEL,FLAGS)
 #endif
@@ -1994,17 +1890,15 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c308(LEVEL, FLAGS, MSG,a10) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10) \
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c308) \
-    (( \
+     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10) \
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c308) \
+     ( ( \
          WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
-         WPP_SF_S(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) \
-                            17, \
-                            WPP_LOCAL_TraceGuids+0, a10), \
-         1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+            WPP_SF_S(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) 17, \
+                               WPP_LOCAL_TraceGuids+0, a10), 1:0  \
+     ) ) \
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #ifndef WPP_LEVEL_FLAGS_POST
 #  define WPP_LEVEL_FLAGS_POST(LEVEL,FLAGS)
 #endif
@@ -2012,17 +1906,15 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c371(LEVEL, FLAGS, MSG) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG) \
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c371) \
-    (( \
+     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG) \
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c371) \
+     ( ( \
          WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
-         WPP_SF_(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) \
-                            18, \
-                            WPP_LOCAL_TraceGuids+0), \
-         1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+            WPP_SF_(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) 18, \
+                               WPP_LOCAL_TraceGuids+0), 1:0  \
+     ) ) \
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #ifndef WPP_LEVEL_FLAGS_POST
 #  define WPP_LEVEL_FLAGS_POST(LEVEL,FLAGS)
 #endif
@@ -2030,17 +1922,15 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c398(LEVEL, FLAGS, MSG,a10) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10) \
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c398) \
-    (( \
+     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10) \
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c398) \
+     ( ( \
          WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
-         WPP_SF_S(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) \
-                            19, \
-                            WPP_LOCAL_TraceGuids+0, a10), \
-         1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+            WPP_SF_S(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) 19, \
+                               WPP_LOCAL_TraceGuids+0, a10), 1:0  \
+     ) ) \
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #ifndef WPP_LEVEL_FLAGS_POST
 #  define WPP_LEVEL_FLAGS_POST(LEVEL,FLAGS)
 #endif
@@ -2048,17 +1938,15 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c45(LEVEL, FLAGS, MSG,a10) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10) \
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c45) \
-    (( \
+     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10) \
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c45) \
+     ( ( \
          WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
-         WPP_SF_S(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) \
-                            10, \
-                            WPP_LOCAL_TraceGuids+0, a10), \
-         1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+            WPP_SF_S(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) 10, \
+                               WPP_LOCAL_TraceGuids+0, a10), 1:0  \
+     ) ) \
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #ifndef WPP_LEVEL_FLAGS_POST
 #  define WPP_LEVEL_FLAGS_POST(LEVEL,FLAGS)
 #endif
@@ -2066,17 +1954,15 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 #  define WPP_LEVEL_FLAGS_PRE(LEVEL,FLAGS)
 #endif
 #define WPP_CALL_LdapHelpers_c83(LEVEL, FLAGS, MSG,a10,a11) \
-    WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10,a11) \
-    WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
-    WPP_ANNOTATE(LdapHelpers_c83) \
-    (( \
+     WPP_LOG_ALWAYS(WPP_EX_LEVEL_FLAGS(LEVEL, FLAGS),MSG,a10,a11) \
+     WPP_LEVEL_FLAGS_PRE(LEVEL, FLAGS) \
+     WPP_ANNOTATE(LdapHelpers_c83) \
+     ( ( \
          WPP_CHECK_INIT WPP_LEVEL_FLAGS_ENABLED(LEVEL, FLAGS) ? \
-         WPP_SF_DD(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) \
-                            11, \
-                            WPP_LOCAL_TraceGuids+0, a10, a11), \
-         1:0 \
-    )) \
-    WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
+            WPP_SF_DD(WPP_LEVEL_FLAGS_LOGGER(LEVEL, FLAGS) 11, \
+                               WPP_LOCAL_TraceGuids+0, a10, a11), 1:0  \
+     ) ) \
+     WPP_LEVEL_FLAGS_POST(LEVEL, FLAGS)
 #endif
 
 
@@ -2092,7 +1978,7 @@ WPP_INLINE void WPP_SF_S(WPP_LOGGER_ARG unsigned short id, LPCGUID TraceGuid, LP
 
 #endif
 
-// d37b267a89fbf18ded4a29caeb8ddfc0 Generated file. Do not edit.
+// 8db6b437b17744c165688ff10c3f8b9f Generated file. Do not edit.
 // File created by WPP compiler version 10.0.16299-Fri Sep 29 02:03:49 2017
 // from template provider.tpl
 
@@ -2283,7 +2169,7 @@ EXTERN_C __declspec(selectany) const GUID ;// = {0x00000000, 0x0000, 0x0000, {0x
 #ifndef MCGEN_DISABLE_PROVIDER_CODE_GENERATION
 
 
-#define Handle (_Context.RegistrationHandle)
+EXTERN_C __declspec(selectany) REGHANDLE Handle;// = (REGHANDLE)0;
 
 EXTERN_C __declspec(selectany) MCGEN_TRACE_CONTEXT _Context;// = {0};
 

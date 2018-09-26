@@ -238,20 +238,20 @@ BOOL LdapExtractRangedAttributes(
         dwRet = ldap_search_s(pConnection->pLdapSession, ptCurrentDN, LDAP_SCOPE_BASE, _T("(objectClass=*)"), ptNewRangeAttributes, FALSE, &pLDAPSearchResult);
         if (dwRet != LDAP_SUCCESS)
         {
-            LdapWppMessage(TRACE_LEVEL_ERROR, REQUEST, "Unable to process inner LDAP request for multivaluate attribute <%ws>: <%#x>", ptCurrentDN, dwRet);
+            LdapWppMessage(TRACE_LEVEL_ERROR, REQUEST, "Unable to process inner LDAP request for ranged multivaluate attribute <%ws>: <%#x>", ptCurrentDN, dwRet);
             API_RETURN_ERROR(dwRet);
         }
 
         pLDAPEntry = ldap_first_entry(pConnection->pLdapSession, pLDAPSearchResult);
         if (pLDAPEntry == NULL)
         {
-            LdapWppMessage(TRACE_LEVEL_ERROR, REQUEST, "Unable to process inner LDAP request for multivaluate attribute <%ws>", ptCurrentDN);
+            LdapWppMessage(TRACE_LEVEL_ERROR, REQUEST, "Unable to process inner LDAP request for ranged multivaluate attribute <%ws>", ptCurrentDN);
             API_RETURN_ERROR(LDAP_ERR_BAD_ENTRY_DATA);
         }
 
         if (API_FAILED(GetRangeValues(pConnection, pLDAPEntry, ptOrigAttribute, &dwCurrAttributeCount, &ppbCurrData, &pdwCurrDataSize, &dwStart, &dwEnd)))
         {
-            LdapWppMessage(TRACE_LEVEL_ERROR, REQUEST, "Unable to extract range values during inner LDAP request for multivaluate attribute <%ws>", ptCurrentDN);
+            LdapWppMessage(TRACE_LEVEL_ERROR, REQUEST, "Unable to extract range values during inner LDAP request for ranged multivaluate attribute <%ws>", ptCurrentDN);
             API_RETURN_SAME_ERROR();
         }
 
@@ -304,7 +304,7 @@ BOOL GetRangeValues(
     PDWORD pdwDataSize = NULL;
     struct berval **ppBvals = NULL;
 
-    LdapWppMessage(TRACE_LEVEL_INFORMATION, INITIALIZATION, "Starting range attribute values extraction");
+    LdapWppMessage(TRACE_LEVEL_INFORMATION, INITIALIZATION, "Starting ranged attribute values extraction");
 
     (*pdwAttributeCount) = 0;
     (*pppbData) = NULL;
@@ -315,13 +315,14 @@ BOOL GetRangeValues(
     ptAttribute = ldap_first_attribute(pConnection->pLdapSession, pEntry, &pBerElt);
     if (ptAttribute == NULL)
     {
-        LdapWppMessage(TRACE_LEVEL_WARNING, REQUEST, "Unable to extract range values: there is no attributes for the current entry: <%p>", pEntry);
-        API_RETURN_SAME_ERROR(); // TODO: mauvaise macro
+		(*pdwEnd) = (DWORD)-1;
+        LdapWppMessage(TRACE_LEVEL_WARNING, REQUEST, "Unable to find next range of attribute, no more values: <%p>", pEntry);
+		API_RETURN_SUCCESS();
     }
 
     if (API_FAILED(ParseRange(ptOrigAttribute, ptAttribute, pdwStart, pdwEnd)))
     {
-        LdapWppMessage(TRACE_LEVEL_ERROR, REQUEST, "Unable to parse attribute range values during inner LDAP request for multivaluate attribute <%ws>", ptAttribute);
+        LdapWppMessage(TRACE_LEVEL_ERROR, REQUEST, "Unable to parse attribute range values during inner LDAP request for ranged attribute <%ws>", ptAttribute);
         API_RETURN_SAME_ERROR();
     }
 

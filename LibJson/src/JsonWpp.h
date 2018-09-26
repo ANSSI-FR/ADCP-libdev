@@ -33,7 +33,7 @@ XXX XXX XXX XXX XXX XXX XXX XXX XXX
 /* --- WPP CONFIG ----------------------------------------------------------- */
 // begin_wpp config
 //      FUNC JsonWppMessage(LEVEL, FLAGS, MSG, ...);
-//      USEPREFIX (CsvWppMessage, "%!STDPREFIX!");
+//      USEPREFIX (JsonWppMessage, "%!STDPREFIX!");
 // end_wpp
 
 //

@@ -1,4 +1,4 @@
-// 9d3d0a22965d0b3b627b3ef343f072df Generated file. Do not edit.
+// 602c76e0ee2be342df170f6fd0a3108f Generated file. Do not edit.
 // File created by WPP compiler version 10.0.16299-Fri Sep 29 02:03:49 2017
 // from template um-default.tpl
 
@@ -523,36 +523,16 @@ extern "C" {
 
 #if !defined(WPP_NO_ANNOTATIONS)
 
-#ifdef WPP_EMIT_FUNC_NAME
-#define WPP_FUNC_NAME L" FUNC=" _WPPW(__FUNCTION__)
-#else
-#define WPP_FUNC_NAME
-#endif
-
 # define WPP_ANNOTATE(x) WPP_ANNOTATE_ ## x,
 
 #else
 # define WPP_ANNOTATE(x)
 #endif
 
+#define WPP_LOCAL_TraceGuids WPP_Traceguids
 
 #if 0
-#if !defined(WPP_USER_MSG_GUID)
-
-#define WPP_LOCAL_TraceGuids WPP_Traceguids
 extern const __declspec(selectany) GUID WPP_LOCAL_TraceGuids[] = {};
-
-#else
-
-#define WPP_LOCAL_MSG_VAR(Guid) WPP_XGLUE3(WPP_, WPP_GUID_NORM Guid, _Traceguids)
-
-#define WPP_LOCAL_MSG_GUID(Guid) \
-extern const __declspec(selectany) GUID WPP_LOCAL_MSG_VAR(Guid)[] = { WPP_GUID_STRUCT Guid }
-
-WPP_LOCAL_MSG_GUID(WPP_USER_MSG_GUID);
-#define WPP_LOCAL_TraceGuids WPP_LOCAL_MSG_VAR(WPP_USER_MSG_GUID)
-
-#endif
 #endif
 
 #ifndef WPP_ALREADY_INCLUDED
@@ -562,14 +542,8 @@ enum {WPP_TRACE_OPTIONS = TRACE_MESSAGE_SEQUENCE   | TRACE_MESSAGE_GUID
                         | TRACE_MESSAGE_SYSTEMINFO | TRACE_MESSAGE_TIMESTAMP };
 #endif
 
-#ifndef WPP_LOGPAIR_SEPARATOR
-# define WPP_LOGPAIR_SEPARATOR ,
-#endif
-#ifndef WPP_LOGPAIR_SIZET
-# define WPP_LOGPAIR_SIZET SIZE_T
-#endif
 #if !defined(WPP_LOGPAIR)
-# define WPP_LOGPAIR(_Size, _Addr)     (_Addr),((WPP_LOGPAIR_SIZET)(_Size))WPP_LOGPAIR_SEPARATOR
+# define WPP_LOGPAIR(_Size, _Addr)     (_Addr),((SIZE_T)(_Size)),
 #endif
 
 #define WPP_LOGTYPEVAL(_Type, _Value) WPP_LOGPAIR(sizeof(_Type), &(_Value))
@@ -644,7 +618,7 @@ enum {WPP_TRACE_OPTIONS = TRACE_MESSAGE_SEQUENCE   | TRACE_MESSAGE_GUID
 #endif  //  #ifndef WPP_ALREADY_INCLUDED
 
 #if !defined(WPP_ENABLE_FLAG_BIT)
-#define WPP_ENABLE_FLAG_BIT(flag) (WPP_CB[((flag) >> 16)].Control).Flags[( (0xFFFF & ((flag)-1) ) / 32)] & (1 << ( ((flag)-1) & 31 ))
+#define WPP_ENABLE_FLAG_BIT(flag) (WPP_CB[((flag) >> 16)].Control).Flags[( (0xFFFF & ((flag)-1) ) / 32)] & (1 << ( ((flag)-1) & 31 )) 
 #endif
 
 #ifndef WPP_POST
@@ -655,9 +629,6 @@ enum {WPP_TRACE_OPTIONS = TRACE_MESSAGE_SEQUENCE   | TRACE_MESSAGE_GUID
 #  define WPP_PRE()
 #endif
 
-#ifndef WPP_LOG_ALWAYS
-#  define WPP_LOG_ALWAYS(...)
-#endif
 
 #ifdef WPP_DEBUG
 #else
@@ -673,6 +644,7 @@ enum {WPP_TRACE_OPTIONS = TRACE_MESSAGE_SEQUENCE   | TRACE_MESSAGE_GUID
 #if defined(__cplusplus)
 };
 #endif
+
 
 #else
 // template tracemacro.tpl
@@ -742,6 +714,7 @@ WPP_LOCAL_MSG_GUID(WPP_USER_MSG_GUID);
 #endif
 #endif
 
+
 #ifndef WPP_ALREADY_INCLUDED
 
 #if !defined(WPP_TRACE_OPTIONS)
@@ -752,9 +725,11 @@ enum {WPP_TRACE_OPTIONS = TRACE_MESSAGE_SEQUENCE   | TRACE_MESSAGE_GUID
 #ifndef WPP_LOGPAIR_SEPARATOR
 # define WPP_LOGPAIR_SEPARATOR ,
 #endif
+
 #ifndef WPP_LOGPAIR_SIZET
 # define WPP_LOGPAIR_SIZET SIZE_T
 #endif
+
 #if !defined(WPP_LOGPAIR)
 # define WPP_LOGPAIR(_Size, _Addr)     (_Addr),((WPP_LOGPAIR_SIZET)(_Size))WPP_LOGPAIR_SEPARATOR
 #endif
@@ -831,8 +806,9 @@ enum {WPP_TRACE_OPTIONS = TRACE_MESSAGE_SEQUENCE   | TRACE_MESSAGE_GUID
 #endif  //  #ifndef WPP_ALREADY_INCLUDED
 
 #if !defined(WPP_CHECK_INIT)
-# define WPP_CHECK_INIT (WPP_CB != (WPP_CB_TYPE*)&WPP_CB) &&
+# define WPP_CHECK_INIT (WPP_CB != (WPP_CB_TYPE*)&WPP_CB) && 
 #endif
+
 
 #ifndef WPP_POST
 #  define WPP_POST()
@@ -844,7 +820,7 @@ enum {WPP_TRACE_OPTIONS = TRACE_MESSAGE_SEQUENCE   | TRACE_MESSAGE_GUID
 
 #ifndef WPP_LOG_ALWAYS
 #  define WPP_LOG_ALWAYS(...)
-#endif
+#endif      
 
 #ifdef WPP_DEBUG
 #else
@@ -863,7 +839,7 @@ enum {WPP_TRACE_OPTIONS = TRACE_MESSAGE_SEQUENCE   | TRACE_MESSAGE_GUID
 
 #endif
 
-// 9d3d0a22965d0b3b627b3ef343f072df Generated file. Do not edit.
+// 602c76e0ee2be342df170f6fd0a3108f Generated file. Do not edit.
 // File created by WPP compiler version 10.0.16299-Fri Sep 29 02:03:49 2017
 // from template provider.tpl
 
@@ -1054,7 +1030,7 @@ EXTERN_C __declspec(selectany) const GUID ;// = {0x00000000, 0x0000, 0x0000, {0x
 #ifndef MCGEN_DISABLE_PROVIDER_CODE_GENERATION
 
 
-#define Handle (_Context.RegistrationHandle)
+EXTERN_C __declspec(selectany) REGHANDLE Handle;// = (REGHANDLE)0;
 
 EXTERN_C __declspec(selectany) MCGEN_TRACE_CONTEXT _Context;// = {0};
 

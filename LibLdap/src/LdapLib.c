@@ -345,6 +345,7 @@ BOOL
 LdapLibInit (
 )
 {
+	//WPP_INIT_TRACING(_T("LdapLib"));
    LdapWppMessage(TRACE_LEVEL_INFORMATION, INITIALIZATION, "LibLdap WPP initialized");
    API_RETURN_SUCCESS();
 }
@@ -354,6 +355,7 @@ LdapLibCleanup (
 )
 {
    LdapWppMessage(TRACE_LEVEL_INFORMATION, FINALIZATION, "Cleanup LibLdap WPP");
+   //WPP_CLEANUP();
    API_RETURN_SUCCESS();
 }
 
@@ -786,7 +788,7 @@ BOOL LdapGetNextEntry(
     DWORD dwResult = LDAP_SUCCESS, dwCount = 0;
     BOOL bResult = FALSE;
     PLDAPMessage pCurrentEntry = NULL;
-    struct l_timeval timeout = { .tv_sec = 100, .tv_usec = 0 }; // TODO: hardcoded timeout
+    struct l_timeval timeout = { .tv_sec = 300, .tv_usec = 0 }; // usually limited by the server timeout
 
     LdapWppMessage(TRACE_LEVEL_INFORMATION, INITIALIZATION, "Getting next entry of LDAP request <%p>", pRequest->pLDAPSearch);
 
